@@ -1,0 +1,142 @@
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+    maven { url 'https://repo1.maven.org/maven2' }
+}
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.71")
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0"
+        classpath "gradle.plugin.com.github.sherter.google-java-format:google-java-format-gradle-plugin:0.9"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'com.github.sherter.google-java-format'
+apply plugin: 'org.sonarqube'
+
+// Configuración de Java
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+// Configuración de encoding
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    verifyGoogleJavaFormat.dependsOn(tasks.googleJavaFormat)
+}
+
+// Configuración de tests
+test {
+    systemProperties = System.properties
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+}
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+    systemProperties = System.properties
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+
+    doFirst {
+        def appType = System.getProperty("appType", "superapp") // Valor por defecto: superapp
+
+        if (System.getProperty("os.name").toLowerCase().contains("win")) {
+            exec {
+                commandLine "cmd", "/c", "setAppTypeConfig.bat", appType
+            }
+        } else {
+            exec {
+                commandLine "sh", "setAppTypeConfig.sh", appType
+            }
+        }
+    }
+}
+
+// Forzar versiones de Jackson compatibles con Java 11
+configurations.all {
+    resolutionStrategy {
+        force "com.fasterxml.jackson.core:jackson-core:2.13.5"
+        force "com.fasterxml.jackson.core:jackson-databind:2.13.5"
+        force "com.fasterxml.jackson.core:jackson-annotations:2.13.5"
+        force "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.5"
+
+        // Excluir versiones problemáticas
+        eachDependency { DependencyResolveDetails details ->
+            if (details.requested.group == 'com.fasterxml.jackson.core') {
+                if (details.requested.version.startsWith('2.15') ||
+                        details.requested.version.startsWith('2.16') ||
+                        details.requested.version.contains('rc')) {
+                    details.useVersion '2.13.5'
+                    details.because 'Force Jackson version compatible with Java 11'
+                }
+            }
+        }
+    }
+}
+
+// Versiones originales que funcionaban
+ext {
+    serenityVersion = '2.0.71'
+    serenityCucumberVersion = '1.9.45'
+    jacksonVersion = '2.13.5'
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-core:3.13.2'
+    testImplementation 'org.slf4j:slf4j-api:1.7.2'
+    testImplementation 'org.slf4j:slf4j-log4j12:1.7.2'
+
+    // Apache POI para Excel
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
+    // Serenity BDD (versiones originales que funcionaban)
+    implementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-ensure:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-rest-assured:${serenityVersion}"
+    implementation 'net.serenity-bdd:serenity-screenplay-rest:2.0.0'
+
+    // Appium
+    implementation 'io.appium:java-client:7.5.1'   // Versión original
+
+    // WebDriverManager
+    implementation 'io.github.bonigarcia:webdrivermanager:5.0.3'
+
+    // JSON
+    implementation 'org.json:json:20210307'
+
+    // Jackson - versiones específicas compatibles con Java 11
+    implementation "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+
+    // Log4j con exclusiones originales
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17', {
+        exclude group: 'com.sun.jmx', module: 'jmxri'
+        exclude group: 'com.sun.jdmk', module: 'jmxtools'
+        exclude group: 'javax.jms', module: 'jms'
+    }
+
+    // Dependencias adicionales para JARs locales
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+// Configuración de Gradle para continuar en caso de fallas
+gradle.startParameter.continueOnFailure = true
+
+// Finalizar con agregación de reportes
+test.finalizedBy('aggregate')

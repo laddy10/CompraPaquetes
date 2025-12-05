@@ -1,0 +1,130 @@
+package tasks.Cmax;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.CmaxPage.*;
+import static utils.Constants.*;
+
+import interactions.WaitFor;
+import interactions.comunes.ValidateInformationText;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
+import org.openqa.selenium.By;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import utils.AdjustPageZoom;
+import utils.EvidenciaUtils;
+
+import java.util.List;
+import java.util.Map;
+
+public class ContadorDeUsoConsumoDeSMS implements Task {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ContadorDeUsoConsumoDeSMS.class);
+    private final Map<String, String> data;
+
+    public ContadorDeUsoConsumoDeSMS(Map<String, String> data) {
+        this.data = data;
+    }
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        LOGGER.info("Iniciando validación de contadores de uso consumo de SMS");
+
+        navegarAContadores(actor);
+        buscarYSeleccionarPaqueteSMS(actor);
+        validarOfertaEnDetalle(actor);
+        capturarEvidencia(actor);
+
+        LOGGER.info("Validación de contadores de SMS completada");
+    }
+
+    private void navegarAContadores(Actor actor) {
+        actor.attemptsTo(Click.on(BTN_CONTADORES_USO), WaitFor.aTime(1000));
+        actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_CONTADORES_USO)));
+    }
+
+    private void buscarYSeleccionarPaqueteSMS(Actor actor) {
+        List<WebElementFacade> rows = TBL_CONTADORES_USO.resolveAllFor(actor);
+        LOGGER.info("Filas encontradas en la tabla de contadores: {}", rows.size());
+
+        String paqueteEsperado = data.get("paqueteSMS");
+        boolean paqueteEncontrado = false;
+
+        for (WebElementFacade row : rows) {
+            String actualPackageName = row.then(By.xpath(COLUMN_PAQUETE_XPATH)).getText().trim();
+            LOGGER.debug("Comparando: '{}' con '{}'", actualPackageName, paqueteEsperado);
+
+            if (actualPackageName.equals(paqueteEsperado)) {
+                WebElementFacade yesLink = row.then(By.xpath(".//td[5]/a"));
+                actor.attemptsTo(Scroll.to(yesLink), Click.on(yesLink), WaitFor.aTime(1000));
+                paqueteEncontrado = true;
+                LOGGER.info("Paquete de SMS encontrado y seleccionado: '{}'", paqueteEsperado);
+                break;
+            }
+        }
+
+        if (!paqueteEncontrado) {
+            String errorMessage = "No se encontró el paquete de SMS: " + paqueteEsperado;
+            LOGGER.error(errorMessage);
+            throw new AssertionError(errorMessage);
+        }
+    }
+
+    private void validarOfertaEnDetalle(Actor actor) {
+        String paqueteEsperado = data.get("paqueteSMS");
+
+        List<WebElementFacade> filas = TBL_VALORES_CONTADORES.resolveAllFor(actor);
+        LOGGER.info("Filas encontradas en valores de contadores: {}", filas.size());
+
+        boolean ofertaValidada = false;
+
+        for (WebElementFacade fila : filas) {
+            String actualPackageName = fila.then(By.xpath(COLUMN_PAQUETE_XPATH)).getText().trim();
+            LOGGER.debug("Validando oferta en detalle: '{}'", actualPackageName);
+
+            if (actualPackageName.equals(paqueteEsperado)) {
+                validarCamposContador(actor);
+                ofertaValidada = true;
+                LOGGER.info("Oferta validada en detalle: '{}'", actualPackageName);
+                break;
+            }
+        }
+
+        if (!ofertaValidada) {
+            LOGGER.warn("No se pudo validar la oferta en el detalle: {}", paqueteEsperado);
+        }
+    }
+
+    private void validarCamposContador(Actor actor) {
+        LOGGER.debug("Validando campos de contador SMS");
+
+        actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_FECHA_INICIO_CONTADORES)));
+        actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_FECHA_EXPIRACION_CONTADORES)));
+        actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_VALOR_CONTADOR)));
+    }
+
+    private void capturarEvidencia(Actor actor) {
+        actor.attemptsTo(
+                WaitFor.aTime(3000),
+                AdjustPageZoom.to(ZOOM_LEVEL_85),
+                Scroll.to(LGO_CLARO)
+        );
+
+        String nombrePaquete = data.get("paqueteSMS");
+        String mensajeEvidencia = "Validar contadores de uso consumo de SMS";
+        if (nombrePaquete != null && !nombrePaquete.isEmpty()) {
+            mensajeEvidencia += " - " + nombrePaquete;
+        }
+
+        EvidenciaUtils.registrarCaptura(mensajeEvidencia);
+    }
+
+    public static Performable contadorDeUsoConsumoDeSMS(Map<String, String> data) {
+        return instrumented(ContadorDeUsoConsumoDeSMS.class, data);
+    }
+}

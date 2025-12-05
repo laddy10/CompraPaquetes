@@ -1,0 +1,168 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="GENERATOR" content="">
+    <meta name="Cache-Control" content="no-cache">
+    <meta name="PRAGMA" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    
+    <title>Login - Customer Care</title>
+    
+    <link rel="stylesheet" type="text/css" href="webresources/css/bscs_main.css" id="main_style_sheet"> 
+    
+    <style type="text/css">
+        @import "webresources/css/bscs_dojo.css";
+    </style>
+    
+    <link rel="stylesheet" type="text/css" href="webresources/css/style.css">
+    
+    <script type="text/javascript" src="webresources/js/dojo/dojo/dojo.js" djconfig="parseOnLoad: true"></script><script type="text/javascript" src="webresources/js/dojo/dojo/_base/_loader/bootstrap.js"></script><script type="text/javascript" src="webresources/js/dojo/dojo/_base/_loader/loader.js"></script><script type="text/javascript" src="webresources/js/dojo/dojo/_base/_loader/hostenv_browser.js"></script><script type="text/javascript" src="webresources/js/dojo/dojo/_base.js"></script>
+    <script type="text/javascript" src="webresources/js/jsUtil.js"></script>
+    
+     <!-- BUC:Password Autocomplete -changes for disabling autosave popup in mozilla (tested till firefox 66) and IE (11). starts -->
+ 	<script type="text/javascript" src="webresources/js/passwordAutocomplete.js"></script>
+ 	<!-- BUC:Password Autocomplete -changes for disabling autosave popup in mozilla and ie. Ends -->  
+  
+ 
+    <!-- special settings IE versions > 7 -->
+    <!--[if gte IE 7]>
+        <link rel="stylesheet" type="text/css" href="webresources/css/ie7.css" id="ie7_style_sheet" />
+    <![endif]-->
+    
+    <!-- switch off old IE versions -->
+    <!--[if lte IE 6]>
+        <style type="text/css">
+            #div_all {display: none;}
+            #footer {display: none;}
+            .browser-error {display: block;}
+        </style>
+    <![endif]-->
+    
+ 
+
+</head>
+
+<body class="bscs" onload="initStyleSheet('disable_expanded_style_sheet', 'expanded_style_sheet'); setInitialFocus()">
+    
+
+    <div id="div_all">
+        <div id="container">
+            <div id="navivert-container">
+            <div id="navivert-content">
+            
+                <div id="navi-vert">
+                    <div id="navi-vert-header">
+                        <div id="navi-vert-header-logo"></div>
+                    </div>
+                    <div id="navi-vert-rubric">
+                        <h1></h1>
+                    </div>
+                </div>
+                
+                <div id="content">
+                    <div id="hNavBar"><img src="webresources/icons/empty.png" alt="" style="background:transparent;"></div>
+                    <div id="kibar">
+                        <table cellpadding="0" cellspacing="0">
+                            <tbody><tr><td><span class="KIBarLabelTxt">&nbsp;</span><span class="KIBarTxt">&nbsp;</span></td></tr>
+                        </tbody></table>
+                    </div>
+                    
+                    <div class="header">
+                        <h1>
+                        <span>Login&nbsp;-&nbsp;Customer Care</span></h1>
+                    </div>
+                    
+                    <div style="font-size:17px">
+                    	<br>
+                        
+                    </div>
+                    
+                    
+                        <div class="ErrInfoTxt">
+                            <img src="webresources/icons/empty.png" alt="Error" class="ErrorIcon">&nbsp;The system could not log you on.
+Type a valid user name and the correct password.
+Make sure the CAPS LOCK key is not on.
+                        </div>
+                    
+                    
+                    <div class="loginDIV">
+                        <h2 class="loginH2">Login</h2>
+                        <!-- BUC:Password Autocomplete -changes for disabling autosave popup in different browsers.  -->
+                        <form action="Login.au" method="post" id="login" name="login" autocomplete="new-pasword">
+                        
+                        <table cellpadding="0" cellspacing="0" class="DABgFormLogin">
+                            <tbody><tr>
+                                <td class="DAColLabel" style=""><div><span>User:</span></div></td>
+                                <td class="DAColDataSpan" colspan="1">
+                                    <div class="InputDIV">
+                                        <input class="InputTextM" type="text" name="j_username" id="j_username" onkeypress="checkEnter(event)" tabindex="1" value="" autocomplete="new-password">
+                                        
+                                            <input id="FW_FocusForm" type="hidden" value="login">
+                                            <input id="FW_FocusElement" type="hidden" value="j_username">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="DAColLabel"><div><span>Password:</span></div></td>
+                                <td class="DAColDataSpan" colspan="1">
+                                    <div class="InputDIV">
+                                    	<!-- 
+                                    	BUC:Password Autocomplete -changes for disabling autosave popup in ECMS supported  browsers. starts
+                                    	 -->
+                                    	 <!-- BUC:Password Autocomplete - Introducing 2 dummy password fields with class type stealthy  for IE .-->
+                                <!--    	<input type="password" name="password" class="stealthy" value='' tabindex="-1"> -->
+                                    	<!-- BUC:Password Autocomplete - Introducing 1 dummy password field with dummy value  for Mozilla. -->                             	
+                                    	<input class="InputTextM" type="text" name="j_dummypassword" id="j_dummypassword" value="*************************************" style="display:none">
+                                        <input class="InputTextM" type="password" name="j_password" id="j_password" tabindex="2" onkeypress="checkEnter(event)" value="" autocomplete="new-password">                                       
+                                 <!--       <input type="password" class="stealthy"  tabindex="-1"> --> 
+                                        <!-- BUC:Password Autocomplete - ends -->
+                                        
+                                    </div>                                    
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td colspan="2" class="DAStandardButtons">
+                                <!-- BUC:Password Autocomplete -SUBMIT button wont allow any javascript operation(onclick event) after submit.Also our fuctionality wont work properly on SUBMIT button,so changed type to button.-changes  for disabling autosave popup in mozilla and ie. -->
+                                    <input type="button" class="ButtonStandard" onclick="myFunction(event)" tabindex="3" id="submitv" name="submit_v" value="&nbsp;&nbsp;OK&nbsp;&nbsp;">
+                                </td>
+                            </tr>
+                        </tbody></table>
+
+                        
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            <div id="servicebox">
+                <div id="slider-servicebox">
+                    <a class="slider-vertDisabled" href=""><img class="slider-vert-iconDisabled" src="webresources/icons/empty.png" border="0"></a>
+                </div>
+                
+                <div id="servicebox_header">&nbsp;</div>
+                <div id="servicebox_rubric_empty"><h2>&nbsp;</h2></div>
+                <div id="servicebox_content" style="display: none;">&nbsp;</div>
+            </div>
+            
+            <div class="clearing">&nbsp;</div>
+            
+        </div>
+        
+        <div id="footer">
+            <img id="footer-left" src="webresources/icons/empty.png" alt="">
+            <img id="footer-right" src="webresources/icons/empty.png" alt="">
+            <p>Copyright (C) Ericsson Telekommunikation GmbH &amp; Co. KG 2011 2025</p>
+        </div>
+        
+    </div>
+    
+    <div class="browser-error">Your browser or browser version does not support this page.</div>
+    
+
+
+
+
+</body></html>

@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Se requiere tomar evidencias de las consultas realizadas en CMAX" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-12-05T19:39:26" hostname="AU3PH5CG141BG50" time="273.633">
+  <properties/>
+  <testcase name="Consulta inicial del estado de la linea en CMAX" classname="Se requiere tomar evidencias de las consultas realizadas en CMAX" time="273.633">
+    <failure message="org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'AU3PH5CG141BG50', ip: '10.111.242.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'&#10;Driver info: driver.version: RemoteWebDriver" type="org.openqa.selenium.NoSuchSessionException">org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'AU3PH5CG141BG50', ip: '10.111.242.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at app//io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at app//io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+	at app//io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at app//io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at app//net.serenitybdd.core.pages.PageObject.openPageAtUrl(PageObject.java:902)
+	at app//net.serenitybdd.core.pages.PageObject.openUrl(PageObject.java:851)
+	at app//net.serenitybdd.screenplay.actions.OpenUrl.performAs(OpenUrl.java:18)
+	at app//net.serenitybdd.screenplay.actions.OpenUrl$$EnhancerByCGLIB$$f985de1c.CGLIB$performAs$0(&lt;generated&gt;)
+	at app//net.serenitybdd.screenplay.actions.OpenUrl$$EnhancerByCGLIB$$f985de1c$$FastClassByCGLIB$$1611e501.invoke(&lt;generated&gt;)
+	at app//net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at app//net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:460)
+	at app//net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:445)
+	at app//net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:420)
+	at app//net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:175)
+	at app//net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:162)
+	at app//net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:68)
+	at app//net.serenitybdd.screenplay.actions.OpenUrl$$EnhancerByCGLIB$$f985de1c.performAs(&lt;generated&gt;)
+	at app//net.serenitybdd.screenplay.Actor.performTask(Actor.java:233)
+	at app//net.serenitybdd.screenplay.Actor.perform(Actor.java:214)
+	at app//net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:171)
+	at app//stepDefinitions.CMAXDefinitions.seIngresaALaURLDeCMAX(CMAXDefinitions.java:78)
+	at ✽.Se ingresa a la URL de CMAX(src/test/resources/features/pruebas.feature:50)
+</failure>
+  </testcase>
+  <system-out><![CDATA[2025-12-05 14:39:26 [Test worker] INFO :: Limpiando carpeta de capturas...
+2025-12-05 14:39:26 [Test worker] INFO :: Limpiando carpeta de capturas...
+2025-12-05 14:39:26 [Test worker] INFO :: Limpiando carpeta de capturas...
+2025-12-05 14:39:27 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaALaURLDeCMAX - {0} opens the #url
+2025-12-05 14:39:28 [Test worker] INFO :: Instantiating driver
+2025-12-05 14:39:28 [Test worker] INFO :: Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, chrome.switches: --start-maximized, --disabl..., goog:chromeOptions: {args: [--start-maximized, --disable-popup-blocking, --disk-cache-dir=null, --ignore-certificate-errors, --disable-download-notifica..., --enable-automation, --test-type], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+2025-12-05 14:39:34 [Test worker] DEBUG:: Opening darkroom
+2025-12-05 14:39:34 [Darkroom Processing Line] DEBUG:: Darkroom processing line starting up
+2025-12-05 14:39:35 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7c82ec2f947af0a3bdd80d19f7e0e54b0f0d130fe14c0aee1acad64b6d032a9c.png
+2025-12-05 14:39:35 [Test worker] DEBUG:: STEP DONE: {0} opens the #url
+2025-12-05 14:39:35 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7c82ec2f947af0a3bdd80d19f7e0e54b0f0d130fe14c0aee1acad64b6d032a9c.png
+2025-12-05 14:39:35 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaElUsuarioYLaContrasena - performAs
+2025-12-05 14:39:35 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} enters #theTextAsAString into #target
+2025-12-05 14:39:35 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar el nombre del usuario
+2025-12-05 14:39:35 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\daf24d87d58d6e2fc04018bee241791e1cb296a147ad9739c170827292a95a55.png
+2025-12-05 14:39:36 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\daf24d87d58d6e2fc04018bee241791e1cb296a147ad9739c170827292a95a55.png
+2025-12-05 14:39:36 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2025-12-05 14:39:36 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} enters #theTextAsAString into #target
+2025-12-05 14:39:36 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar la contraseña del usuario
+2025-12-05 14:39:36 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ea62bd38b0835a69ebd652dbc2e787a1202a1812df57702a23915189608257c3.png
+2025-12-05 14:39:36 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2025-12-05 14:39:36 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} clicks on #target
+2025-12-05 14:39:36 [Test worker] DEBUG:: default content already selected for Boton de OK
+2025-12-05 14:39:45 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b2449600a217a61b136f85d74984c42570161a6c2f2b08a39d4ac552008727c9.png
+2025-12-05 14:39:45 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11868999691202228659
+2025-12-05 14:39:45 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:39:45 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0}
+2025-12-05 14:39:45 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b2449600a217a61b136f85d74984c42570161a6c2f2b08a39d4ac552008727c9.png
+2025-12-05 14:39:46 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b2449600a217a61b136f85d74984c42570161a6c2f2b08a39d4ac552008727c9.png
+2025-12-05 14:39:46 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:39:46 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:39:46 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b2449600a217a61b136f85d74984c42570161a6c2f2b08a39d4ac552008727c9.png
+2025-12-05 14:39:46 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaElNumeroDeLaLineaAConsultarConsultaInicial - performAs
+2025-12-05 14:39:46 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} clicks on #target
+2025-12-05 14:39:46 [Test worker] DEBUG:: default content already selected for Boton de clientes
+2025-12-05 14:39:47 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4f9490650f433a626241293b3e2b467426204aae57cfc6865e3027b14536dc75.png
+2025-12-05 14:39:47 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11710038511205117661
+2025-12-05 14:39:47 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:39:47 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} clicks on #target
+2025-12-05 14:39:47 [Test worker] DEBUG:: default content already selected for Boton de buscar a clientes
+2025-12-05 14:39:47 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4f9490650f433a626241293b3e2b467426204aae57cfc6865e3027b14536dc75.png
+2025-12-05 14:40:02 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\9b086fdb71bbf1b2df54229464b24d74d74d1141d3cb0e59ca9ec4b34ee8c82f.png
+2025-12-05 14:40:02 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:40:02 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} enters #theTextAsAString into #target
+2025-12-05 14:40:02 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar numero
+2025-12-05 14:40:02 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7ad8c0b31f2915868de2871e8cd225e3786a7be5fe0d91523bf3ae88bf152425.png
+2025-12-05 14:40:02 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2025-12-05 14:40:02 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} clicks on #target
+2025-12-05 14:40:02 [Test worker] DEBUG:: default content already selected for Boton buscar
+2025-12-05 14:40:03 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\86fb5251c1dad672c15d6d54f59d4eda810d89e9cac29a12c74b1599a4d95bba.png
+2025-12-05 14:40:03 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:40:03 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0}
+2025-12-05 14:40:04 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d2582a26e0468b6c142d20f191511d4e67aae1ac178428a44e00267e53ef60d4.png
+2025-12-05 14:40:04 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:40:04 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} clicks on #target
+2025-12-05 14:40:04 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
+2025-12-05 14:40:12 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\380dce92d90f0a090c9b099220414c81bb709c08577e17105bc8bd7980dd13e6.png
+2025-12-05 14:40:12 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:40:12 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
+2025-12-05 14:40:12 [Test worker] DEBUG:: STARTING STEP: ValidateInformationText.answeredBy - performAs
+2025-12-05 14:40:12 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
+2025-12-05 14:40:12 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
+2025-12-05 14:40:12 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:40:12 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
+2025-12-05 14:40:13 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
+2025-12-05 14:40:13 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\0f8cca490ccb52ad65ba768b4d83f171f49177407e05e8d1f645ddfff15c0432.png
+2025-12-05 14:40:13 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0}
+2025-12-05 14:40:14 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\0f8cca490ccb52ad65ba768b4d83f171f49177407e05e8d1f645ddfff15c0432.png
+2025-12-05 14:40:14 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:40:14 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
+2025-12-05 14:40:14 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:40:15 [Test worker] DEBUG:: LOADING LOCAL PROPERTIES FROM D:\Auto\Cmax_CompraPaquetes\serenity.properties 
+2025-12-05 14:40:15 [Test worker] DEBUG:: LOADING LOCAL PROPERTIES FROM D:\Auto\Cmax_CompraPaquetes\serenity.properties 
+2025-12-05 14:40:15 [Test worker] DEBUG:: LOADING LOCAL PROPERTIES FROM D:\Auto\Cmax_CompraPaquetes\serenity.properties 
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.platformName=Android
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.resized.image.width=600
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.automationName=UiAutomator2
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.hub=http://127.0.0.1:4723/wd/hub
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.resetKeyboard=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.browser.maximized=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: webdriver.wait.for.timeout=5000
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.reset=false
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.project.name=Cmax_CompraPaquetes
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.reports.show.step.details=false
+2025-12-05 14:40:15 [Test worker] DEBUG:: webdriver.driver=chrome
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.report.encoding=utf8
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.captureScreenshots=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.store.html.source=false
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.unicodeKeyboard=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.deviceOrientation=portrait
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.fullReset=false
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.compress.screenshots=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.autoGrantPermissions=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: webdriver.base.url=http://172.24.4.168/custcare_cmax/login.au
+2025-12-05 14:40:15 [Test worker] DEBUG:: feature.file.encoding=utf8
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.appWaitDuration=15000
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.timeout=8000
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.take.screenshots=FOR_EACH_ACTION
+2025-12-05 14:40:15 [Test worker] DEBUG:: chrome.switches=--start-maximized, --disable-popup-blocking, --disk-cache-dir=null, --ignore-certificate-errors, --disable-download-notification
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.autoDismissAlerts=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: url_prueba=http://172.24.4.168/custcare_cmax/login.au
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.newCommandTimeout=8000
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.appiumVersion=1.22.3
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.chromedriverExecutable=src/test/resources/webdriver/windows/chromedriver.exe
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.nativeWebScreenshot=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.orientation=PORTRAIT
+2025-12-05 14:40:15 [Test worker] DEBUG:: serenity.console.colors=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: webdriver.appium.driver=src/test/resources/webdriver/windows/chromedriver.exe
+2025-12-05 14:40:15 [Test worker] DEBUG:: webdriver.timeouts.implicitlywait=3000
+2025-12-05 14:40:15 [Test worker] DEBUG:: webdriver.provided.mydriver=utils.MyDriver
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.noReset=true
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.sessionName=Cmax_CompraPaquetes
+2025-12-05 14:40:15 [Test worker] DEBUG:: feature.file.language=es
+2025-12-05 14:40:15 [Test worker] DEBUG:: drivers.windows.webdriver.chrome.driver=src/test/resources/webdriver/windows/chromedriver.exe
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.appPackage=com.clarocolombia.miclaro 
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.app=D:\Auto\Cmax_CompraPaquetes/src/test/resources/app/mi-claro.apk 
+2025-12-05 14:40:15 [Test worker] DEBUG:: appium.appActivity=com.claro.superapp.SplashActivity 
+2025-12-05 14:40:15 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
+2025-12-05 14:40:15 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.cambiaAlContextoMovil - performAs
+? Cambio exitoso a: com.whatsapp
+2025-12-05 14:40:25 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:40:26 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\bb0829200fbcb4ad7399d2f1442d552548dc2e0ef7d33131ec2ae78f26efabcb.png
+2025-12-05 14:40:26 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-31773620126958677
+2025-12-05 14:40:26 [Test worker] DEBUG:: default content already selected for Texto de WhatsApp
+2025-12-05 14:40:26 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\bb0829200fbcb4ad7399d2f1442d552548dc2e0ef7d33131ec2ae78f26efabcb.png
+2025-12-05 14:40:27 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\52314a62f1b71f7241a39b9aef765160c55e992139a43350322608c3667a4097.png
+2025-12-05 14:40:27 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-3769130627400595258
+2025-12-05 14:40:27 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.validarVersionApp - performAs
+2025-12-05 14:40:28 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\52314a62f1b71f7241a39b9aef765160c55e992139a43350322608c3667a4097.png
+2025-12-05 14:40:28 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\52314a62f1b71f7241a39b9aef765160c55e992139a43350322608c3667a4097.png
+2025-12-05 14:40:28 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - {0} clicks on #target
+2025-12-05 14:40:28 [Test worker] DEBUG:: default content already selected for Boton Más opciones WhatsApp
+2025-12-05 14:40:29 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\72e2e91034fffe4425fd7e31c2b462ebe743a32691da6d16f0f54a97cc8fbcbc.png
+2025-12-05 14:40:29 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-4592312740830192980
+2025-12-05 14:40:29 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:40:29 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - {0} clicks on #target
+2025-12-05 14:40:29 [Test worker] DEBUG:: default content already selected for Boton Ajustes
+2025-12-05 14:40:29 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\72e2e91034fffe4425fd7e31c2b462ebe743a32691da6d16f0f54a97cc8fbcbc.png
+2025-12-05 14:40:31 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\80fc03c5ad10d8c6bbcdd46872350f44505ad979cfef1dd6c5524f25b1cd576d.png
+2025-12-05 14:40:31 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-7845389074077324275
+2025-12-05 14:40:31 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:40:31 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Realiza scroll vertical en busca del texto '#labelText' y de la click.
+2025-12-05 14:40:32 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\80fc03c5ad10d8c6bbcdd46872350f44505ad979cfef1dd6c5524f25b1cd576d.png
+2025-12-05 14:40:35 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d19d34235408acf7642b1ead19d14c857137e4d7b4c2a27496c18046eed3bcc9.png
+2025-12-05 14:40:35 [Test worker] DEBUG:: STEP DONE: Realiza scroll vertical en busca del texto '#labelText' y de la click.
+2025-12-05 14:40:35 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-5780501273386397686
+2025-12-05 14:40:35 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:36 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d19d34235408acf7642b1ead19d14c857137e4d7b4c2a27496c18046eed3bcc9.png
+2025-12-05 14:40:37 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\63ff8cdbdcd517bef87a3fc36cea76134c041f2541adc1e71e8761eebd7657fe.png
+2025-12-05 14:40:37 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:37 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-1867527501565014007
+2025-12-05 14:40:37 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\63ff8cdbdcd517bef87a3fc36cea76134c041f2541adc1e71e8761eebd7657fe.png
+2025-12-05 14:40:39 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f934c59eded042e7797511e7740db429d374dfa9cdeba70ea41c31c234fde319.png
+2025-12-05 14:40:39 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-5194110346602537703
+2025-12-05 14:40:39 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:39 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f934c59eded042e7797511e7740db429d374dfa9cdeba70ea41c31c234fde319.png
+2025-12-05 14:40:40 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f934c59eded042e7797511e7740db429d374dfa9cdeba70ea41c31c234fde319.png
+2025-12-05 14:40:40 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:40 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:41 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f934c59eded042e7797511e7740db429d374dfa9cdeba70ea41c31c234fde319.png
+2025-12-05 14:40:41 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:41 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:42 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f934c59eded042e7797511e7740db429d374dfa9cdeba70ea41c31c234fde319.png
+2025-12-05 14:40:42 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:42 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Regresa atrás en la aplicacion.
+2025-12-05 14:40:43 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\acf69c99ad2b9738380335c9bc9e871bf6312f5accccd5b6f716988ad46138d2.png
+2025-12-05 14:40:43 [Test worker] DEBUG:: STEP DONE: Regresa atrás en la aplicacion.
+2025-12-05 14:40:43 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-10859835274833844926
+2025-12-05 14:40:43 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Regresa atrás en la aplicacion.
+2025-12-05 14:40:44 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\acf69c99ad2b9738380335c9bc9e871bf6312f5accccd5b6f716988ad46138d2.png
+2025-12-05 14:40:46 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\82d046ae4edb5925711ad09456febb2fbd931ae10d8850dc65a281eab829ac4e.png
+2025-12-05 14:40:46 [Test worker] DEBUG:: STEP DONE: Regresa atrás en la aplicacion.
+2025-12-05 14:40:46 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-14333552937796279781
+2025-12-05 14:40:46 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Regresa atrás en la aplicacion.
+2025-12-05 14:40:46 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\82d046ae4edb5925711ad09456febb2fbd931ae10d8850dc65a281eab829ac4e.png
+2025-12-05 14:40:47 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\52314a62f1b71f7241a39b9aef765160c55e992139a43350322608c3667a4097.png
+2025-12-05 14:40:47 [Test worker] DEBUG:: STEP DONE: Regresa atrás en la aplicacion.
+2025-12-05 14:40:47 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:40:47 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.buscarChatClaro - performAs
+2025-12-05 14:40:48 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\52314a62f1b71f7241a39b9aef765160c55e992139a43350322608c3667a4097.png
+2025-12-05 14:40:48 [Test worker] DEBUG:: STARTING STEP: BuscarChatClaro.performAs - {0} clicks on #target
+2025-12-05 14:40:48 [Test worker] DEBUG:: default content already selected for Boton enviar mensaje
+2025-12-05 14:40:51 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f9288f62299b852d1291cf748eb6f675b06432b6bf431405d3f164f5073adc92.png
+2025-12-05 14:40:51 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-9012217734044562436
+2025-12-05 14:40:51 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:40:51 [Test worker] DEBUG:: STARTING STEP: BuscarChatClaro.performAs - {0} clicks on #target
+2025-12-05 14:40:51 [Test worker] DEBUG:: default content already selected for Boton lupa
+2025-12-05 14:40:51 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f9288f62299b852d1291cf748eb6f675b06432b6bf431405d3f164f5073adc92.png
+2025-12-05 14:40:51 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d7707db50b1f70b753dce437b8f9f9b6e5394e70b470d654b543846a1d01ed4b.png
+2025-12-05 14:40:51 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-587378405588348035
+2025-12-05 14:40:51 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:40:51 [Test worker] DEBUG:: STARTING STEP: BuscarChatClaro.performAs - {0} enters #theTextAsAString into #target
+2025-12-05 14:40:51 [Test worker] DEBUG:: default content already selected for Caja de texto buscar
+2025-12-05 14:40:52 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d7707db50b1f70b753dce437b8f9f9b6e5394e70b470d654b543846a1d01ed4b.png
+2025-12-05 14:40:54 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\13db1846cca25d003597e821eca966db0f99215c35fdfa97e6ddef832194f8a1.png
+2025-12-05 14:40:54 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-16988342724996263250
+2025-12-05 14:40:54 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2025-12-05 14:40:54 [Test worker] DEBUG:: STARTING STEP: BuscarChatClaro.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:54 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\13db1846cca25d003597e821eca966db0f99215c35fdfa97e6ddef832194f8a1.png
+2025-12-05 14:40:57 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\8507bcf6c3abf030e0ac787d57ae6bcfb9205063d2abe46ee5c913c4c81ad90b.png
+2025-12-05 14:40:57 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:40:57 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-10938872187410949477
+2025-12-05 14:40:57 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\8507bcf6c3abf030e0ac787d57ae6bcfb9205063d2abe46ee5c913c4c81ad90b.png
+2025-12-05 14:40:57 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\8507bcf6c3abf030e0ac787d57ae6bcfb9205063d2abe46ee5c913c4c81ad90b.png
+2025-12-05 14:40:57 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:40:57 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.iniciarChatClaro - performAs
+2025-12-05 14:40:58 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\28d4b4f000568d57572566c42720f1005c6e7de2e0b1c5cd9e60a2a8dd28ce8f.png
+2025-12-05 14:40:58 [Test worker] DEBUG:: STARTING STEP: IniciarChatClaro.performAs - {0} enters #theTextAsAString into #target
+2025-12-05 14:40:58 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-13156185309559048109
+2025-12-05 14:40:58 [Test worker] DEBUG:: default content already selected for Caja de texto enviar mensaje
+2025-12-05 14:40:58 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\28d4b4f000568d57572566c42720f1005c6e7de2e0b1c5cd9e60a2a8dd28ce8f.png
+2025-12-05 14:41:01 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\426a02f87bf45c1193b4b48d59dfb15703cba2dda3a67fbeaa4b38076b68cbd9.png
+2025-12-05 14:41:01 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-9715608563789509469
+2025-12-05 14:41:01 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2025-12-05 14:41:01 [Test worker] DEBUG:: STARTING STEP: IniciarChatClaro.performAs - {0} clicks on #target
+2025-12-05 14:41:01 [Test worker] DEBUG:: default content already selected for Boton enviar mensaje
+2025-12-05 14:41:02 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\426a02f87bf45c1193b4b48d59dfb15703cba2dda3a67fbeaa4b38076b68cbd9.png
+2025-12-05 14:41:03 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\fba21a8987cfa1f489a1464d50caa7f2b857a668029ba2daaa93d66ac2df691d.png
+2025-12-05 14:41:03 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-2648424147197164379
+2025-12-05 14:41:03 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:41:03 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\fba21a8987cfa1f489a1464d50caa7f2b857a668029ba2daaa93d66ac2df691d.png
+2025-12-05 14:41:08 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\89ac3d281a5528f01e439ed3ba53e5a41bcc084a2aa5204c87e48a8b35f6eb20.png
+2025-12-05 14:41:08 [Test worker] DEBUG:: STARTING STEP: IniciarChatClaro.performAs - Realiza Scroll una vez hacia abajo en el inicio de la App
+2025-12-05 14:41:08 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-5041112247892954177
+2025-12-05 14:41:08 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\89ac3d281a5528f01e439ed3ba53e5a41bcc084a2aa5204c87e48a8b35f6eb20.png
+2025-12-05 14:41:10 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d06936fed8f8684e5938e204f1e1da72f83393ff4d68916347d76fa1c0f214a2.png
+2025-12-05 14:41:10 [Test worker] DEBUG:: STEP DONE: Realiza Scroll una vez hacia abajo en el inicio de la App
+2025-12-05 14:41:10 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-7482989944845683242
+2025-12-05 14:41:10 [Test worker] DEBUG:: STARTING STEP: IniciarChatClaro.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:10 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d06936fed8f8684e5938e204f1e1da72f83393ff4d68916347d76fa1c0f214a2.png
+2025-12-05 14:41:11 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d06936fed8f8684e5938e204f1e1da72f83393ff4d68916347d76fa1c0f214a2.png
+2025-12-05 14:41:11 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:12 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d06936fed8f8684e5938e204f1e1da72f83393ff4d68916347d76fa1c0f214a2.png
+2025-12-05 14:41:12 [Test worker] DEBUG:: STARTING STEP: IniciarChatClaro.performAs - Realiza Scroll una vez hacia abajo
+2025-12-05 14:41:12 [Test worker] DEBUG:: STEP DONE: Realiza Scroll una vez hacia abajo
+2025-12-05 14:41:13 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f767b0883fac3b0d91af45aba207b41132ea2d529dd86b08ad8e0c7ddb6fc58d.png
+2025-12-05 14:41:13 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:41:13 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-13171924151492258816
+2025-12-05 14:41:13 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.seleccionarLineaConsulta - performAs
+2025-12-05 14:41:14 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f767b0883fac3b0d91af45aba207b41132ea2d529dd86b08ad8e0c7ddb6fc58d.png
+2025-12-05 14:41:14 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\32c21594c5a6874e3ef3a1779e326daa3ccecacf595171560ce3f955c1de07a9.png
+2025-12-05 14:41:14 [Test worker] DEBUG:: STARTING STEP: SeleccionarNumero.performAs - {0}
+2025-12-05 14:41:14 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-1072953597240635645
+2025-12-05 14:41:14 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\32c21594c5a6874e3ef3a1779e326daa3ccecacf595171560ce3f955c1de07a9.png
+2025-12-05 14:41:16 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f767b0883fac3b0d91af45aba207b41132ea2d529dd86b08ad8e0c7ddb6fc58d.png
+2025-12-05 14:41:16 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:41:16 [Test worker] DEBUG:: default content already selected for texto del menú de líneas
+2025-12-05 14:41:16 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\5ccf20019ff0db9c2df4dd10856616eae0864c1dca91412c8d03e2c0bdde662b.png
+2025-12-05 14:41:16 [Test worker] DEBUG:: STARTING STEP: SeleccionarNumero.performAs - {0}
+2025-12-05 14:41:16 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11280622992008283526
+2025-12-05 14:41:17 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\5ccf20019ff0db9c2df4dd10856616eae0864c1dca91412c8d03e2c0bdde662b.png
+2025-12-05 14:41:18 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d06936fed8f8684e5938e204f1e1da72f83393ff4d68916347d76fa1c0f214a2.png
+2025-12-05 14:41:18 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:41:18 [Test worker] DEBUG:: STARTING STEP: SeleccionarNumero.performAs - {0} enters #theTextAsAString into #target
+2025-12-05 14:41:18 [Test worker] DEBUG:: default content already selected for Caja texto
+2025-12-05 14:41:21 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\912d1fff9184d69e37c5c7bc78fef61d5732b1ca3ba9a496e631b26be1aa8267.png
+2025-12-05 14:41:21 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12463518325032365773
+2025-12-05 14:41:21 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2025-12-05 14:41:21 [Test worker] DEBUG:: STARTING STEP: SeleccionarNumero.performAs - {0} clicks on #target
+2025-12-05 14:41:21 [Test worker] DEBUG:: default content already selected for Botón enviar
+2025-12-05 14:41:21 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\912d1fff9184d69e37c5c7bc78fef61d5732b1ca3ba9a496e631b26be1aa8267.png
+2025-12-05 14:41:22 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\53d99f642db681761f5fe0747f618d663dc827bbd296ed3e343bf7af99fcefc5.png
+2025-12-05 14:41:22 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12526096929814301834
+2025-12-05 14:41:22 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:41:22 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\53d99f642db681761f5fe0747f618d663dc827bbd296ed3e343bf7af99fcefc5.png
+2025-12-05 14:41:26 [Test worker] DEBUG:: default content already selected for Boton Ver menú prepago 
+2025-12-05 14:41:37 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\aa476a603390c0f7a1b1a0453eb7b861b3802b82b6f6e1a17f31964ea48a8753.png
+2025-12-05 14:41:37 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:41:37 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-9871279174272063892
+2025-12-05 14:41:37 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.validarPoliticaTratamiendoDatos - performAs
+2025-12-05 14:41:37 [Test worker] DEBUG:: default content already selected for ¿Autorizas el tratamiento de tus datos personales y aceptas los T&C de nuestro canal de atención digital?
+2025-12-05 14:41:37 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\aa476a603390c0f7a1b1a0453eb7b861b3802b82b6f6e1a17f31964ea48a8753.png
+2025-12-05 14:41:39 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\74268f6d56c26c5e0aa50af5d7bee0a7982e603656de1a8cd785612285ed060e.png
+2025-12-05 14:41:39 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:39 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-10638352878365102928
+2025-12-05 14:41:39 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\74268f6d56c26c5e0aa50af5d7bee0a7982e603656de1a8cd785612285ed060e.png
+2025-12-05 14:41:39 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\db3c69a2577c57d7647648fea884e973f068bfa7076bffcbd2bc9a31afd1cd23.png
+2025-12-05 14:41:39 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:39 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-9912993035369938122
+2025-12-05 14:41:39 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:40 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\db3c69a2577c57d7647648fea884e973f068bfa7076bffcbd2bc9a31afd1cd23.png
+2025-12-05 14:41:40 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\db3c69a2577c57d7647648fea884e973f068bfa7076bffcbd2bc9a31afd1cd23.png
+2025-12-05 14:41:40 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:40 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:41 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\aa476a603390c0f7a1b1a0453eb7b861b3802b82b6f6e1a17f31964ea48a8753.png
+2025-12-05 14:41:41 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:44 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\55f9208eb3bd0d1e2e520619149b5145adb9b8b8673dda04ff7a50863b902996.png
+2025-12-05 14:41:44 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:44 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-6143659299510027123
+2025-12-05 14:41:44 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\55f9208eb3bd0d1e2e520619149b5145adb9b8b8673dda04ff7a50863b902996.png
+2025-12-05 14:41:45 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\55f9208eb3bd0d1e2e520619149b5145adb9b8b8673dda04ff7a50863b902996.png
+2025-12-05 14:41:45 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:45 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:45 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\55f9208eb3bd0d1e2e520619149b5145adb9b8b8673dda04ff7a50863b902996.png
+2025-12-05 14:41:45 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:41:46 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\55f9208eb3bd0d1e2e520619149b5145adb9b8b8673dda04ff7a50863b902996.png
+2025-12-05 14:41:46 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Regresa atrás en la aplicacion.
+2025-12-05 14:41:48 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\920fd67d8ee775af8431b85650474ad351b88bdbff0950ec1eed3fa5e83b8286.png
+2025-12-05 14:41:48 [Test worker] DEBUG:: STEP DONE: Regresa atrás en la aplicacion.
+2025-12-05 14:41:48 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12387497563489099922
+2025-12-05 14:41:48 [Test worker] DEBUG:: default content already selected for Texto vista previ del destino 
+2025-12-05 14:41:48 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\920fd67d8ee775af8431b85650474ad351b88bdbff0950ec1eed3fa5e83b8286.png
+2025-12-05 14:41:59 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\762aa72d991721aa29e49aa7ace232d5e69b57c1aaeac356494a4c69a0053d71.png
+2025-12-05 14:41:59 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Valida que el texto '#text' este presente en pantalla
+2025-12-05 14:41:59 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-5501332350371406476
+2025-12-05 14:41:59 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\762aa72d991721aa29e49aa7ace232d5e69b57c1aaeac356494a4c69a0053d71.png
+2025-12-05 14:42:01 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\890022b1bd8d83f4d553e0b039e29f12e19feeaabdfcc8852f14e4e28c0088af.png
+2025-12-05 14:42:01 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este presente en pantalla
+2025-12-05 14:42:01 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11826059667160481554
+2025-12-05 14:42:01 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Valida que el texto '#text' este presente en pantalla
+2025-12-05 14:42:01 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\890022b1bd8d83f4d553e0b039e29f12e19feeaabdfcc8852f14e4e28c0088af.png
+2025-12-05 14:42:02 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\32fac17f6cd479fc2f4f95712eda640d9960cb8e1ef0d9f15acbfdfbbe5391b6.png
+2025-12-05 14:42:02 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este presente en pantalla
+2025-12-05 14:42:02 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-7869357867995319099
+2025-12-05 14:42:02 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\32fac17f6cd479fc2f4f95712eda640d9960cb8e1ef0d9f15acbfdfbbe5391b6.png
+2025-12-05 14:42:04 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\691a5251b440a98a28a6586c439592a6f7f5fb40c547b9200f7d899384b2afba.png
+2025-12-05 14:42:04 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - Regresa atrás en la aplicacion.
+2025-12-05 14:42:04 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11732839043074757068
+2025-12-05 14:42:04 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\691a5251b440a98a28a6586c439592a6f7f5fb40c547b9200f7d899384b2afba.png
+2025-12-05 14:42:05 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\e2f67998d5d04d7cec42995448f59db11c06b27bb120d46dc5d6c00754162118.png
+2025-12-05 14:42:05 [Test worker] DEBUG:: STEP DONE: Regresa atrás en la aplicacion.
+2025-12-05 14:42:05 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12879831153921903144
+2025-12-05 14:42:05 [Test worker] DEBUG:: default content already selected for Boton Si
+2025-12-05 14:42:05 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\e2f67998d5d04d7cec42995448f59db11c06b27bb120d46dc5d6c00754162118.png
+2025-12-05 14:42:06 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\e2f67998d5d04d7cec42995448f59db11c06b27bb120d46dc5d6c00754162118.png
+2025-12-05 14:42:06 [Test worker] DEBUG:: STARTING STEP: ValidarTratamientoDatos.performAs - {0} clicks on #target
+2025-12-05 14:42:06 [Test worker] DEBUG:: default content already selected for Boton Si
+2025-12-05 14:42:07 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\27b31599abd23e9a8fa2cc755814236efbbb4df19054721bf0cc7786db272f30.png
+2025-12-05 14:42:07 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-9853755943953545149
+2025-12-05 14:42:07 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2025-12-05 14:42:07 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\27b31599abd23e9a8fa2cc755814236efbbb4df19054721bf0cc7786db272f30.png
+2025-12-05 14:42:25 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6917db16e873d52a4f1ed1124e63981d52eb7d3ac8776b751a3f622d831b8e91.png
+2025-12-05 14:42:25 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:42:25 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12575661586110263727
+2025-12-05 14:42:25 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.consultarSaldoLinea - performAs
+2025-12-05 14:42:25 [Test worker] DEBUG:: default content already selected for Boton Ver menú prepago 
+2025-12-05 14:42:25 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6917db16e873d52a4f1ed1124e63981d52eb7d3ac8776b751a3f622d831b8e91.png
+2025-12-05 14:42:35 [Test worker] DEBUG:: default content already selected for Texto paquete activo
+2025-12-05 14:42:35 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6917db16e873d52a4f1ed1124e63981d52eb7d3ac8776b751a3f622d831b8e91.png
+2025-12-05 14:42:35 [Test worker] DEBUG:: STARTING STEP: ConsultarSaldoLinea.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:36 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f710141ee89b6d1d1e4c89d7bd3c61eb5db6633ceea52f851850e92e5994683f.png
+2025-12-05 14:42:36 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:36 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-15803062280185635880
+2025-12-05 14:42:36 [Test worker] DEBUG:: STARTING STEP: ConsultarSaldoLinea.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:36 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f710141ee89b6d1d1e4c89d7bd3c61eb5db6633ceea52f851850e92e5994683f.png
+2025-12-05 14:42:37 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6917db16e873d52a4f1ed1124e63981d52eb7d3ac8776b751a3f622d831b8e91.png
+2025-12-05 14:42:37 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:38 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f710141ee89b6d1d1e4c89d7bd3c61eb5db6633ceea52f851850e92e5994683f.png
+2025-12-05 14:42:38 [Test worker] DEBUG:: STARTING STEP: ConsultarSaldoLinea.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:39 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ae1f577f5822afe95e5d5d8f4d5363b055957ac8e8fb782c608637c5128c3bc8.png
+2025-12-05 14:42:39 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:39 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-4784833435640985308
+2025-12-05 14:42:39 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ae1f577f5822afe95e5d5d8f4d5363b055957ac8e8fb782c608637c5128c3bc8.png
+2025-12-05 14:42:39 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\02990629e04becad151cc6f1b03474b6eee513700db324ec617c28782c96c2ab.png
+2025-12-05 14:42:39 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:42:39 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-13771700324021892208
+2025-12-05 14:42:39 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.seleccionarTipoPaquete - performAs
+2025-12-05 14:42:39 [Test worker] DEBUG:: STARTING STEP: SeleccionarTipoPaquete.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:39 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\02990629e04becad151cc6f1b03474b6eee513700db324ec617c28782c96c2ab.png
+2025-12-05 14:42:40 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\c9131c6d475be9f799889527f4086209fe881cd65c9507dd410ee666ee070dbc.png
+2025-12-05 14:42:40 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:40 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-3571150723469432871
+2025-12-05 14:42:40 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\c9131c6d475be9f799889527f4086209fe881cd65c9507dd410ee666ee070dbc.png
+2025-12-05 14:42:41 [Test worker] DEBUG:: default content already selected for Boton Enviar
+2025-12-05 14:42:51 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1ef8e62128aebeaadad2a5bec2d4ecc5ccf63769be686fea642a4cd9c63e82b2.png
+2025-12-05 14:42:51 [Test worker] DEBUG:: STARTING STEP: SeleccionarTipoPaquete.performAs - Busca el texto de '#Text' y le da click.
+2025-12-05 14:42:51 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11978435835808870341
+2025-12-05 14:42:51 [Test worker] DEBUG:: STARTING STEP: AndroidObject.ClickByText - {0}
+2025-12-05 14:42:51 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1ef8e62128aebeaadad2a5bec2d4ecc5ccf63769be686fea642a4cd9c63e82b2.png
+2025-12-05 14:42:53 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1ef8e62128aebeaadad2a5bec2d4ecc5ccf63769be686fea642a4cd9c63e82b2.png
+2025-12-05 14:42:53 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:42:55 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\8d40309cdb1337be1ae6a2055c9e33e3cdf1b7ee40b1e320645929547445cf6d.png
+2025-12-05 14:42:55 [Test worker] DEBUG:: STEP DONE: Busca el texto de '#Text' y le da click.
+2025-12-05 14:42:55 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12425875605915538108
+2025-12-05 14:42:56 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\8d40309cdb1337be1ae6a2055c9e33e3cdf1b7ee40b1e320645929547445cf6d.png
+2025-12-05 14:42:59 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b5622bc8b13687e4636b6abf1543222620256d27d72cb901d5f7cbd4844ed5b5.png
+2025-12-05 14:42:59 [Test worker] DEBUG:: STARTING STEP: SeleccionarTipoPaquete.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:42:59 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11837326893411591835
+2025-12-05 14:43:00 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b5622bc8b13687e4636b6abf1543222620256d27d72cb901d5f7cbd4844ed5b5.png
+2025-12-05 14:43:00 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1bf03a9e7b36e31bd36f9707ab0edf359c7d8b6ffc4ed5eeff43c44a01adff6b.png
+2025-12-05 14:43:00 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:00 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-15960887159974024112
+2025-12-05 14:43:00 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1bf03a9e7b36e31bd36f9707ab0edf359c7d8b6ffc4ed5eeff43c44a01adff6b.png
+2025-12-05 14:43:01 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ac0138a969ca85282a8a70fa95ba28c22b58f3caa6042cefcbddfeb038120887.png
+2025-12-05 14:43:01 [Test worker] DEBUG:: STARTING STEP: SeleccionarTipoPaquete.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:01 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-15270086711114820001
+2025-12-05 14:43:02 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ac0138a969ca85282a8a70fa95ba28c22b58f3caa6042cefcbddfeb038120887.png
+2025-12-05 14:43:02 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\54903d38c78b23a4f5543616b9e430102c0cfdeb5862da4cf7d547f30261d8c6.png
+2025-12-05 14:43:02 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:02 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-2294205538466502365
+2025-12-05 14:43:02 [Test worker] DEBUG:: STARTING STEP: SeleccionarTipoPaquete.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:02 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\54903d38c78b23a4f5543616b9e430102c0cfdeb5862da4cf7d547f30261d8c6.png
+2025-12-05 14:43:03 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6a6f4905a243ca618fdad3682e1630a975c2e63b68e5ccf7589ce1aafb83ca7e.png
+2025-12-05 14:43:03 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:03 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-4986775767070994940
+2025-12-05 14:43:03 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6a6f4905a243ca618fdad3682e1630a975c2e63b68e5ccf7589ce1aafb83ca7e.png
+2025-12-05 14:43:04 [Test worker] DEBUG:: default content already selected for Boton Enviar
+2025-12-05 14:43:14 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\2bc09c9469da7393fe685fa4ecd97577e58bbb5ffb6e15c43c340e1a08514f14.png
+2025-12-05 14:43:14 [Test worker] DEBUG:: STARTING STEP: SeleccionarTipoPaquete.performAs - Busca el texto de '#Text' y le da click.
+2025-12-05 14:43:14 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-13141164956380684917
+2025-12-05 14:43:14 [Test worker] DEBUG:: STARTING STEP: AndroidObject.ClickByText - {0}
+2025-12-05 14:43:14 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\2bc09c9469da7393fe685fa4ecd97577e58bbb5ffb6e15c43c340e1a08514f14.png
+2025-12-05 14:43:16 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\2bc09c9469da7393fe685fa4ecd97577e58bbb5ffb6e15c43c340e1a08514f14.png
+2025-12-05 14:43:16 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:43:18 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\130b0d6ca1d9445927cff3a548e6f28554921fe017759da500b7a235aa925352.png
+2025-12-05 14:43:18 [Test worker] DEBUG:: STEP DONE: Busca el texto de '#Text' y le da click.
+2025-12-05 14:43:18 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-16920051196925174562
+2025-12-05 14:43:18 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\130b0d6ca1d9445927cff3a548e6f28554921fe017759da500b7a235aa925352.png
+2025-12-05 14:43:32 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3f761bdb1ec647a19728ecc001c58c79d2d8a58edfb5cb2cec0d0692b3a078fb.png
+2025-12-05 14:43:32 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:43:32 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-17232642849134721398
+2025-12-05 14:43:32 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.realizarCompraPqTodoIncluido - performAs
+2025-12-05 14:43:32 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3f761bdb1ec647a19728ecc001c58c79d2d8a58edfb5cb2cec0d0692b3a078fb.png
+2025-12-05 14:43:33 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4a2a71a740d11882c9dd36b215ed6a72b18d03b3c6588021674349e773d453bc.png
+2025-12-05 14:43:33 [Test worker] DEBUG:: STARTING STEP: ComprarPaqueteTodoIncluido.performAs - performAs
+2025-12-05 14:43:33 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-6771403585823211748
+2025-12-05 14:43:33 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4a2a71a740d11882c9dd36b215ed6a72b18d03b3c6588021674349e773d453bc.png
+2025-12-05 14:43:44 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b56c6e8824ae82cc43bbf49582b10b310088e5a17ec41e6efe82f64a50fd2b02.png
+2025-12-05 14:43:44 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:43:44 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-5346007829476495710
+2025-12-05 14:43:44 [Test worker] DEBUG:: STARTING STEP: ComprarPaqueteTodoIncluido.performAs - {0}
+2025-12-05 14:43:45 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b56c6e8824ae82cc43bbf49582b10b310088e5a17ec41e6efe82f64a50fd2b02.png
+2025-12-05 14:43:47 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\adce8b11f6658294f5e8850246b8558677ecc1794866e5b10c97bb20ab2336b2.png
+2025-12-05 14:43:47 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:43:47 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-13644123218775141571
+2025-12-05 14:43:47 [Test worker] DEBUG:: default content already selected for Opciones de paquetes
+2025-12-05 14:43:47 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\adce8b11f6658294f5e8850246b8558677ecc1794866e5b10c97bb20ab2336b2.png
+Evaluando: $2.500 x 1 día
+2025-12-05 14:43:48 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\adce8b11f6658294f5e8850246b8558677ecc1794866e5b10c97bb20ab2336b2.png
+2025-12-05 14:43:48 [Test worker] DEBUG:: STARTING STEP: ComprarPaqueteTodoIncluido.performAs - Busca el texto de '#Text' y le da click.
+2025-12-05 14:43:48 [Test worker] DEBUG:: STARTING STEP: AndroidObject.ClickByText - {0}
+2025-12-05 14:43:49 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\adce8b11f6658294f5e8850246b8558677ecc1794866e5b10c97bb20ab2336b2.png
+2025-12-05 14:43:49 [Test worker] DEBUG:: STEP DONE: {0}
+2025-12-05 14:43:50 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ff919bf0e96c091dea888de2c53bf8a7c8abf2ebac55df91d5586e1b3bf1b021.png
+2025-12-05 14:43:50 [Test worker] DEBUG:: STEP DONE: Busca el texto de '#Text' y le da click.
+2025-12-05 14:43:50 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-17625175939829742262
+2025-12-05 14:43:50 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ff919bf0e96c091dea888de2c53bf8a7c8abf2ebac55df91d5586e1b3bf1b021.png
+2025-12-05 14:43:51 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1887ff1d193fdf8dc7c0cb4cfc765bbf26a192ec5d0d83e5270dec3c89b5956e.png
+2025-12-05 14:43:51 [Test worker] DEBUG:: STARTING STEP: ComprarPaqueteTodoIncluido.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:51 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-16216271775038889056
+2025-12-05 14:43:51 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1887ff1d193fdf8dc7c0cb4cfc765bbf26a192ec5d0d83e5270dec3c89b5956e.png
+2025-12-05 14:43:54 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b19f9393c3a9a11b20a8a7998b9c0ea7d6f59533c29c9e4d4f2f558ce7c89581.png
+2025-12-05 14:43:54 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:54 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11228486620852793094
+2025-12-05 14:43:54 [Test worker] DEBUG:: STARTING STEP: ComprarPaqueteTodoIncluido.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:54 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b19f9393c3a9a11b20a8a7998b9c0ea7d6f59533c29c9e4d4f2f558ce7c89581.png
+2025-12-05 14:43:56 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\fa9b190d11c1812dc47dddf57466dbea260e5801d0f48fc7e1b4dc83c98188f7.png
+2025-12-05 14:43:56 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:56 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12024289921326784916
+2025-12-05 14:43:56 [Test worker] DEBUG:: STARTING STEP: ComprarPaqueteTodoIncluido.performAs - Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:56 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\fa9b190d11c1812dc47dddf57466dbea260e5801d0f48fc7e1b4dc83c98188f7.png
+2025-12-05 14:43:57 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6bf43eaae7a5b2db2ebb79f11cf7867c9c6c61ba6347e2f72377c93f52f9e8e4.png
+2025-12-05 14:43:57 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
+2025-12-05 14:43:57 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-4163897177187298491
+2025-12-05 14:43:57 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6bf43eaae7a5b2db2ebb79f11cf7867c9c6c61ba6347e2f72377c93f52f9e8e4.png
+2025-12-05 14:43:58 [Test worker] WARN :: Failed to take screenshot
+org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'AU3PH5CG141BG50', ip: '10.111.242.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:45)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at net.serenitybdd.core.photography.PhotoSession.takeScreenshot(PhotoSession.java:57)
+	at net.serenitybdd.core.photography.PhotoSessionBooking.andSaveToDirectory(PhotoSessionBooking.java:37)
+	at net.thucydides.core.steps.BaseStepListener.screenshotFrom(BaseStepListener.java:928)
+	at net.thucydides.core.steps.BaseStepListener.lambda$grabScreenshots$5(BaseStepListener.java:919)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at net.thucydides.core.steps.BaseStepListener.grabScreenshots(BaseStepListener.java:921)
+	at net.thucydides.core.steps.BaseStepListener.take(BaseStepListener.java:822)
+	at net.thucydides.core.steps.BaseStepListener.takeEndOfStepScreenshotFor(BaseStepListener.java:803)
+	at net.thucydides.core.steps.BaseStepListener.stepFinished(BaseStepListener.java:680)
+	at net.thucydides.core.steps.StepEventBus.stepFinished(StepEventBus.java:404)
+	at net.thucydides.core.steps.StepInterceptor.notifyStepFinishedFor(StepInterceptor.java:468)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:446)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:420)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:175)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:162)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:68)
+	at tasks.WhatsApp.TodoIncluido.ComprarPaqueteTodoIncluido$$EnhancerByCGLIB$$c67136f9.performAs(<generated>)
+	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:233)
+	at net.serenitybdd.screenplay.Actor.perform(Actor.java:214)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:171)
+	at stepDefinitions.CompraPaquetesWhatsAppDefinitions.realizarCompraPqTodoIncluido(CompraPaquetesWhatsAppDefinitions.java:103)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at cucumber.runtime.Utils$1.call(Utils.java:31)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:25)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)
+	at cucumber.api.TestStep.executeStep(TestStep.java:102)
+	at cucumber.api.TestStep.run(TestStep.java:83)
+	at cucumber.api.TestCase.run(TestCase.java:58)
+	at cucumber.runner.Runner.runPickle(Runner.java:80)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:118)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:56)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:127)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at runners.CustomRunner.run(CustomRunner.java:67)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2025-12-05 14:43:58 [Test worker] DEBUG:: STEP DONE: performAs
+2025-12-05 14:43:58 [Test worker] WARN :: Failed to take screenshot
+org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'AU3PH5CG141BG50', ip: '10.111.242.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:45)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at net.serenitybdd.core.photography.PhotoSession.takeScreenshot(PhotoSession.java:57)
+	at net.serenitybdd.core.photography.PhotoSessionBooking.andSaveToDirectory(PhotoSessionBooking.java:37)
+	at net.thucydides.core.steps.BaseStepListener.screenshotFrom(BaseStepListener.java:928)
+	at net.thucydides.core.steps.BaseStepListener.lambda$grabScreenshots$5(BaseStepListener.java:919)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at net.thucydides.core.steps.BaseStepListener.grabScreenshots(BaseStepListener.java:921)
+	at net.thucydides.core.steps.BaseStepListener.take(BaseStepListener.java:822)
+	at net.thucydides.core.steps.BaseStepListener.takeEndOfStepScreenshotFor(BaseStepListener.java:803)
+	at net.thucydides.core.steps.BaseStepListener.stepFinished(BaseStepListener.java:680)
+	at net.thucydides.core.steps.StepEventBus.stepFinished(StepEventBus.java:404)
+	at cucumber.runtime.formatter.SerenityReporter.recordStepResult(SerenityReporter.java:767)
+	at cucumber.runtime.formatter.SerenityReporter.handleResult(SerenityReporter.java:756)
+	at cucumber.runtime.formatter.SerenityReporter.handleTestStepFinished(SerenityReporter.java:326)
+	at cucumber.runtime.formatter.SerenityReporter.lambda$new$4(SerenityReporter.java:129)
+	at cucumber.runner.EventBus.send(EventBus.java:28)
+	at cucumber.api.TestStep.run(TestStep.java:90)
+	at cucumber.api.TestCase.run(TestCase.java:58)
+	at cucumber.runner.Runner.runPickle(Runner.java:80)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:118)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:56)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:127)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at runners.CustomRunner.run(CustomRunner.java:67)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2025-12-05 14:43:58 [Test worker] WARN :: Failed to take screenshot
+org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'AU3PH5CG141BG50', ip: '10.111.242.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:45)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at net.serenitybdd.core.photography.PhotoSession.takeScreenshot(PhotoSession.java:57)
+	at net.serenitybdd.core.photography.PhotoSessionBooking.andSaveToDirectory(PhotoSessionBooking.java:37)
+	at net.thucydides.core.steps.BaseStepListener.screenshotFrom(BaseStepListener.java:928)
+	at net.thucydides.core.steps.BaseStepListener.lambda$grabScreenshots$5(BaseStepListener.java:919)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at net.thucydides.core.steps.BaseStepListener.grabScreenshots(BaseStepListener.java:921)
+	at net.thucydides.core.steps.BaseStepListener.take(BaseStepListener.java:822)
+	at net.thucydides.core.steps.BaseStepListener.take(BaseStepListener.java:816)
+	at net.thucydides.core.steps.BaseStepListener.takeInitialScreenshot(BaseStepListener.java:903)
+	at net.thucydides.core.steps.BaseStepListener.stepStarted(BaseStepListener.java:569)
+	at net.thucydides.core.steps.StepEventBus.stepStarted(StepEventBus.java:380)
+	at net.thucydides.core.steps.StepEventBus.stepStarted(StepEventBus.java:369)
+	at cucumber.runtime.formatter.SerenityReporter.handleTestStepStarted(SerenityReporter.java:313)
+	at cucumber.runtime.formatter.SerenityReporter.lambda$new$3(SerenityReporter.java:128)
+	at cucumber.runner.EventBus.send(EventBus.java:28)
+	at cucumber.api.TestStep.run(TestStep.java:79)
+	at cucumber.api.TestCase.run(TestCase.java:58)
+	at cucumber.runner.Runner.runPickle(Runner.java:80)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:118)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:56)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:127)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at runners.CustomRunner.run(CustomRunner.java:67)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2025-12-05 14:43:58 [Test worker] WARN :: Failed to take screenshot
+org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'AU3PH5CG141BG50', ip: '10.111.242.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:45)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at net.serenitybdd.core.photography.PhotoSession.takeScreenshot(PhotoSession.java:57)
+	at net.serenitybdd.core.photography.PhotoSessionBooking.andSaveToDirectory(PhotoSessionBooking.java:37)
+	at net.thucydides.core.steps.BaseStepListener.screenshotFrom(BaseStepListener.java:928)
+	at net.thucydides.core.steps.BaseStepListener.lambda$grabScreenshots$5(BaseStepListener.java:919)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at net.thucydides.core.steps.BaseStepListener.grabScreenshots(BaseStepListener.java:921)
+	at net.thucydides.core.steps.BaseStepListener.take(BaseStepListener.java:822)
+	at net.thucydides.core.steps.BaseStepListener.take(BaseStepListener.java:816)
+	at net.thucydides.core.steps.BaseStepListener.takeInitialScreenshot(BaseStepListener.java:903)
+	at net.thucydides.core.steps.BaseStepListener.stepStarted(BaseStepListener.java:569)
+	at net.thucydides.core.steps.StepEventBus.stepStarted(StepEventBus.java:380)
+	at net.thucydides.core.steps.StepEventBus.stepStarted(StepEventBus.java:369)
+	at net.thucydides.core.steps.StepInterceptor.notifyStepStarted(StepInterceptor.java:519)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:174)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:162)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:68)
+	at net.serenitybdd.screenplay.actions.OpenUrl$$EnhancerByCGLIB$$f985de1c.performAs(<generated>)
+	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:233)
+	at net.serenitybdd.screenplay.Actor.perform(Actor.java:214)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:171)
+	at stepDefinitions.CMAXDefinitions.seIngresaALaURLDeCMAX(CMAXDefinitions.java:78)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at cucumber.runtime.Utils$1.call(Utils.java:31)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:25)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)
+	at cucumber.api.TestStep.executeStep(TestStep.java:102)
+	at cucumber.api.TestStep.run(TestStep.java:83)
+	at cucumber.api.TestCase.run(TestCase.java:58)
+	at cucumber.runner.Runner.runPickle(Runner.java:80)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:118)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:56)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:127)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at runners.CustomRunner.run(CustomRunner.java:67)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2025-12-05 14:43:58 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaALaURLDeCMAX - {0} opens the #url
+2025-12-05 14:43:58 [Test worker] WARN :: Failed to take screenshot
+org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'AU3PH5CG141BG50', ip: '10.111.242.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:45)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
+	at net.serenitybdd.core.photography.PhotoSession.takeScreenshot(PhotoSession.java:57)
+	at net.serenitybdd.core.photography.PhotoSessionBooking.andSaveToDirectory(PhotoSessionBooking.java:37)
+	at net.thucydides.core.steps.BaseStepListener.screenshotFrom(BaseStepListener.java:928)
+	at net.thucydides.core.steps.BaseStepListener.lambda$grabScreenshots$5(BaseStepListener.java:919)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at net.thucydides.core.steps.BaseStepListener.grabScreenshots(BaseStepListener.java:921)
+	at net.thucydides.core.steps.BaseStepListener.take(BaseStepListener.java:822)
+	at net.thucydides.core.steps.BaseStepListener.takeEndOfStepScreenshotFor(BaseStepListener.java:803)
+	at net.thucydides.core.steps.BaseStepListener.stepFailed(BaseStepListener.java:715)
+	at net.thucydides.core.steps.StepEventBus.stepFailed(StepEventBus.java:420)
+	at net.thucydides.core.steps.StepInterceptor.notifyOfStepFailure(StepInterceptor.java:506)
+	at net.thucydides.core.steps.StepInterceptor.logStepFailure(StepInterceptor.java:437)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:430)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:175)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:162)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:68)
+	at net.serenitybdd.screenplay.actions.OpenUrl$$EnhancerByCGLIB$$f985de1c.performAs(<generated>)
+	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:233)
+	at net.serenitybdd.screenplay.Actor.perform(Actor.java:214)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:171)
+	at stepDefinitions.CMAXDefinitions.seIngresaALaURLDeCMAX(CMAXDefinitions.java:78)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at cucumber.runtime.Utils$1.call(Utils.java:31)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:25)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)
+	at cucumber.api.TestStep.executeStep(TestStep.java:102)
+	at cucumber.api.TestStep.run(TestStep.java:83)
+	at cucumber.api.TestCase.run(TestCase.java:58)
+	at cucumber.runner.Runner.runPickle(Runner.java:80)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:118)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:56)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:127)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at runners.CustomRunner.run(CustomRunner.java:67)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+2025-12-05 14:43:58 [Test worker] WARN :: Failed to get page source
+org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'AU3PH5CG141BG50', ip: '10.111.242.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:45)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.getPageSource(RemoteWebDriver.java:438)
+	at net.serenitybdd.core.photography.PageSourceRecorder.getPageSource(PageSourceRecorder.java:41)
+	at net.serenitybdd.core.photography.PageSourceRecorder.intoDirectory(PageSourceRecorder.java:26)
+	at net.thucydides.core.steps.BaseStepListener.sourceFrom(BaseStepListener.java:937)
+	at net.thucydides.core.steps.BaseStepListener.lambda$grabScreenshots$5(BaseStepListener.java:920)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at net.thucydides.core.steps.BaseStepListener.grabScreenshots(BaseStepListener.java:921)
+	at net.thucydides.core.steps.BaseStepListener.take(BaseStepListener.java:822)
+	at net.thucydides.core.steps.BaseStepListener.takeEndOfStepScreenshotFor(BaseStepListener.java:803)
+	at net.thucydides.core.steps.BaseStepListener.stepFailed(BaseStepListener.java:715)
+	at net.thucydides.core.steps.StepEventBus.stepFailed(StepEventBus.java:420)
+	at net.thucydides.core.steps.StepInterceptor.notifyOfStepFailure(StepInterceptor.java:506)
+	at net.thucydides.core.steps.StepInterceptor.logStepFailure(StepInterceptor.java:437)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:430)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:175)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:162)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:68)
+	at net.serenitybdd.screenplay.actions.OpenUrl$$EnhancerByCGLIB$$f985de1c.performAs(<generated>)
+	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:233)
+	at net.serenitybdd.screenplay.Actor.perform(Actor.java:214)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:171)
+	at stepDefinitions.CMAXDefinitions.seIngresaALaURLDeCMAX(CMAXDefinitions.java:78)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at cucumber.runtime.Utils$1.call(Utils.java:31)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:25)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:37)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:40)
+	at cucumber.api.TestStep.executeStep(TestStep.java:102)
+	at cucumber.api.TestStep.run(TestStep.java:83)
+	at cucumber.api.TestCase.run(TestCase.java:58)
+	at cucumber.runner.Runner.runPickle(Runner.java:80)
+	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:140)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:118)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:56)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at cucumber.api.junit.Cucumber$1.evaluate(Cucumber.java:127)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at runners.CustomRunner.run(CustomRunner.java:67)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+? [DEBUG] Se ejecutó afterScenario con escenario: Consulta inicial del estado de la linea en CMAX
+? Generando reporte Word con pasos: 1
+2025-12-05 14:44:00 [Test worker] ERROR:: ?[91m
+           __  _____ _____ ____ _____   _____ _    ___ _     _____ ____  
+  _       / / |_   _| ____/ ___|_   _| |  ___/ \  |_ _| |   | ____|  _ \ 
+ (_)_____| |    | | |  _| \___ \ | |   | |_ / _ \  | || |   |  _| | | | |
+  _|_____| |    | | | |___ ___) || |   |  _/ ___ \ | || |___| |___| |_| |
+ (_)     | |    |_| |_____|____/ |_|   |_|/_/   \_\___|_____|_____|____/ 
+          \_\                                                            
+
+TEST FAILED WITH ERROR: Consulta inicial del estado de la linea en CMAX
+---------------------------------------------------------------------?[0m
+2025-12-05 14:44:00 [Test worker] DEBUG:: RELATED ISSUES: 
+2025-12-05 14:44:00 [Test worker] ERROR:: ?[91mTEST FAILED AT STEP cmax opens the http://172.24.4.168/custcare_cmax/login.au?[0m
+2025-12-05 14:44:00 [Test worker] ERROR:: Session ID is null. Using WebDriver after calling quit()?
+]]></system-out>
+  <system-err><![CDATA[Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
+dic. 05, 2025 2:39:27 P. M. org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Starting ChromeDriver 142.0.7444.175 (302067f14a4ea3f42001580e6101fa25ed343445-refs/branch-heads/7444@{#2749}) on port 31604
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 31604.
+dic. 05, 2025 2:39:30 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+dic. 05, 2025 2:40:14 P. M. utils.CapturasPantallasWeb capturaPantalla
+INFO: Captura guardada: Verificar_el_estado_inicial_de_la_l_nea_1_05_12_2025 14_40_14.png
+dic. 05, 2025 2:40:25 P. M. io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+dic. 05, 2025 2:40:38 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_40_37.jpg
+dic. 05, 2025 2:41:11 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_41_11.jpg
+dic. 05, 2025 2:41:13 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_41_12.jpg
+dic. 05, 2025 2:41:38 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_41_37.jpg
+dic. 05, 2025 2:41:46 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_41_45.jpg
+dic. 05, 2025 2:42:03 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_42_02.jpg
+dic. 05, 2025 2:42:37 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_42_37.jpg
+dic. 05, 2025 2:42:41 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_42_40.jpg
+dic. 05, 2025 2:43:01 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_43_00.jpg
+dic. 05, 2025 2:43:04 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_43_03.jpg
+dic. 05, 2025 2:43:31 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_43_30.jpg
+dic. 05, 2025 2:43:50 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_43_50.jpg
+dic. 05, 2025 2:43:58 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
+INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_14_43_57.jpg
+dic. 05, 2025 2:43:59 P. M. utils.WordWeb generarReporte
+INFO: ? Reporte generado correctamente en EXXO.docx
+]]></system-err>
+</testsuite>
