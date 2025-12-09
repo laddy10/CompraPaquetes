@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -24,6 +25,7 @@ import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
 import tasks.Cmax.*;
 import tasks.SwitchToMobile;
+import tasks.SwitchToWeb;
 import utils.*;
 
 import static net.serenitybdd.screenplay.actions.Open.url;
@@ -184,6 +186,18 @@ public class CMAXDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(LBL_WHATSAPP, WebElementStateMatchers.isVisible())
                         .forNoMoreThan(10).seconds()
+        );
+    }
+
+    @And("^cambia al contexto web$")
+    public void cambiaAlContextoWeb() {
+        LOGGER.info("Cambiando a contexto web - CMAX");
+
+        URL = environmentVariables.getProperty("url_prueba");
+
+
+        theActorInTheSpotlight().attemptsTo(
+                SwitchToWeb.toCmax(URL)
         );
     }
 

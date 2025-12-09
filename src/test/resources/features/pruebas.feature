@@ -47,7 +47,8 @@ Feature: Se requiere tomar evidencias de las consultas realizadas en CMAX
     And Realizar la compra del paquete todo incluido
      # And Selecciona opcion usa tu saldo
     #Then Validar la notificacion de la compra
-    Given Se ingresa a la URL de CMAX
+    And cambia al contexto web
+   ## Given Se ingresa a la URL de CMAX
     When Se ingresa el usuario y la contrasena
     When Se ingresa el numero de la linea en consulta de compra
     When Se valida el historial de contrato
