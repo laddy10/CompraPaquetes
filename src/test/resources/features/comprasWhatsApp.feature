@@ -4,7 +4,12 @@ Feature: Se requiere tomar evidencias de las consultas realizadas en CMAX
   @Whatsapp_Compra_Paquete_Todo_Incluido_01
   Scenario: Consultar estado de linea CMAX y comprar paquete todo incluido
     Given Se ingresa a la URL de CMAX
-
+    When Se ingresa el usuario y la contrasena
+    When Se ingresa el numero de la linea en consulta inicial
+    When Se valida el resumen de la cuenta para el SC
+    When Se validan las ofertas activas en consulta inicial
+    When Se validan las cuentas dedicadas
+    When Se validan los acumuladores de uso
 
 
    ## Se realiza el proceso de compra por WhatsApp
