@@ -1,6 +1,7 @@
 package tasks.USSD;
 
 import interactions.WaitFor;
+import interactions.comunes.ObtenerTextoUSSD;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -25,9 +26,11 @@ public class SeleccionarConsultaSaldo implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String textoMenuPrincipal = Text.of(Target.the("menu principal").located(By.id("android:id/message")))
+        String textoMenuPrincipal = ObtenerTextoUSSD.obtener(actor);
+
+    /*    String textoMenuPrincipal = Text.of(Target.the("menu principal").located(By.id("android:id/message")))
                 .viewedBy(actor)
-                .asString();
+                .asString(); */
         //  System.out.println("Texto del menú: " + textoMenuPrincipal);
 
         int opcionCompraPaquetes = obtenerNumeroOpcion(textoMenuPrincipal, option);

@@ -5,11 +5,13 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import freemarker.log.Logger;
+import models.User;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import tasks.USSD.*;
 import utils.DataDrivenExcel;
 import utils.DataReader;
+import utils.TestDataProvider;
 import utils.WordAppium;
 
 import java.io.File;
@@ -22,11 +24,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CompraPaquetesUSDDefinitions {
 
-    DataDrivenExcel dataDriverExcel = new DataDrivenExcel();
-
-    Map<String, String> data = new HashMap<String, String>();
-
     private static final Logger LOGGER = Logger.getLogger(WordAppium.class.getName());
+    private final User user = TestDataProvider.getRealUser();
 
 
     @Before
@@ -52,7 +51,7 @@ public class CompraPaquetesUSDDefinitions {
     @Given("^Se realiza la llamada al numero (.*)$")
     public void realizaUnaLlamadaAlNumero(String numero) {
 
-        theActorCalled("").attemptsTo(RealizarLlamada.alNumero(numero));
+        theActorInTheSpotlight().attemptsTo(RealizarLlamada.alNumero(numero));
 
 
     }
@@ -67,25 +66,16 @@ public class CompraPaquetesUSDDefinitions {
 
     @When("^Se selecciona el tipo de paquete a comprar$")
     public void seSeleccionaElTipoDePaqueteAComprar() {
-        int rowNumber = 1; // El número de fila que contiene el valor de la opción en el archivo de Excel
-        int columnNumber = 0; // El número de columna que contiene el valor de la opción en el archivo de Excel
 
-        String opcionCompra = DataReader.getCellValue(filePath, sheetName, rowNumber, columnNumber);
-        //  System.out.println("Paquete buscado: " + opcionCompra);
-        theActorInTheSpotlight().attemptsTo(CompraPaquete.comprapaquete(opcionCompra));
+        theActorInTheSpotlight().attemptsTo(CompraPaquete.comprapaquete(user.getTipoPaquete()));
 
     }
 
 
     @When("^Se realiza la compra del paquete$")
     public void seRealizaLaCompraDelPaquete() {
-        int rowNumber = 1; // El número de fila que contiene el valor de la opción en el archivo de Excel
-        int columnNumber = 1; // El número de columna que contiene el valor de la opción en el archivo de Excel
 
-        String paqueteComprar = DataReader.getCellValue(filePath, sheetName, rowNumber, columnNumber);
-        //  System.out.println("Paquete a comprar: " + paqueteComprar);
-
-        theActorInTheSpotlight().attemptsTo(RealizarCompraPaquete.comprapaquete(paqueteComprar));
+        theActorInTheSpotlight().attemptsTo(RealizarCompraPaquete.comprapaquete(user.getPaqueteComprar()));
     }
 
 
@@ -93,7 +83,7 @@ public class CompraPaquetesUSDDefinitions {
     public void seConfirmaElPagoDeLaCompra() {
         //   theActorInTheSpotlight().attemptsTo(PagoCompra.pagocompra());
         theActorInTheSpotlight().attemptsTo(SeleccionarOpcionPago.comprapaquete("Descuento de saldo"));
-        theActorInTheSpotlight().attemptsTo(ValidarNotificacion.deCompra());
+        theActorInTheSpotlight().attemptsTo(ValidarMensajeConfirmacion.deCompra());
 
 
     }

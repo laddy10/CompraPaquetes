@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">3m27.07s</div>
+<div class="counter">48.050s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,51 +61,16 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
+<a href="#tab1">Standard output</a>
 </li>
 <li>
-<a href="#tab2">Standard output</a>
-</li>
-<li>
-<a href="#tab3">Standard error</a>
+<a href="#tab2">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="Consulta inicial del estado de la linea en CMAX"></a>
-<h3 class="failures">Consulta inicial del estado de la linea en CMAX</h3>
-<span class="code">
-<pre>java.lang.RuntimeException: Ninguno de los textos esperados fue encontrado en el tiempo dado.
-	at interactions.WaitForResponse.performAs(WaitForResponse.java:48)
-	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:233)
-	at net.serenitybdd.screenplay.Actor.perform(Actor.java:214)
-	at net.serenitybdd.screenplay.Actor.performWithoutReporting(Actor.java:198)
-	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:169)
-	at tasks.WhatsApp.IniciarChatClaro.performAs(IniciarChatClaro.java:25)
-	at tasks.WhatsApp.IniciarChatClaro$$EnhancerByCGLIB$$693d574e.CGLIB$performAs$0(&lt;generated&gt;)
-	at tasks.WhatsApp.IniciarChatClaro$$EnhancerByCGLIB$$693d574e$$FastClassByCGLIB$$2532f1af.invoke(&lt;generated&gt;)
-	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
-	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:460)
-	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:445)
-	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:420)
-	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:175)
-	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:162)
-	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:68)
-	at tasks.WhatsApp.IniciarChatClaro$$EnhancerByCGLIB$$693d574e.performAs(&lt;generated&gt;)
-	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:233)
-	at net.serenitybdd.screenplay.Actor.perform(Actor.java:214)
-	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:171)
-	at stepDefinitions.CompraPaquetesWhatsAppDefinitions.iniciarChatClaro(CompraPaquetesWhatsAppDefinitions.java:77)
-	at ✽.Iniciar el chat con Claro Colombia(src/test/resources/features/pruebas.feature:42)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -116,274 +81,233 @@
 </tr>
 </thead>
 <tr>
-<td class="failures">Consulta inicial del estado de la linea en CMAX</td>
-<td class="failures">3m27.07s</td>
-<td class="failures">failed</td>
+<td class="success">Validacion de consumos de SMS en Cmax</td>
+<td class="success">48.050s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2025-12-05 15:56:43 [Test worker] INFO :: Limpiando carpeta de capturas...
-2025-12-05 15:56:43 [Test worker] INFO :: Limpiando carpeta de capturas...
-2025-12-05 15:56:43 [Test worker] INFO :: Limpiando carpeta de capturas...
-2025-12-05 15:56:44 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaALaURLDeCMAX - {0} opens the #url
-2025-12-05 15:56:45 [Test worker] INFO :: Instantiating driver
-2025-12-05 15:56:45 [Test worker] INFO :: Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, chrome.switches: --start-maximized, --disabl..., goog:chromeOptions: {args: [--start-maximized, --disable-popup-blocking, --disk-cache-dir=null, --ignore-certificate-errors, --disable-download-notifica..., --enable-automation, --test-type], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
-2025-12-05 15:56:51 [Test worker] DEBUG:: Opening darkroom
-2025-12-05 15:56:51 [Darkroom Processing Line] DEBUG:: Darkroom processing line starting up
-2025-12-05 15:56:51 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7c82ec2f947af0a3bdd80d19f7e0e54b0f0d130fe14c0aee1acad64b6d032a9c.png
-2025-12-05 15:56:51 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-2769003951744909030
-2025-12-05 15:56:51 [Test worker] DEBUG:: STEP DONE: {0} opens the #url
-2025-12-05 15:56:51 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaElUsuarioYLaContrasena - performAs
-2025-12-05 15:56:51 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7c82ec2f947af0a3bdd80d19f7e0e54b0f0d130fe14c0aee1acad64b6d032a9c.png
-2025-12-05 15:56:51 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7c82ec2f947af0a3bdd80d19f7e0e54b0f0d130fe14c0aee1acad64b6d032a9c.png
-2025-12-05 15:56:51 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} enters #theTextAsAString into #target
-2025-12-05 15:56:51 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar el nombre del usuario
-2025-12-05 15:56:52 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\daf24d87d58d6e2fc04018bee241791e1cb296a147ad9739c170827292a95a55.png
-2025-12-05 15:56:52 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-2745602877593968718
-2025-12-05 15:56:52 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\daf24d87d58d6e2fc04018bee241791e1cb296a147ad9739c170827292a95a55.png
-2025-12-05 15:56:52 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\daf24d87d58d6e2fc04018bee241791e1cb296a147ad9739c170827292a95a55.png
-2025-12-05 15:56:52 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
-2025-12-05 15:56:52 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} enters #theTextAsAString into #target
-2025-12-05 15:56:52 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar la contraseña del usuario
-2025-12-05 15:56:52 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ea62bd38b0835a69ebd652dbc2e787a1202a1812df57702a23915189608257c3.png
-2025-12-05 15:56:52 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-13427782095717683507
-2025-12-05 15:56:52 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
-2025-12-05 15:56:52 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} clicks on #target
-2025-12-05 15:56:52 [Test worker] DEBUG:: default content already selected for Boton de OK
-2025-12-05 15:56:52 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ea62bd38b0835a69ebd652dbc2e787a1202a1812df57702a23915189608257c3.png
-2025-12-05 15:57:01 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\58846c1000a059ca5cf9e7cac1e1113c81f6163841b622f50b6ba3297cdbe709.png
-2025-12-05 15:57:01 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-5488110251895102346
-2025-12-05 15:57:01 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:01 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0}
-2025-12-05 15:57:01 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\58846c1000a059ca5cf9e7cac1e1113c81f6163841b622f50b6ba3297cdbe709.png
-2025-12-05 15:57:02 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\58846c1000a059ca5cf9e7cac1e1113c81f6163841b622f50b6ba3297cdbe709.png
-2025-12-05 15:57:02 [Test worker] DEBUG:: STEP DONE: {0}
-2025-12-05 15:57:02 [Test worker] DEBUG:: STEP DONE: performAs
-2025-12-05 15:57:02 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaElNumeroDeLaLineaAConsultarConsultaInicial - performAs
-2025-12-05 15:57:02 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} clicks on #target
-2025-12-05 15:57:02 [Test worker] DEBUG:: default content already selected for Boton de clientes
-2025-12-05 15:57:02 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\5cb5cd733ffaa7d98950776cceb12aa505da7089e2a2282b96217050cea98957.png
-2025-12-05 15:57:02 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-6723372034435295496
-2025-12-05 15:57:02 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:02 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} clicks on #target
-2025-12-05 15:57:02 [Test worker] DEBUG:: default content already selected for Boton de buscar a clientes
-2025-12-05 15:57:02 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\5cb5cd733ffaa7d98950776cceb12aa505da7089e2a2282b96217050cea98957.png
-2025-12-05 15:57:12 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\9b086fdb71bbf1b2df54229464b24d74d74d1141d3cb0e59ca9ec4b34ee8c82f.png
-2025-12-05 15:57:12 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12828507528234819494
-2025-12-05 15:57:12 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:12 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} enters #theTextAsAString into #target
-2025-12-05 15:57:12 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar numero
-2025-12-05 15:57:12 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\9b086fdb71bbf1b2df54229464b24d74d74d1141d3cb0e59ca9ec4b34ee8c82f.png
-2025-12-05 15:57:13 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7ad8c0b31f2915868de2871e8cd225e3786a7be5fe0d91523bf3ae88bf152425.png
-2025-12-05 15:57:13 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-14045565119535947980
-2025-12-05 15:57:13 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
-2025-12-05 15:57:13 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} clicks on #target
-2025-12-05 15:57:13 [Test worker] DEBUG:: default content already selected for Boton buscar
-2025-12-05 15:57:13 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7ad8c0b31f2915868de2871e8cd225e3786a7be5fe0d91523bf3ae88bf152425.png
-2025-12-05 15:57:13 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\86fb5251c1dad672c15d6d54f59d4eda810d89e9cac29a12c74b1599a4d95bba.png
-2025-12-05 15:57:13 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-6096374112804135670
-2025-12-05 15:57:13 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:13 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0}
-2025-12-05 15:57:13 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\86fb5251c1dad672c15d6d54f59d4eda810d89e9cac29a12c74b1599a4d95bba.png
-2025-12-05 15:57:14 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d2582a26e0468b6c142d20f191511d4e67aae1ac178428a44e00267e53ef60d4.png
-2025-12-05 15:57:14 [Test worker] DEBUG:: STEP DONE: {0}
-2025-12-05 15:57:14 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-669015032885248687
-2025-12-05 15:57:14 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0} clicks on #target
-2025-12-05 15:57:14 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
-2025-12-05 15:57:14 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d2582a26e0468b6c142d20f191511d4e67aae1ac178428a44e00267e53ef60d4.png
-2025-12-05 15:57:22 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\380dce92d90f0a090c9b099220414c81bb709c08577e17105bc8bd7980dd13e6.png
-2025-12-05 15:57:22 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-16551102560954822539
-2025-12-05 15:57:22 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:22 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\380dce92d90f0a090c9b099220414c81bb709c08577e17105bc8bd7980dd13e6.png
-2025-12-05 15:57:22 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
-2025-12-05 15:57:22 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-8232438670896011887
-2025-12-05 15:57:22 [Test worker] DEBUG:: STARTING STEP: ValidateInformationText.answeredBy - performAs
-2025-12-05 15:57:22 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
-2025-12-05 15:57:22 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
-2025-12-05 15:57:22 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
-2025-12-05 15:57:22 [Test worker] DEBUG:: STEP DONE: performAs
-2025-12-05 15:57:22 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
-2025-12-05 15:57:22 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\0f8cca490ccb52ad65ba768b4d83f171f49177407e05e8d1f645ddfff15c0432.png
-2025-12-05 15:57:22 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaInicial.performAs - {0}
-2025-12-05 15:57:22 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-14753883445046713904
-2025-12-05 15:57:22 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\0f8cca490ccb52ad65ba768b4d83f171f49177407e05e8d1f645ddfff15c0432.png
-2025-12-05 15:57:23 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\0f8cca490ccb52ad65ba768b4d83f171f49177407e05e8d1f645ddfff15c0432.png
-2025-12-05 15:57:23 [Test worker] DEBUG:: STEP DONE: {0}
-2025-12-05 15:57:24 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\95eeeed1f493c18188d25c6f4e82a3c0d6ad4bdfc109c2263e00aa05a25fb901.png
-2025-12-05 15:57:24 [Test worker] DEBUG:: STEP DONE: performAs
-2025-12-05 15:57:24 [Test worker] DEBUG:: LOADING LOCAL PROPERTIES FROM D:\Auto\Cmax_CompraPaquetes\serenity.properties 
-2025-12-05 15:57:24 [Test worker] DEBUG:: LOADING LOCAL PROPERTIES FROM D:\Auto\Cmax_CompraPaquetes\serenity.properties 
-2025-12-05 15:57:24 [Test worker] DEBUG:: LOADING LOCAL PROPERTIES FROM D:\Auto\Cmax_CompraPaquetes\serenity.properties 
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.platformName=Android
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.resized.image.width=600
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.automationName=UiAutomator2
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.hub=http://127.0.0.1:4723/wd/hub
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.resetKeyboard=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.browser.maximized=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: webdriver.wait.for.timeout=5000
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.reset=false
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.project.name=Cmax_CompraPaquetes
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.reports.show.step.details=false
-2025-12-05 15:57:24 [Test worker] DEBUG:: webdriver.driver=chrome
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.report.encoding=utf8
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.captureScreenshots=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.store.html.source=false
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.unicodeKeyboard=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.deviceOrientation=portrait
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.fullReset=false
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.compress.screenshots=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.autoGrantPermissions=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: webdriver.base.url=http://172.24.4.168/custcare_cmax/login.au
-2025-12-05 15:57:24 [Test worker] DEBUG:: feature.file.encoding=utf8
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.appWaitDuration=15000
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.timeout=8000
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.take.screenshots=FOR_EACH_ACTION
-2025-12-05 15:57:24 [Test worker] DEBUG:: chrome.switches=--start-maximized, --disable-popup-blocking, --disk-cache-dir=null, --ignore-certificate-errors, --disable-download-notification
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.autoDismissAlerts=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: url_prueba=http://172.24.4.168/custcare_cmax/login.au
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.newCommandTimeout=8000
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.appiumVersion=1.22.3
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.chromedriverExecutable=src/test/resources/webdriver/windows/chromedriver.exe
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.nativeWebScreenshot=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.orientation=PORTRAIT
-2025-12-05 15:57:24 [Test worker] DEBUG:: serenity.console.colors=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: webdriver.appium.driver=src/test/resources/webdriver/windows/chromedriver.exe
-2025-12-05 15:57:24 [Test worker] DEBUG:: webdriver.timeouts.implicitlywait=3000
-2025-12-05 15:57:24 [Test worker] DEBUG:: webdriver.provided.mydriver=utils.MyDriver
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.noReset=true
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.sessionName=Cmax_CompraPaquetes
-2025-12-05 15:57:24 [Test worker] DEBUG:: feature.file.language=es
-2025-12-05 15:57:24 [Test worker] DEBUG:: drivers.windows.webdriver.chrome.driver=src/test/resources/webdriver/windows/chromedriver.exe
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.appPackage=com.clarocolombia.miclaro 
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.app=D:\Auto\Cmax_CompraPaquetes/src/test/resources/app/mi-claro.apk 
-2025-12-05 15:57:24 [Test worker] DEBUG:: appium.appActivity=com.claro.superapp.SplashActivity 
-2025-12-05 15:57:24 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.cambiaAlContextoMovil - performAs
-? Cambio exitoso a: com.whatsapp
-2025-12-05 15:57:34 [Test worker] DEBUG:: STEP DONE: performAs
-2025-12-05 15:57:34 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\05492dbecd2b30f2176d5a1a003bb9ab68d235535738143268c023acf080aaac.png
-2025-12-05 15:57:34 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-667124906119284296
-2025-12-05 15:57:34 [Test worker] DEBUG:: default content already selected for Texto de WhatsApp
-2025-12-05 15:57:34 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\05492dbecd2b30f2176d5a1a003bb9ab68d235535738143268c023acf080aaac.png
-2025-12-05 15:57:36 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ae9e92ca9aa59b6779a99a5e17249b0db36473ee0458836e9b0f51230815cbca.png
-2025-12-05 15:57:36 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-9729918781186563432
-2025-12-05 15:57:36 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.validarVersionApp - performAs
-2025-12-05 15:57:36 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - {0} clicks on #target
-2025-12-05 15:57:36 [Test worker] DEBUG:: default content already selected for Boton Más opciones WhatsApp
-2025-12-05 15:57:36 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ae9e92ca9aa59b6779a99a5e17249b0db36473ee0458836e9b0f51230815cbca.png
-2025-12-05 15:57:37 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f5f57621cfc8f960b4dd54a9aaf2e7b3a1599bbe2b93283e25ec195cd5525abf.png
-2025-12-05 15:57:37 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-17704557894154265979
-2025-12-05 15:57:37 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:37 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - {0} clicks on #target
-2025-12-05 15:57:37 [Test worker] DEBUG:: default content already selected for Boton Ajustes
-2025-12-05 15:57:37 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f5f57621cfc8f960b4dd54a9aaf2e7b3a1599bbe2b93283e25ec195cd5525abf.png
-2025-12-05 15:57:39 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\557d4e46651d4a4de9beabd1738f701e9d7a6bd40aed0d4d2310896808d39dcb.png
-2025-12-05 15:57:39 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-8204075100438998715
-2025-12-05 15:57:39 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:39 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Realiza scroll vertical en busca del texto '#labelText' y de la click.
-2025-12-05 15:57:39 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\557d4e46651d4a4de9beabd1738f701e9d7a6bd40aed0d4d2310896808d39dcb.png
-2025-12-05 15:57:43 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\40144b6d8f6e05cd36c6fa479c6dee4e8c267117c7716a2999931ce3e148bc7e.png
-2025-12-05 15:57:43 [Test worker] DEBUG:: STEP DONE: Realiza scroll vertical en busca del texto '#labelText' y de la click.
-2025-12-05 15:57:43 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-11145589472506510053
-2025-12-05 15:57:43 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:43 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\40144b6d8f6e05cd36c6fa479c6dee4e8c267117c7716a2999931ce3e148bc7e.png
-2025-12-05 15:57:44 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\a938401f1e13426614a8f5e681a93b30092d9f45b5ab75116a5b5f11d8d99906.png
-2025-12-05 15:57:44 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:44 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-3671718297121582753
-2025-12-05 15:57:45 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\a938401f1e13426614a8f5e681a93b30092d9f45b5ab75116a5b5f11d8d99906.png
-2025-12-05 15:57:46 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3a41d2e331d3464a5a434392d97fc88bb79a689de05507515a1c5fe89f99deb5.png
-2025-12-05 15:57:46 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:46 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-8513050185572412701
-2025-12-05 15:57:47 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3a41d2e331d3464a5a434392d97fc88bb79a689de05507515a1c5fe89f99deb5.png
-2025-12-05 15:57:47 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3a41d2e331d3464a5a434392d97fc88bb79a689de05507515a1c5fe89f99deb5.png
-2025-12-05 15:57:47 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:47 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:48 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3a41d2e331d3464a5a434392d97fc88bb79a689de05507515a1c5fe89f99deb5.png
-2025-12-05 15:57:48 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:48 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:49 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3a41d2e331d3464a5a434392d97fc88bb79a689de05507515a1c5fe89f99deb5.png
-2025-12-05 15:57:49 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:49 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Regresa atrás en la aplicacion.
-2025-12-05 15:57:50 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3f903bea3f7f73bf63346b3d029a6aa25c34eb3b4e8c06c24b104e69441a8dca.png
-2025-12-05 15:57:50 [Test worker] DEBUG:: STEP DONE: Regresa atrás en la aplicacion.
-2025-12-05 15:57:50 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-2688519092767802482
-2025-12-05 15:57:50 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Regresa atrás en la aplicacion.
-2025-12-05 15:57:50 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3f903bea3f7f73bf63346b3d029a6aa25c34eb3b4e8c06c24b104e69441a8dca.png
-2025-12-05 15:57:52 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ca24e066dde18ad7beaae9b4a4d378c3f9afb4ab366d08af88b1bcab70a1fd20.png
-2025-12-05 15:57:52 [Test worker] DEBUG:: STEP DONE: Regresa atrás en la aplicacion.
-2025-12-05 15:57:52 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-15410580431220828221
-2025-12-05 15:57:52 [Test worker] DEBUG:: STARTING STEP: ValidarVersionApp.performAs - Regresa atrás en la aplicacion.
-2025-12-05 15:57:53 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ca24e066dde18ad7beaae9b4a4d378c3f9afb4ab366d08af88b1bcab70a1fd20.png
-2025-12-05 15:57:54 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\70a651c212d6d888186258ae823106796c6b5ab07571fc0819632622dd156a53.png
-2025-12-05 15:57:54 [Test worker] DEBUG:: STEP DONE: Regresa atrás en la aplicacion.
-2025-12-05 15:57:54 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-642122729937249436
-2025-12-05 15:57:54 [Test worker] DEBUG:: STEP DONE: performAs
-2025-12-05 15:57:54 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.buscarChatClaro - performAs
-2025-12-05 15:57:54 [Test worker] DEBUG:: STARTING STEP: BuscarChatClaro.performAs - {0} clicks on #target
-2025-12-05 15:57:54 [Test worker] DEBUG:: default content already selected for Boton enviar mensaje
-2025-12-05 15:57:54 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\70a651c212d6d888186258ae823106796c6b5ab07571fc0819632622dd156a53.png
-2025-12-05 15:57:56 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\e4c526d7ceac90cb6f03013ad57215bab472b919924f4c0a6c7b07d8ed06f3e2.png
-2025-12-05 15:57:56 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-3133498119613379219
-2025-12-05 15:57:56 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:56 [Test worker] DEBUG:: STARTING STEP: BuscarChatClaro.performAs - {0} clicks on #target
-2025-12-05 15:57:56 [Test worker] DEBUG:: default content already selected for Boton lupa
-2025-12-05 15:57:56 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\e4c526d7ceac90cb6f03013ad57215bab472b919924f4c0a6c7b07d8ed06f3e2.png
-2025-12-05 15:57:56 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\42dd30d48eeeb4ee39caa59fa30cdd35670a931b1e12b1d6bdfe94285179a3d0.png
-2025-12-05 15:57:56 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-16910303304147306931
-2025-12-05 15:57:56 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:57:56 [Test worker] DEBUG:: STARTING STEP: BuscarChatClaro.performAs - {0} enters #theTextAsAString into #target
-2025-12-05 15:57:56 [Test worker] DEBUG:: default content already selected for Caja de texto buscar
-2025-12-05 15:57:57 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\42dd30d48eeeb4ee39caa59fa30cdd35670a931b1e12b1d6bdfe94285179a3d0.png
-2025-12-05 15:57:59 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f45150c634859a8e1c2a8bbeacbbb52e5a4c01edb63f35aa8780f29ca7854fd2.png
-2025-12-05 15:57:59 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-9904096115320654189
-2025-12-05 15:57:59 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
-2025-12-05 15:57:59 [Test worker] DEBUG:: STARTING STEP: BuscarChatClaro.performAs - Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:57:59 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\f45150c634859a8e1c2a8bbeacbbb52e5a4c01edb63f35aa8780f29ca7854fd2.png
-2025-12-05 15:58:01 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\2eba881b6e66ac61a5c26bd7471167c4b45ec0b87ba15d75d53e7bad13793c54.png
-2025-12-05 15:58:01 [Test worker] DEBUG:: STEP DONE: Valida que el texto '#text' este contenido en otro texto visible.
-2025-12-05 15:58:01 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-5126571194253678288
-2025-12-05 15:58:01 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\2eba881b6e66ac61a5c26bd7471167c4b45ec0b87ba15d75d53e7bad13793c54.png
-2025-12-05 15:58:02 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\72577017f0731b4c2512a1e37f6850ecd35b6649464f6385aadd49dc2f899913.png
-2025-12-05 15:58:02 [Test worker] DEBUG:: STEP DONE: performAs
-2025-12-05 15:58:02 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-4030858785654909314
-2025-12-05 15:58:02 [Test worker] DEBUG:: STARTING STEP: CompraPaquetesWhatsAppDefinitions.iniciarChatClaro - performAs
-2025-12-05 15:58:02 [Test worker] DEBUG:: STARTING STEP: IniciarChatClaro.performAs - {0} enters #theTextAsAString into #target
-2025-12-05 15:58:02 [Test worker] DEBUG:: default content already selected for Caja de texto enviar mensaje
-2025-12-05 15:58:02 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\72577017f0731b4c2512a1e37f6850ecd35b6649464f6385aadd49dc2f899913.png
-2025-12-05 15:58:04 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b50dccad0d5ba98229cfb9114de26dabb76a632ce863ec6292db020c9c47e259.png
-2025-12-05 15:58:04 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-13472516350788557601
-2025-12-05 15:58:04 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
-2025-12-05 15:58:04 [Test worker] DEBUG:: STARTING STEP: IniciarChatClaro.performAs - {0} clicks on #target
-2025-12-05 15:58:04 [Test worker] DEBUG:: default content already selected for Boton enviar mensaje
-2025-12-05 15:58:04 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\b50dccad0d5ba98229cfb9114de26dabb76a632ce863ec6292db020c9c47e259.png
-2025-12-05 15:58:07 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\57ef84abc0dffa62afabae7994b4bc64e8888ce1896b0519fd942d74d89611e2.png
-2025-12-05 15:58:07 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-735557011129758397
-2025-12-05 15:58:07 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
-2025-12-05 15:58:07 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\57ef84abc0dffa62afabae7994b4bc64e8888ce1896b0519fd942d74d89611e2.png
-2025-12-05 16:00:09 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\45b2618a06b63b58543021f0db050bded83660f30565de9c667a3b0854d0a31b.png
-2025-12-05 16:00:09 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-18126697466998304821
-2025-12-05 16:00:09 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\45b2618a06b63b58543021f0db050bded83660f30565de9c667a3b0854d0a31b.png
-? [DEBUG] Se ejecutó afterScenario con escenario: Consulta inicial del estado de la linea en CMAX
-? Generando reporte Word con pasos: 1
-2025-12-05 16:00:10 [Test worker] ERROR:: ?[91m
-           __  _____ _____ ____ _____   _____ _    ___ _     _____ ____  
-  _       / / |_   _| ____/ ___|_   _| |  ___/ \  |_ _| |   | ____|  _ \ 
- (_)_____| |    | | |  _| \___ \ | |   | |_ / _ \  | || |   |  _| | | | |
-  _|_____| |    | | | |___ ___) || |   |  _/ ___ \ | || |___| |___| |_| |
- (_)     | |    |_| |_____|____/ |_|   |_|/_/   \_\___|_____|_____|____/ 
-          \_\                                                            
+<pre>2026-01-29 12:56:12 [Test worker] INFO :: Limpiando carpeta de capturas...
+2026-01-29 12:56:12 [Test worker] INFO :: Limpiando carpeta de capturas...
+2026-01-29 12:56:12 [Test worker] INFO :: Limpiando carpeta de capturas...
+2026-01-29 12:56:12 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaALaURLDeCMAX - {0} opens the #url
+2026-01-29 12:56:13 [Test worker] INFO :: Instantiating driver
+2026-01-29 12:56:13 [Test worker] INFO :: Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, chrome.switches: --start-maximized, --disabl..., goog:chromeOptions: {args: [--start-maximized, --disable-popup-blocking, --disk-cache-dir=null, --ignore-certificate-errors, --disable-download-notifica..., --enable-automation, --test-type], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+2026-01-29 12:56:16 [Test worker] DEBUG:: Opening darkroom
+2026-01-29 12:56:16 [Darkroom Processing Line] DEBUG:: Darkroom processing line starting up
+2026-01-29 12:56:16 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1710a06a32ec087386937db1f93b71260b619c5c78ef8a92224214bb11df41e4.png
+2026-01-29 12:56:16 [Test worker] DEBUG:: STEP DONE: {0} opens the #url
+2026-01-29 12:56:16 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaElUsuarioYLaContrasena - performAs
+2026-01-29 12:56:17 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1710a06a32ec087386937db1f93b71260b619c5c78ef8a92224214bb11df41e4.png
+2026-01-29 12:56:17 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} enters #theTextAsAString into #target
+2026-01-29 12:56:17 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar el nombre del usuario
+2026-01-29 12:56:17 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1e8fd13a7d6c52299eafafa32de23e971ade7c3d2331ad3dace84ceffbb6f3a9.png
+2026-01-29 12:56:17 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1e8fd13a7d6c52299eafafa32de23e971ade7c3d2331ad3dace84ceffbb6f3a9.png
+2026-01-29 12:56:17 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2026-01-29 12:56:17 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} enters #theTextAsAString into #target
+2026-01-29 12:56:17 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar la contraseña del usuario
+2026-01-29 12:56:17 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ed898a33499f9e46efdda644780989e64311118ee341793c51d7321cd6e2fc1a.png
+2026-01-29 12:56:17 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2026-01-29 12:56:17 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0} clicks on #target
+2026-01-29 12:56:17 [Test worker] DEBUG:: default content already selected for Boton de OK
+2026-01-29 12:56:22 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\050d1037f327ec8301d4adc9db92939bd1852f31e5fdb427eef8b3ce98552563.png
+2026-01-29 12:56:22 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-5682627330239763911
+2026-01-29 12:56:22 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:22 [Test worker] DEBUG:: STARTING STEP: RealizarIngreso.performAs - {0}
+2026-01-29 12:56:22 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\050d1037f327ec8301d4adc9db92939bd1852f31e5fdb427eef8b3ce98552563.png
+2026-01-29 12:56:23 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\050d1037f327ec8301d4adc9db92939bd1852f31e5fdb427eef8b3ce98552563.png
+2026-01-29 12:56:23 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:23 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:23 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seIngresaElNumeroDeLaLineaEnConsultaDeCompra - performAs
+2026-01-29 12:56:23 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaCompra.performAs - {0} clicks on #target
+2026-01-29 12:56:23 [Test worker] DEBUG:: default content already selected for Boton de clientes
+2026-01-29 12:56:23 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\00a48baeadb9c6432f4ccdb043e8bf0abeeef6da7009928dbe612947f0bd3dbc.png
+2026-01-29 12:56:23 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-2201773384404243453
+2026-01-29 12:56:23 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:23 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaCompra.performAs - {0} clicks on #target
+2026-01-29 12:56:23 [Test worker] DEBUG:: default content already selected for Boton de buscar a clientes
+2026-01-29 12:56:23 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\00a48baeadb9c6432f4ccdb043e8bf0abeeef6da7009928dbe612947f0bd3dbc.png
+2026-01-29 12:56:27 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\2a209ffeff9db9c84f2872eef0703a90887092bcd035b33ea4d2c7673059a887.png
+2026-01-29 12:56:27 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:27 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaCompra.performAs - {0} enters #theTextAsAString into #target
+2026-01-29 12:56:27 [Test worker] DEBUG:: default content already selected for Caja de texto para ingresar numero
+2026-01-29 12:56:27 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\c05974846299e75d432e93a70490111fcefbe8b459fc714f16675f21ef261c22.png
+2026-01-29 12:56:27 [Test worker] DEBUG:: STEP DONE: {0} enters #theTextAsAString into #target
+2026-01-29 12:56:27 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaCompra.performAs - {0} clicks on #target
+2026-01-29 12:56:27 [Test worker] DEBUG:: default content already selected for Boton buscar
+2026-01-29 12:56:27 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\0d79f8046e1f5b70420a8426afc12319a070cbeff0696148ab49f66787480293.png
+2026-01-29 12:56:27 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:27 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaCompra.performAs - {0} clicks on #target
+2026-01-29 12:56:27 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
+2026-01-29 12:56:31 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\ded2736362284349bf4e1a948bf45e4eb683428ad84e1367d38c7dedc897c80c.png
+2026-01-29 12:56:31 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:31 [Test worker] DEBUG:: STARTING STEP: IngresarNumeroConsultaCompra.performAs - {0}
+2026-01-29 12:56:32 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4e193a860f2e50e2900c94a52e0a52e845fcd63ed602d661c3ab26fd9e36c34f.png
+2026-01-29 12:56:32 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:32 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4e193a860f2e50e2900c94a52e0a52e845fcd63ed602d661c3ab26fd9e36c34f.png
+2026-01-29 12:56:32 [Test worker] DEBUG:: STARTING STEP: ValidateInformationText.answeredBy - performAs
+2026-01-29 12:56:32 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
+2026-01-29 12:56:32 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4e193a860f2e50e2900c94a52e0a52e845fcd63ed602d661c3ab26fd9e36c34f.png
+2026-01-29 12:56:32 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:32 [Test worker] DEBUG:: default content already selected for Texto de la linea consultada
+2026-01-29 12:56:32 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:33 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4e193a860f2e50e2900c94a52e0a52e845fcd63ed602d661c3ab26fd9e36c34f.png
+2026-01-29 12:56:33 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.seValidanLasOfertasActivasEnContadores - performAs
+2026-01-29 12:56:33 [Test worker] INFO :: Iniciando validación de ofertas activas en contadores
+2026-01-29 12:56:33 [Test worker] DEBUG:: Navegando a ofertas
+2026-01-29 12:56:33 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.navegarAOfertas - performAs
+2026-01-29 12:56:33 [Test worker] DEBUG:: default content already selected for Boton de ofertas
+2026-01-29 12:56:33 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4e193a860f2e50e2900c94a52e0a52e845fcd63ed602d661c3ab26fd9e36c34f.png
+2026-01-29 12:56:33 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:33 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.navegarAOfertas - {0} clicks on #target
+2026-01-29 12:56:33 [Test worker] DEBUG:: default content already selected for Boton de ofertas
+2026-01-29 12:56:36 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6ca3510cf25d7fe9f7a6277a8b6ee22ab4f80106a3873f7300232b99f285b8ed.png
+2026-01-29 12:56:36 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-12893411301774877785
+2026-01-29 12:56:36 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:36 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.navegarAOfertas - {0} clicks on #target
+2026-01-29 12:56:36 [Test worker] DEBUG:: default content already selected for Boton fecha de inicio
+2026-01-29 12:56:36 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\6ca3510cf25d7fe9f7a6277a8b6ee22ab4f80106a3873f7300232b99f285b8ed.png
+2026-01-29 12:56:36 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\7b88ccc84c880972892f4333725ff5c8f1bf99fc9bce7f3ce6c788b73a9f6ee8.png
+2026-01-29 12:56:36 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:36 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.navegarAOfertas - {0} clicks on #target
+2026-01-29 12:56:36 [Test worker] DEBUG:: default content already selected for Boton fecha de inicio 2
+2026-01-29 12:56:37 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\29a503b859cea1fd6b60e672c36e32329a8070f09e343632221ffe5032440616.png
+2026-01-29 12:56:37 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-8262884956189242792
+2026-01-29 12:56:37 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:37 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.navegarAOfertas - {0}
+2026-01-29 12:56:37 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\29a503b859cea1fd6b60e672c36e32329a8070f09e343632221ffe5032440616.png
+2026-01-29 12:56:38 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d3c0479632ee0824e481548324fd7e0d5ce5f234c03ef180fd67d39449e1a047.png
+2026-01-29 12:56:38 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:38 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.navegarAOfertas - {0}
+2026-01-29 12:56:40 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\efeba5f45fd71340104a75f9b1d016e03473bbeb694bbee83e3d923b73fb2183.png
+2026-01-29 12:56:40 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:40 [Test worker] DEBUG:: default content already selected for Boton Siguiente segunda pagina
+2026-01-29 12:56:40 [Test worker] DEBUG:: ¿Existe página siguiente? true
+2026-01-29 12:56:40 [Test worker] DEBUG:: default content already selected for Tabla de la información de Ofertas
+2026-01-29 12:56:40 [Test worker] DEBUG:: Paquete activo encontrado: datos 400mb+wtf vig 1 dia por tiempo determinado s
+2026-01-29 12:56:40 [Test worker] DEBUG:: ¿Hay paquetes activos? true
+2026-01-29 12:56:40 [Test worker] INFO :: Navegando a página 2
+2026-01-29 12:56:40 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d3c0479632ee0824e481548324fd7e0d5ce5f234c03ef180fd67d39449e1a047.png
+2026-01-29 12:56:40 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.validarPaginasAdicionales - {0} clicks on #target
+2026-01-29 12:56:40 [Test worker] DEBUG:: default content already selected for Boton Siguiente segunda pagina
+2026-01-29 12:56:41 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1b8b816e600464c34012904a81c52b51923736c18669d9fc86cd193803542e19.png
+2026-01-29 12:56:41 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-18417958530315720947
+2026-01-29 12:56:41 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:41 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.validarPaginasAdicionales - {0}
+2026-01-29 12:56:41 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\1b8b816e600464c34012904a81c52b51923736c18669d9fc86cd193803542e19.png
+2026-01-29 12:56:42 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3087f72570f349bd1f6c93314face34a3484dc97a1c055fd0654ecdd6d8cb69a.png
+2026-01-29 12:56:42 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:42 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.validarPaginasAdicionales - {0}
+2026-01-29 12:56:43 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\4ddd32c7aa18013834091e88c7aaae3ce04571ecbce7dd694ea64ebe19388749.png
+2026-01-29 12:56:43 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:43 [Test worker] DEBUG:: default content already selected for Texto displaying
+2026-01-29 12:56:46 [Test worker] DEBUG:: ¿Estamos en primera página? false
+2026-01-29 12:56:46 [Test worker] DEBUG:: default content already selected for Boton Siguiente segunda pagina
+2026-01-29 12:56:46 [Test worker] DEBUG:: ¿Existe página siguiente? true
+2026-01-29 12:56:46 [Test worker] DEBUG:: default content already selected for Tabla de la información de Ofertas
+2026-01-29 12:56:46 [Test worker] DEBUG:: Paquete activo encontrado: elegidos ilimitado nacional voz 1 year cuenta
+15-a
+2026-01-29 12:56:46 [Test worker] DEBUG:: ¿Hay paquetes activos? true
+2026-01-29 12:56:46 [Test worker] INFO :: Navegando a página 3
+2026-01-29 12:56:46 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\3087f72570f349bd1f6c93314face34a3484dc97a1c055fd0654ecdd6d8cb69a.png
+2026-01-29 12:56:46 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.validarPaginasAdicionales - {0} clicks on #target
+2026-01-29 12:56:46 [Test worker] DEBUG:: default content already selected for Boton Siguiente segunda pagina
+2026-01-29 12:56:46 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\a0fcabce35853e6d49e77b8feb65b98964e9d76fb1acf693a8cbbdfb24832d0c.png
+2026-01-29 12:56:46 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-2451740916366158480
+2026-01-29 12:56:46 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:46 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.validarPaginasAdicionales - {0}
+2026-01-29 12:56:46 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\a0fcabce35853e6d49e77b8feb65b98964e9d76fb1acf693a8cbbdfb24832d0c.png
+2026-01-29 12:56:48 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d3c0479632ee0824e481548324fd7e0d5ce5f234c03ef180fd67d39449e1a047.png
+2026-01-29 12:56:48 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:48 [Test worker] DEBUG:: STARTING STEP: ValidarOfertaConsultaContadores.validarPaginasAdicionales - {0}
+2026-01-29 12:56:49 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\113306505a01c0275045096c17c0471c1fd058aef44ecaf93f126b97587ce72e.png
+2026-01-29 12:56:49 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:49 [Test worker] DEBUG:: default content already selected for Texto displaying
+2026-01-29 12:56:49 [Test worker] DEBUG:: ¿Estamos en primera página? true
+2026-01-29 12:56:49 [Test worker] INFO :: Se detectó vuelta a la primera página. Finalizando paginación.
+2026-01-29 12:56:49 [Test worker] INFO :: Validación completada. Total de páginas procesadas: 2
+2026-01-29 12:56:49 [Test worker] INFO :: Validación de ofertas en contadores completada
+2026-01-29 12:56:49 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:49 [Test worker] DEBUG:: STARTING STEP: CMAXDefinitions.validarContadoresDeUsoConsumoDeSMS - performAs
+2026-01-29 12:56:49 [Test worker] INFO :: Iniciando validación de contadores de uso consumo de SMS
+2026-01-29 12:56:49 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\113306505a01c0275045096c17c0471c1fd058aef44ecaf93f126b97587ce72e.png
+2026-01-29 12:56:49 [Test worker] DEBUG:: STARTING STEP: ContadorDeUsoConsumoDeSMS.navegarAContadores - {0} clicks on #target
+2026-01-29 12:56:49 [Test worker] DEBUG:: default content already selected for Boton de contadores de uso y umbrales
+2026-01-29 12:56:52 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d3f52c21d8b382891061cef96aa32bc5170e85f134d0847d19bacaf785e2607a.png
+2026-01-29 12:56:52 [Test worker] DEBUG:: STEP DONE: {0} clicks on #target
+2026-01-29 12:56:52 [Test worker] DEBUG:: STARTING STEP: ContadorDeUsoConsumoDeSMS.navegarAContadores - {0}
+2026-01-29 12:56:53 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d3f52c21d8b382891061cef96aa32bc5170e85f134d0847d19bacaf785e2607a.png
+2026-01-29 12:56:53 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:53 [Test worker] DEBUG:: STARTING STEP: ValidateInformationText.answeredBy - performAs
+2026-01-29 12:56:53 [Test worker] DEBUG:: default content already selected for Texto Contadores de uso y umbrales
+2026-01-29 12:56:53 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d3f52c21d8b382891061cef96aa32bc5170e85f134d0847d19bacaf785e2607a.png
+2026-01-29 12:56:53 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:53 [Test worker] DEBUG:: default content already selected for Texto Contadores de uso y umbrales
+2026-01-29 12:56:53 [Test worker] DEBUG:: default content already selected for Tabla Contadores de uso 
+2026-01-29 12:56:53 [Test worker] INFO :: Filas encontradas en la tabla de contadores: 5
+2026-01-29 12:56:53 [Test worker] DEBUG:: Comparando: 'Costo Acumulado Mensual - Reforma Tributaria' con 'Todo Incluido SMS Ilimitados Vig 30 dias'
+2026-01-29 12:56:53 [Test worker] DEBUG:: Comparando: 'Navegacion por Paquete Datos' con 'Todo Incluido SMS Ilimitados Vig 30 dias'
+2026-01-29 12:56:54 [Test worker] DEBUG:: Comparando: 'Todo Incluido Voz Ilimitados Whatsapp Facebook Twitter +80GB Vig 30 dias' con 'Todo Incluido SMS Ilimitados Vig 30 dias'
+2026-01-29 12:56:54 [Test worker] DEBUG:: Comparando: 'Todo Incluido SMS Ilimitados Vig 30 dias' con 'Todo Incluido SMS Ilimitados Vig 30 dias'
+2026-01-29 12:56:54 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\de602e02e4f0d2188e33b5eb31cfa768be95ed51fd65a1d6e4f8a531f1c9e83f.png
+2026-01-29 12:56:54 [Test worker] DEBUG:: STARTING STEP: ContadorDeUsoConsumoDeSMS.buscarYSeleccionarPaqueteSMS - {0} clicks on #element
+2026-01-29 12:56:54 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\200c0dbb31f9efdc2989109b41d81cb6b05bba8a735ec6c815203a4b98889c8f.png
+2026-01-29 12:56:54 [Test worker] DEBUG:: STEP DONE: {0} clicks on #element
+2026-01-29 12:56:54 [Test worker] DEBUG:: STARTING STEP: ContadorDeUsoConsumoDeSMS.buscarYSeleccionarPaqueteSMS - {0}
+2026-01-29 12:56:55 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\385d6293b636e2178941c050fc34cfb738212f3abe87b1ff8cc593915c51b844.png
+2026-01-29 12:56:55 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:55 [Test worker] INFO :: Paquete de SMS encontrado y seleccionado: 'Todo Incluido SMS Ilimitados Vig 30 dias'
+2026-01-29 12:56:55 [Test worker] DEBUG:: default content already selected for Tabla Valores del contador de uso privado
+2026-01-29 12:56:55 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-1747536359766908948
+2026-01-29 12:56:55 [Test worker] INFO :: Filas encontradas en valores de contadores: 1
+2026-01-29 12:56:55 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\385d6293b636e2178941c050fc34cfb738212f3abe87b1ff8cc593915c51b844.png
+2026-01-29 12:56:55 [Test worker] DEBUG:: Validando oferta en detalle: 'Todo Incluido SMS Ilimitados Vig 30 dias'
+2026-01-29 12:56:55 [Test worker] DEBUG:: Validando campos de contador SMS
+2026-01-29 12:56:55 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\385d6293b636e2178941c050fc34cfb738212f3abe87b1ff8cc593915c51b844.png
+2026-01-29 12:56:55 [Test worker] DEBUG:: STARTING STEP: ValidateInformationText.answeredBy - performAs
+2026-01-29 12:56:55 [Test worker] DEBUG:: default content already selected for Texto Fecha de inicio de contadores de uso
+2026-01-29 12:56:55 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\385d6293b636e2178941c050fc34cfb738212f3abe87b1ff8cc593915c51b844.png
+2026-01-29 12:56:55 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:55 [Test worker] DEBUG:: default content already selected for Texto Fecha de inicio de contadores de uso
+2026-01-29 12:56:55 [Test worker] DEBUG:: STARTING STEP: ValidateInformationText.answeredBy - performAs
+2026-01-29 12:56:55 [Test worker] DEBUG:: default content already selected for Texto Fecha de expiración de contadores de uso
+2026-01-29 12:56:56 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\385d6293b636e2178941c050fc34cfb738212f3abe87b1ff8cc593915c51b844.png
+2026-01-29 12:56:56 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:56 [Test worker] DEBUG:: default content already selected for Texto Fecha de expiración de contadores de uso
+2026-01-29 12:56:56 [Test worker] DEBUG:: STARTING STEP: ValidateInformationText.answeredBy - performAs
+2026-01-29 12:56:56 [Test worker] DEBUG:: default content already selected for Texto Valor actual contador de uso
+2026-01-29 12:56:56 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\385d6293b636e2178941c050fc34cfb738212f3abe87b1ff8cc593915c51b844.png
+2026-01-29 12:56:56 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:56 [Test worker] DEBUG:: default content already selected for Texto Valor actual contador de uso
+2026-01-29 12:56:56 [Test worker] INFO :: Oferta validada en detalle: 'Todo Incluido SMS Ilimitados Vig 30 dias'
+2026-01-29 12:56:56 [Test worker] DEBUG:: STARTING STEP: ContadorDeUsoConsumoDeSMS.capturarEvidencia - {0}
+2026-01-29 12:56:59 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\385d6293b636e2178941c050fc34cfb738212f3abe87b1ff8cc593915c51b844.png
+2026-01-29 12:56:59 [Test worker] DEBUG:: STEP DONE: {0}
+2026-01-29 12:56:59 [Test worker] DEBUG:: default content already selected for Logo de Claro 
+2026-01-29 12:56:59 [Test worker] INFO :: Validación de contadores de SMS completada
+2026-01-29 12:56:59 [Test worker] DEBUG:: Send negative for processing for D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d46896ead033793c14b579bebbcfcfcf4dd95169b9e5230a5a70be096b282194.png
+2026-01-29 12:56:59 [Test worker] DEBUG:: STEP DONE: performAs
+2026-01-29 12:56:59 [Darkroom Processing Line] DEBUG:: Processing screenshot image in /var/screenshots/screenshot-13360399698779082376
+? [DEBUG] Se ejecutó afterScenario con escenario: Validacion de consumos de SMS en Cmax
+? Generando reporte Word con pasos: 3
+2026-01-29 12:56:59 [Darkroom Processing Line] DEBUG:: Saving screenshot to D:\Auto\Cmax_CompraPaquetes\target\site\serenity\d46896ead033793c14b579bebbcfcfcf4dd95169b9e5230a5a70be096b282194.png
+2026-01-29 12:57:00 [Test worker] INFO :: ?[92m
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
 
-TEST FAILED WITH ERROR: Consulta inicial del estado de la linea en CMAX
----------------------------------------------------------------------?[0m
-2025-12-05 16:00:10 [Test worker] DEBUG:: RELATED ISSUES: 
-2025-12-05 16:00:10 [Test worker] ERROR:: ?[91mTEST FAILED AT STEP Cmax iniciar chat claro?[0m
-2025-12-05 16:00:10 [Test worker] ERROR:: Ninguno de los textos esperados fue encontrado en el tiempo dado.
+TEST PASSED: Validacion de consumos de SMS en Cmax
+----------------------------------------------------------------------------?[0m
 </pre>
 </span>
 </div>
-<div id="tab3" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
 <pre>Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
@@ -397,24 +321,20 @@ Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\
 Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
 Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
 Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
-Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
-Cleaning up unclosed ZipFile for archive D:\Auto\Cmax_CompraPaquetes\.\src\test\resources\data\UsersPROD.xlsx
-dic. 05, 2025 3:56:44 P. M. org.openqa.selenium.remote.DesiredCapabilities chrome
+ene. 29, 2026 12:56:12 P. M. org.openqa.selenium.remote.DesiredCapabilities chrome
 INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
-Starting ChromeDriver 142.0.7444.175 (302067f14a4ea3f42001580e6101fa25ed343445-refs/branch-heads/7444@{#2749}) on port 16777
+Starting ChromeDriver 144.0.7559.96 (d7b80622cfab91c265741194e7942eefd2d21811-refs/branch-heads/7559@{#3667}) on port 4015
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully on port 16777.
-dic. 05, 2025 3:56:47 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+ChromeDriver was started successfully on port 4015.
+ene. 29, 2026 12:56:15 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-dic. 05, 2025 3:57:23 P. M. utils.CapturasPantallasWeb capturaPantalla
-INFO: Captura guardada: Verificar_el_estado_inicial_de_la_l_nea_1_05_12_2025 15_57_23.png
-dic. 05, 2025 3:57:34 P. M. io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
-INFO: Detected dialect: W3C
-dic. 05, 2025 3:57:45 P. M. utils.CapturaDePantallaMovil tomarCapturaPantalla
-INFO: Captura de pantalla guardada con borde rojo: Capturas/captura_pantalla_05_12_2025_15_57_44.jpg
-dic. 05, 2025 4:00:10 P. M. utils.WordWeb generarReporte
-INFO: ? Reporte generado correctamente en EXXO.docx
+ene. 29, 2026 12:56:40 P. M. utils.CapturasPantallasWeb capturaPantalla
+INFO: Captura guardada: Se_validan_las_ofertas_activas___P_gina_1__.png
+ene. 29, 2026 12:56:46 P. M. utils.CapturasPantallasWeb capturaPantalla
+INFO: Captura guardada: Se_validan_las_ofertas_activas___P_gina_2__.png
+ene. 29, 2026 12:56:59 P. M. utils.CapturasPantallasWeb capturaPantalla
+INFO: Captura guardada: Validar_contadores_de_uso_consumo_de_SMS___Todo_Incluido_SMS_Ilimitados_Vig_30_dias__.png
 </pre>
 </span>
 </div>
@@ -426,7 +346,7 @@ INFO: ? Reporte generado correctamente en EXXO.docx
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4</a> at 5/12/2025, 4:00:17 p. m.</p>
+<a href="http://www.gradle.org">Gradle 7.4</a> at 29/01/2026, 12:57:13 p. m.</p>
 </div>
 </div>
 </body>

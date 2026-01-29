@@ -13,14 +13,14 @@ import javax.imageio.ImageIO;
 public class CapturasPantallasWeb {
 
     private static final Logger logger = Logger.getLogger(CapturasPantallasWeb.class.getName());
-    public static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd_MM_yyyy HH_mm_ss");
+ //   public static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd_MM_yyyy HH_mm_ss");
     private static int contador = 1;
     private static final String RUTA_CAPTURAS = "Capturas/";
     private static final Map<String, String> titulosCapturas = new HashMap<>();
 
     public static String capturaPantalla(String nombreCaptura, String titulo) {
-        String fecha = dtf.format(LocalDateTime.now());
-        String nombreArchivo = nombreCaptura + "_" + contador + "_" + fecha + ".png";
+       // String fecha = dtf.format(LocalDateTime.now());
+        String nombreArchivo = nombreCaptura + "_" +  "_" +  ".png";
         contador++;
 
         try {

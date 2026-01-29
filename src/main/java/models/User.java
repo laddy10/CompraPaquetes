@@ -3,212 +3,244 @@ package models;
 public class User {
 
 
-  private String usuario;
-  private String contrasena;
-  private String numeroWhatsApp;
-  private String opcion;
-  private String password;
-  private String nombreUsuario;
-  private String segmentacion;
-  private String numero;
-  private String documento;
-  private String email2;
-  private String password2;
-  private String email;
+    private String usuario;
+    private String contrasena;
+    private String numeroWhatsApp;
+    private String opcion;
+    private String password;
+    private String nombreUsuario;
+    private String segmentacion;
+    private String numero;
+    private String documento;
+    private String email2;
+    private String password2;
+    private String email;
 
-  private String tipoPaquete;
-  private String paqueteComprar;
-  private String nombrePaquete;
+    private String tipoPaquete;
+    private String paqueteComprar;
+    private String nombrePaquete;
 
-  private String paquete;
-  private String datos;
-  private String minutos;
-  private String precio;
-  private String fecha;
-  private String valorBuscado;
-  private String criterioExtra;
-
-
-
-
-
-  public String getUsuario() {
-    return usuario;
-  }
-
-  public void setUsuario(String usuario) {
-    this.usuario = usuario;
-  }
-
-  public String getContrasena() {
-    return contrasena;
-  }
-
-  public void setContrasena(String contrasena) {
-    this.contrasena = contrasena;
-  }
-
-  public String getNumeroWhatsApp() {
-    return numeroWhatsApp;
-  }
-
-  public void setNumeroWhatsApp(String numeroWhatsApp) {
-    this.numeroWhatsApp = numeroWhatsApp;
-  }
+    private String paquete;
+    private String datos;
+    private String minutos;
+    private String precio;
+    private String fecha;
+    private String valorBuscado;
+    private String paqueteCMAX;
+    private String paqueteVoz;
+    private String paqueteDatos;
+    private String paqueteSMS;
+    private String criterioExtra;
 
 
+    public String getUsuario() {
+        return usuario;
+    }
 
-  public String getNombrePaquete() {
-    return nombrePaquete;
-  }
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
 
-  public void setNombrePaquete(String nombrePaquete) {
-    this.nombrePaquete = nombrePaquete;
-  }
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getNumeroWhatsApp() {
+        return numeroWhatsApp;
+    }
+
+    public void setNumeroWhatsApp(String numeroWhatsApp) {
+        this.numeroWhatsApp = numeroWhatsApp;
+    }
 
 
-  public String getPaquete() {
-    return paquete;
-  }
+    public String getNombrePaquete() {
+        return nombrePaquete;
+    }
 
-  public void setPaquete(String paquete) {
-    this.paquete = paquete;
-  }
+    public void setNombrePaquete(String nombrePaquete) {
+        this.nombrePaquete = nombrePaquete;
+    }
 
-  public String getEmail() {
-    return email;
-  }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    public String getPaquete() {
+        return paquete;
+    }
 
-  public String getDocumento() {
-    return documento;
-  }
+    public void setPaquete(String paquete) {
+        this.paquete = paquete;
+    }
 
-  public void setDocumento(String documento) {
-    this.documento = documento;
-  }
+    public String getEmail() {
+        return email;
+    }
 
-  public String getNombreUsuario() {
-    return nombreUsuario;
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public void setNombreUsuario(String nombreUsuario) {
-    this.nombreUsuario = nombreUsuario;
-  }
+    public String getDocumento() {
+        return documento;
+    }
 
-  public String getOpcion() {
-    return opcion;
-  }
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
 
-  public void setOpcion(String opcion) {
-    this.opcion = opcion;
-  }
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
 
-  public String getPassword() {
-    return password;
-  }
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
+    public String getOpcion() {
+        return opcion;
+    }
 
-  public String getNumero() {
-    return numero;
-  }
+    public void setOpcion(String opcion) {
+        this.opcion = opcion;
+    }
 
-  public void setNumero(String numero) {
-    this.numero = numero;
-  }
+    public String getPassword() {
+        return password;
+    }
 
-  public void setSegmentacion(String segmentacion) {
-    this.segmentacion = segmentacion;
-  }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-  public String getSegmentacion() {
-    return segmentacion;
-  }
+    public String getNumero() {
+        return numero;
+    }
 
-  public String getEmail2() {
-    return email2;
-  }
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
 
-  public void setEmail2(String email2) {
-    this.email2 = email2;
-  }
+    public void setSegmentacion(String segmentacion) {
+        this.segmentacion = segmentacion;
+    }
 
-  public String getPassword2() {
-    return password2;
-  }
+    public String getSegmentacion() {
+        return segmentacion;
+    }
 
-  public void setPassword2(String password2) {
-    this.password2 = password2;
-  }
+    public String getEmail2() {
+        return email2;
+    }
 
-  public String getTipoPaquete() {
-    return tipoPaquete;
-  }
+    public void setEmail2(String email2) {
+        this.email2 = email2;
+    }
 
-  public void setTipoPaquete(String tipoPaquete) {
-    this.tipoPaquete = tipoPaquete;
-  }
+    public String getPassword2() {
+        return password2;
+    }
 
-  public String getPaqueteComprar() {
-    return paqueteComprar;
-  }
+    public void setPassword2(String password2) {
+        this.password2 = password2;
+    }
 
-  public void setPaqueteComprar(String paqueteComprar) {
-    this.paqueteComprar = paqueteComprar;
-  }
+    public String getTipoPaquete() {
+        return tipoPaquete;
+    }
 
-  public String getDatos() {
-    return datos;
-  }
+    public void setTipoPaquete(String tipoPaquete) {
+        this.tipoPaquete = tipoPaquete;
+    }
 
-  public void setDatos(String datos) {
-    this.datos = datos;
-  }
+    public String getPaqueteComprar() {
+        return paqueteComprar;
+    }
 
-  public String getMinutos() {
-    return minutos;
-  }
+    public void setPaqueteComprar(String paqueteComprar) {
+        this.paqueteComprar = paqueteComprar;
+    }
 
-  public void setMinutos(String minutos) {
-    this.minutos = minutos;
-  }
+    public String getDatos() {
+        return datos;
+    }
 
-  public String getPrecio() {
-    return precio;
-  }
+    public void setDatos(String datos) {
+        this.datos = datos;
+    }
 
-  public void setPrecio(String precio) {
-    this.precio = precio;
-  }
+    public String getMinutos() {
+        return minutos;
+    }
 
-  public String getCriterioExtra() {
-    return criterioExtra;
-  }
+    public void setMinutos(String minutos) {
+        this.minutos = minutos;
+    }
 
-  public void setCriterioExtra(String criterioExtra) {
-    this.criterioExtra = criterioExtra;
-  }
+    public String getPrecio() {
+        return precio;
+    }
 
-  public String getFecha() {
-    return fecha;
-  }
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
 
-  public void setFecha(String fecha) {
-    this.fecha = fecha;
-  }
+    public String getCriterioExtra() {
+        return criterioExtra;
+    }
 
-  public String getValorBuscado() {
-    return valorBuscado;
-  }
+    public void setCriterioExtra(String criterioExtra) {
+        this.criterioExtra = criterioExtra;
+    }
 
-  public void setValorBuscado(String valorBuscado) {
-    this.valorBuscado = valorBuscado;
-  }
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getValorBuscado() {
+        return valorBuscado;
+    }
+
+    public void setValorBuscado(String valorBuscado) {
+        this.valorBuscado = valorBuscado;
+    }
+
+    public String getPaqueteCMAX() {
+        return paqueteCMAX;
+    }
+
+    public void setPaqueteCMAX(String paqueteCMAX) {
+        this.paqueteCMAX = paqueteCMAX;
+    }
+
+    public String getPaqueteVoz() {
+        return paqueteVoz;
+    }
+
+    public void setPaqueteVoz(String paqueteVoz) {
+        this.paqueteVoz = paqueteVoz;
+    }
+
+    public String getPaqueteDatos() {
+        return paqueteDatos;
+    }
+
+    public void setPaqueteDatos(String paqueteDatos) {
+        this.paqueteDatos = paqueteDatos;
+    }
+
+    public String getPaqueteSMS() {
+        return paqueteSMS;
+    }
+
+    public void setPaqueteSMS(String paqueteSMS) {
+        this.paqueteSMS = paqueteSMS;
+    }
 
 }

@@ -7,6 +7,7 @@ import static utils.Constants.ZOOM_LEVEL_90;
 
 import interactions.WaitFor;
 import interactions.comunes.ValidateInformationText;
+import models.User;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -15,21 +16,19 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
+import utils.TestDataProvider;
 
 import java.util.Map;
 
 public class IngresarNumeroConsultaFinal implements Task {
-    private final Map<String, String> data;
+
+
+    private final User user = TestDataProvider.getRealUser();
     private static final String paso = "Verificar el estado final de la línea";
 
-
-    public IngresarNumeroConsultaFinal(Map<String, String> data) {
-        this.data = data;
-    }
-
-    public static Performable ingresarNumeroConsultaFinal(Map<String, String> data) {
+    public static Performable ingresarNumeroConsultaFinal() {
         return Instrumented.instanceOf(IngresarNumeroConsultaFinal.class)
-                .withProperties(data);
+                .withProperties();
     }
 
     @Override
@@ -37,7 +36,7 @@ public class IngresarNumeroConsultaFinal implements Task {
         actor.attemptsTo(
                 Click.on(BTN_CLIENTES),
                 Click.on(BTN_BUSCAR_CLIENTE),
-                Enter.theValue(data.get("Numero")).into(TXT_MSISDN),
+                Enter.theValue(user.getNumero()).into(TXT_MSISDN),
                 Click.on(BTN_BUSCAR),
                 Click.on(TXT_MSISDN_BUSCADO),
                 WaitFor.aTime(1000)

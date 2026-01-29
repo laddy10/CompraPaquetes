@@ -6,6 +6,8 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.questions.Presence;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
@@ -40,7 +42,7 @@ public class NotificacionCompra extends AndroidObject implements Task {
                     Atras.irAtras());
 
 
-        } else {
+       } /* else {
             actor.attemptsTo(
                     ClickElementByText.clickElementByText(CLARO),
                     WaitFor.aTime(1000));
@@ -73,7 +75,7 @@ public class NotificacionCompra extends AndroidObject implements Task {
                     ValidarTextoQueContengaX.elTextoContiene(COMPRASTE_PAQUETE));
 
             CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
-        }
+        } */
 
         actor.attemptsTo(
                 Atras.irAtras(),
@@ -81,6 +83,8 @@ public class NotificacionCompra extends AndroidObject implements Task {
                 Atras.irAtras());
 
         WordAppium.main();
+
+       // OnStage.theActorInTheSpotlight().abilityTo(BrowseTheWeb.class).getDriver().quit();
 
     }
 

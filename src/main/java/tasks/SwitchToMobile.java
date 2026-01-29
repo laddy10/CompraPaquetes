@@ -45,6 +45,12 @@ public class SwitchToMobile implements Task {
             capabilities.setCapability("appActivity", appActivity);
             capabilities.setCapability("noReset", true);
             capabilities.setCapability("autoGrantPermissions", true);
+            capabilities.setCapability("fullReset", false);
+            capabilities.setCapability("autoDismissAlerts", "true");
+            capabilities.setCapability("unicodeKeyboard", true);
+            capabilities.setCapability("resetKeyboard", true);
+            capabilities.setCapability("hideKeyboardOnStart", true);
+
 
             String hub = environmentVariables.getProperty("appium.hub", "http://127.0.0.1:4723/wd/hub");
             AndroidDriver driver = new AndroidDriver(new URL(hub), capabilities);

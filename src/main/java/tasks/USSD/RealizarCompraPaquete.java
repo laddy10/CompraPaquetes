@@ -1,6 +1,7 @@
 package tasks.USSD;
 
 import interactions.WaitFor;
+import interactions.comunes.ObtenerTextoUSSD;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -30,9 +31,10 @@ public class RealizarCompraPaquete implements Task {
         actor.attemptsTo(
                 WaitFor.aTime(3000));
 
-        String textoMenuPrincipal = Text.of(Target.the("menu principal").located(By.id("android:id/message")))
+        String textoMenuPrincipal = ObtenerTextoUSSD.obtener(actor);
+      /*  String textoMenuPrincipal = Text.of(Target.the("menu principal").located(By.id("android:id/message")))
                 .viewedBy(actor)
-                .asString();
+                .asString(); */
      //    System.out.println("Texto del menú: " + textoMenuPrincipal);
 
         int opcionCompraPaquetes = obtenerNumeroOpcion(textoMenuPrincipal, option);
@@ -52,9 +54,11 @@ public class RealizarCompraPaquete implements Task {
         );
 
         while (opcionCompraPaquetes == 9) {
-            String textoMenuCompra = Text.of(Target.the("menu compra").located(By.id("android:id/message")))
+            String textoMenuCompra = ObtenerTextoUSSD.obtener(actor);
+
+         /*   String textoMenuCompra = Text.of(Target.the("menu compra").located(By.id("android:id/message")))
                     .viewedBy(actor)
-                    .asString();
+                    .asString(); */
            //     System.out.println("Texto del menú de compra: " + textoMenuCompra);
 
             opcionCompraPaquetes = obtenerNumeroOpcion(textoMenuCompra, option);

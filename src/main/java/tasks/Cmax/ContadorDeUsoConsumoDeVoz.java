@@ -7,6 +7,7 @@ import static utils.Constants.*;
 
 import interactions.WaitFor;
 import interactions.comunes.ValidateInformationText;
+import models.User;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -19,6 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
+import utils.TestDataProvider;
 
 import java.util.List;
 import java.util.Map;
@@ -26,11 +28,7 @@ import java.util.Map;
 public class ContadorDeUsoConsumoDeVoz implements Task {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ContadorDeUsoConsumoDeVoz.class);
-    private final Map<String, String> data;
-
-    public ContadorDeUsoConsumoDeVoz(Map<String, String> data) {
-        this.data = data;
-    }
+    private final User user = TestDataProvider.getRealUser();
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -55,7 +53,7 @@ public class ContadorDeUsoConsumoDeVoz implements Task {
         List<WebElementFacade> rows = TBL_CONTADORES_USO.resolveAllFor(actor);
         LOGGER.info("Filas encontradas en la tabla de contadores: {}", rows.size());
 
-        String paqueteEsperado = data.get("paqueteVoz");
+        String paqueteEsperado = user.getPaqueteVoz();
         boolean paqueteEncontrado = false;
 
         for (WebElementFacade row : rows) {
@@ -88,7 +86,7 @@ public class ContadorDeUsoConsumoDeVoz implements Task {
 
     private void validarOfertaEnDetalle(Actor actor) {
         try {
-            String paqueteEsperado = data.get("paqueteVoz");
+            String paqueteEsperado = user.getPaqueteVoz();
 
             // Buscar en la sección "Valores del contador de uso privado"
             Target detalleOferta = Target.the("Detalle de la oferta en contador privado")
@@ -122,7 +120,7 @@ public class ContadorDeUsoConsumoDeVoz implements Task {
                 Scroll.to(LGO_CLARO)
         );
 
-        String nombrePaquete = data.get("paqueteVoz");
+        String nombrePaquete = user.getPaqueteVoz();
         String mensajeEvidencia = "Validar contadores de uso consumo de voz";
         if (nombrePaquete != null && !nombrePaquete.isEmpty()) {
             mensajeEvidencia += " - " + nombrePaquete;
@@ -133,7 +131,7 @@ public class ContadorDeUsoConsumoDeVoz implements Task {
         actor.attemptsTo(AdjustPageZoom.to(NORMAL_ZOOM));
     }
 
-    public static Performable contadorDeUsoConsumoDeVoz(Map<String, String> data) {
-        return instrumented(ContadorDeUsoConsumoDeVoz.class, data);
+    public static Performable contadorDeUsoConsumoDeVoz() {
+        return instrumented(ContadorDeUsoConsumoDeVoz.class);
     }
 }

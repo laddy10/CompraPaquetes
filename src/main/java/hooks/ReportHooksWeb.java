@@ -44,14 +44,14 @@ public class ReportHooksWeb {
 
         System.out.println("🟢 Generando reporte Word con pasos: " + pasosEjecutados.size());
 
-        WordWeb.generarReporte(
+    /*    WordWeb.generarReporte(
                 scenario.getName(),
                 pasosEjecutados.toArray(new String[0]),
                 lineaUsada,
                 duracionFormato,
                 pasoFallido,
                 estadoFinal
-        );
+        ); */
 
         pasosEjecutados.clear();
         lineaUsada = "No definida";

@@ -7,6 +7,7 @@ import static utils.Constants.*;
 
 import interactions.WaitFor;
 import interactions.comunes.ValidateInformationText;
+import models.User;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -18,6 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
+import utils.TestDataProvider;
 
 import java.util.List;
 import java.util.Map;
@@ -25,11 +27,7 @@ import java.util.Map;
 public class ContadorDeUsoConsumoDeDatos implements Task {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ContadorDeUsoConsumoDeDatos.class);
-    private final Map<String, String> data;
-
-    public ContadorDeUsoConsumoDeDatos(Map<String, String> data) {
-        this.data = data;
-    }
+    private final User user = TestDataProvider.getRealUser();
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -52,7 +50,7 @@ public class ContadorDeUsoConsumoDeDatos implements Task {
         List<WebElementFacade> rows = TBL_CONTADORES_USO.resolveAllFor(actor);
         LOGGER.info("Filas encontradas en la tabla de contadores: {}", rows.size());
 
-        String paqueteEsperado = data.get("paqueteDatos");
+        String paqueteEsperado = user.getPaqueteDatos();
         boolean paqueteEncontrado = false;
 
         for (WebElementFacade row : rows) {
@@ -76,7 +74,7 @@ public class ContadorDeUsoConsumoDeDatos implements Task {
     }
 
     private void validarOfertaEnDetalle(Actor actor) {
-        String paqueteEsperado = data.get("paqueteDatos");
+        String paqueteEsperado = user.getPaqueteDatos();
 
         List<WebElementFacade> filas = TBL_VALORES_CONTADORES.resolveAllFor(actor);
         LOGGER.info("Filas encontradas en valores de contadores: {}", filas.size());
@@ -117,7 +115,7 @@ public class ContadorDeUsoConsumoDeDatos implements Task {
                 Scroll.to(LGO_CLARO)
         );
 
-        String nombrePaquete = data.get("paqueteDatos");
+        String nombrePaquete = user.getPaqueteDatos();
         String mensajeEvidencia = "Validar contadores de uso consumo de datos";
         if (nombrePaquete != null && !nombrePaquete.isEmpty()) {
             mensajeEvidencia += " - " + nombrePaquete;
@@ -126,7 +124,7 @@ public class ContadorDeUsoConsumoDeDatos implements Task {
         EvidenciaUtils.registrarCaptura(mensajeEvidencia);
     }
 
-    public static Performable contadorDeUsoConsumoDeDatos(Map<String, String> data) {
-        return instrumented(ContadorDeUsoConsumoDeDatos.class, data);
+    public static Performable contadorDeUsoConsumoDeDatos() {
+        return instrumented(ContadorDeUsoConsumoDeDatos.class);
     }
 }

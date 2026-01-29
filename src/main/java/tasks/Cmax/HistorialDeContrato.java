@@ -19,7 +19,7 @@ public class HistorialDeContrato implements Task {
     private final User user = TestDataProvider.getRealUser();
 
 
-    public static Performable historialDeContrato(Map<String, String> data) {
+    public static Performable historialDeContrato() {
         return Instrumented.instanceOf(HistorialDeContrato.class).withProperties();
     }
 

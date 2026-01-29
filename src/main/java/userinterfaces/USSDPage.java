@@ -1,6 +1,7 @@
 package userinterfaces;
 
 import io.appium.java_client.MobileBy;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 
@@ -8,7 +9,7 @@ public class USSDPage extends PageObject {
 
     public static final Target TECLADO_TELEFONO =
             Target.the("Teclado del telefono")
-                    .located(MobileBy.id("dialpad_fab"));
+                    .located(MobileBy.xpath("//*[@id='dialpad_fab']"));
 
     public static final Target BTN_LLAMAR =
             Target.the("Boton de marcar")
@@ -70,6 +71,14 @@ public class USSDPage extends PageObject {
     public static final Target MENSAJE_CON_LINK =
             Target.the("Texto de Actualizar")
                     .located(MobileBy.xpath("//*[@text='Compra Exitosa. Ya puedes disfrutar de tu paquete de 200 MB con Vig de 1 dias por $1500. Info clro.co/paquetes']"));
+
+    public static final Target MENSAJE_USSD_ANDROID =
+            Target.the("mensaje ussd android")
+                    .located(By.id("android:id/message"));
+
+    public static final Target MENSAJE_USSD_PHONE =
+            Target.the("mensaje ussd phone")
+                    .located(By.id("com.android.phone:id/ussd_message"));
 
 }
 

@@ -11,6 +11,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.questions.Presence;
 import utils.EvidenciaUtils;
+import utils.WordWeb;
 import utils.WordWebReport;
 
 public class AcumuladoresDeUso implements Task {
@@ -47,11 +48,8 @@ public class AcumuladoresDeUso implements Task {
             EvidenciaUtils.registrarCaptura("Se validan los acumuladores de uso pagina " + pagina++);
         }
 
-        WordWebReport.generarReporte(
-                System.getProperty("user.dir") + "/ruta/EXXO.docx"
-        );
 
-
+        WordWebReport.main();
 
     }
 

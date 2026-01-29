@@ -113,7 +113,9 @@ public class Constants {
   public static final String PAGOS_Y_RECARGAS = "Pagos y Recargas";
   public static final String AHORRA_Y_APROVECHA_MAXIMO = "¡Ahorra y aprovecha al máximo los paquetes TODO INCLUIDO";
   public static final String ELIGE_Y_COMPRA = "Elige y compra el paquete ideal para ti";
-
+  public static final String DISFRUTA_TUS_APP_MOVILES = "Disfruta tus aplicaciones móviles favoritas y navega";
+  public static final String CONECTADO = "conectado sin importar dónde te encuentres";
+  public static final String RECUERDA_TENER_SALDO = "Recuerda tener saldo disponible para la compra de este paquete";
 
     // Portal Cautivo
   public static final String USAR_SIN_UNA_CUENTA = "Usar sin una cuenta";

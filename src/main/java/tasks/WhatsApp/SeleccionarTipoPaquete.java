@@ -63,7 +63,7 @@ public class SeleccionarTipoPaquete implements Task {
 
         actor.attemptsTo(
                 WaitForTextContains.withAnyTextContains(
-                        ELIGE_TIPO_PAQUETE,AHORRA_Y_APROVECHA_MAXIMO)
+                        ELIGE_TIPO_PAQUETE, AHORRA_Y_APROVECHA_MAXIMO, DISFRUTA_TUS_APP_MOVILES, CONECTADO, RECUERDA_TENER_SALDO)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");

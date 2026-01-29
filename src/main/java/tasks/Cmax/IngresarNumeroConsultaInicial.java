@@ -16,13 +16,11 @@ import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
 import utils.TestDataProvider;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class IngresarNumeroConsultaInicial implements Task {
 
     private final User user = TestDataProvider.getRealUser();
-    private static final String paso = "Verificar el estado inicial de la línea";
+    private static final String paso = "Verificar el estado inicial de la linea";
 
 
     public static Performable ingresarNumeroConsultaInicial() {

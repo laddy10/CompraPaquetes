@@ -7,6 +7,7 @@ import static utils.Constants.*;
 
 import interactions.WaitFor;
 import interactions.comunes.ValidateInformationText;
+import models.User;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -18,6 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
+import utils.TestDataProvider;
 
 import java.util.List;
 import java.util.Map;
@@ -25,11 +27,7 @@ import java.util.Map;
 public class ContadorDeUsoConsumoDeSMS implements Task {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ContadorDeUsoConsumoDeSMS.class);
-    private final Map<String, String> data;
-
-    public ContadorDeUsoConsumoDeSMS(Map<String, String> data) {
-        this.data = data;
-    }
+    private final User user = TestDataProvider.getRealUser();
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -52,7 +50,7 @@ public class ContadorDeUsoConsumoDeSMS implements Task {
         List<WebElementFacade> rows = TBL_CONTADORES_USO.resolveAllFor(actor);
         LOGGER.info("Filas encontradas en la tabla de contadores: {}", rows.size());
 
-        String paqueteEsperado = data.get("paqueteSMS");
+        String paqueteEsperado = user.getPaqueteSMS();
         boolean paqueteEncontrado = false;
 
         for (WebElementFacade row : rows) {
@@ -76,7 +74,7 @@ public class ContadorDeUsoConsumoDeSMS implements Task {
     }
 
     private void validarOfertaEnDetalle(Actor actor) {
-        String paqueteEsperado = data.get("paqueteSMS");
+        String paqueteEsperado = user.getPaqueteSMS();
 
         List<WebElementFacade> filas = TBL_VALORES_CONTADORES.resolveAllFor(actor);
         LOGGER.info("Filas encontradas en valores de contadores: {}", filas.size());
@@ -115,7 +113,7 @@ public class ContadorDeUsoConsumoDeSMS implements Task {
                 Scroll.to(LGO_CLARO)
         );
 
-        String nombrePaquete = data.get("paqueteSMS");
+        String nombrePaquete = user.getPaqueteSMS();
         String mensajeEvidencia = "Validar contadores de uso consumo de SMS";
         if (nombrePaquete != null && !nombrePaquete.isEmpty()) {
             mensajeEvidencia += " - " + nombrePaquete;
@@ -124,7 +122,7 @@ public class ContadorDeUsoConsumoDeSMS implements Task {
         EvidenciaUtils.registrarCaptura(mensajeEvidencia);
     }
 
-    public static Performable contadorDeUsoConsumoDeSMS(Map<String, String> data) {
-        return instrumented(ContadorDeUsoConsumoDeSMS.class, data);
+    public static Performable contadorDeUsoConsumoDeSMS() {
+        return instrumented(ContadorDeUsoConsumoDeSMS.class);
     }
 }

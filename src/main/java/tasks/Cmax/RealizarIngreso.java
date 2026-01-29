@@ -29,7 +29,6 @@ public class RealizarIngreso implements Task {
         actor.attemptsTo(
                 Enter.theValue(user.getUsuario()).into(TXT_USUARIO),
                 Enter.theValue(user.getContrasena()).into(TXT_CONTRASENA),
-
                 Click.on(BTN_OK),
                 WaitFor.aTime(1000));
     }

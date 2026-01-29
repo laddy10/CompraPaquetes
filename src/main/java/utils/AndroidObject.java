@@ -485,17 +485,14 @@ public class AndroidObject extends Excepciones {
     }
 
 
-    public AndroidDriver getAndroidDriver(Actor actor) {
-        return androidDriver(actor);
-    }
-
-    private static WebDriverFacade getDriver(Actor actor) {
-        return ((WebDriverFacade) BrowseTheWeb.as(actor).getDriver());
+    public static AndroidDriver androidDriver(Actor actor) {
+        return (AndroidDriver) BrowseTheWeb.as(actor).getDriver();
     }
 
     public TouchAction withAction(Actor actor) {
-        return new TouchAction(androidDriver(actor));
+        return new TouchAction<>(androidDriver(actor));
     }
+
 
     public void SwitchtoFrame(Actor actor, int id) {
         androidDriver(actor).switchTo().frame(id);

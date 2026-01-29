@@ -94,9 +94,9 @@ public class CMAXDefinitions {
 
     @When("^Se ingresa el numero de la linea en consulta final$")
     public void seIngresaElNumeroDeLaLineaAConsultarConsultaFinal() {
-        ReportHooksWeb.setLineaDesdeData(data.get("Numero"));
+        ReportHooksWeb.setLineaDesdeData(user.getNumero());
         theActorInTheSpotlight()
-                .attemptsTo(IngresarNumeroConsultaFinal.ingresarNumeroConsultaFinal(data));
+                .attemptsTo(IngresarNumeroConsultaFinal.ingresarNumeroConsultaFinal());
 
     }
 
@@ -125,12 +125,12 @@ public class CMAXDefinitions {
 
     @When("^Se validan las ofertas activas$")
     public void seValidanLasOfertasActivas() {
-        theActorInTheSpotlight().attemptsTo(ValidarOfertas.validarOfertas(data));
+        theActorInTheSpotlight().attemptsTo(ValidarOfertas.validarOfertas());
     }
 
     @When("^Se valida el historial de contrato$")
     public void seValidaElHistorialDeContrato() {
-        theActorInTheSpotlight().attemptsTo(HistorialDeContrato.historialDeContrato(data));
+        theActorInTheSpotlight().attemptsTo(HistorialDeContrato.historialDeContrato());
     }
 
     @When("^Se validan los datos de compra$")
@@ -142,11 +142,12 @@ public class CMAXDefinitions {
     public void seVerificanFirmasYFactorMultiplicador() {
         theActorInTheSpotlight()
                 .attemptsTo(ValidarFirmaYFactorMultiplicador.validarFirmaYFactorMultiplicador());
+        WordWebReport.main();
     }
 
     @Then("^Validar contadores de uso consumo de voz$")
     public void validarContadoresDeUsoConsumoDeVoz() {
-        theActorInTheSpotlight().attemptsTo(ContadorDeUsoConsumoDeVoz.contadorDeUsoConsumoDeVoz(data));
+        theActorInTheSpotlight().attemptsTo(ContadorDeUsoConsumoDeVoz.contadorDeUsoConsumoDeVoz());
     }
 
     @Then("^Validar contadores de uso consumo iniciales$")
@@ -156,13 +157,13 @@ public class CMAXDefinitions {
 
     @Then("^Validar contadores de uso consumo de SMS$")
     public void validarContadoresDeUsoConsumoDeSMS() {
-        theActorInTheSpotlight().attemptsTo(ContadorDeUsoConsumoDeSMS.contadorDeUsoConsumoDeSMS(data));
+        theActorInTheSpotlight().attemptsTo(ContadorDeUsoConsumoDeSMS.contadorDeUsoConsumoDeSMS());
     }
 
 
     @Then("^Validar contadores de uso consumo de Datos$")
     public void validarContadoresDeUsoConsumoDeDatos() {
-        theActorInTheSpotlight().attemptsTo(ContadorDeUsoConsumoDeDatos.contadorDeUsoConsumoDeDatos(data));
+        theActorInTheSpotlight().attemptsTo(ContadorDeUsoConsumoDeDatos.contadorDeUsoConsumoDeDatos());
     }
 
     @When("^Se validan las cuentas dedicadas$")
@@ -179,6 +180,12 @@ public class CMAXDefinitions {
     public void cambiaAlContextoMovil() {
         theActorInTheSpotlight().attemptsTo(
                 SwitchToMobile.toApp("com.whatsapp", ".Main"));
+    }
+
+    @When("^cambia al contexto movil USSD$")
+    public void cambiaAlContextoMovilUSSD() {
+        theActorInTheSpotlight().attemptsTo(
+                SwitchToMobile.toApp("com.google.android.dialer", ".activities.CallLogActivity"));
     }
 
     @When("^abre WhatsApp$")

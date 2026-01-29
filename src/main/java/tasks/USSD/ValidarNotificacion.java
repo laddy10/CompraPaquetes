@@ -63,6 +63,8 @@ public class ValidarNotificacion extends AndroidObject implements Task {
 
         WordAppium.main();
 
+
+
         actor.attemptsTo(
                 WaitFor.aTime(25000));
 

@@ -1,116 +1,171 @@
 package utils;
 
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import javax.imageio.ImageIO;
+
+import freemarker.log.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.util.Units;
 import org.apache.poi.xwpf.usermodel.*;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.logging.Logger;
-
-/**
- * Genera un reporte en Word tomando imágenes de la carpeta /Capturas
- * y las inserta en un documento .docx existente.
- */
 public class WordWebReport {
 
-    private static final Logger LOGGER = Logger.getLogger(WordWebReport.class.getName());
+    private static final String EXISTING_DOCUMENT_PATH = System.getProperty("user.dir") + File.separator + "ruta" + File.separator + "EXXO.docx";
+    private static final String CAPTURAS_FOLDER_PATH = "Capturas/";
+    private static final String COPIA_FOLDER_PATH = "Copia/";
+    private static final Logger LOGGER = Logger.getLogger(WordAppium.class.getName());
+    private static Map<String, Integer> contadorPasos = new HashMap<>();
 
-    private static final String CAPTURAS_PATH = "Capturas/";
-    private static final String COPIA_PATH = "Copia/";
-    private static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("dd_MM_yyyy HH_mm_ss");
+    public static void main() {
+        crearCarpetaSiNoExiste(COPIA_FOLDER_PATH);
+        contadorPasos.clear();
 
-    /**
-     * Genera el reporte agregando todas las imágenes al documento Word indicado.
-     */
-    public static void generarReporte(String rutaDocumento) {
-        File carpetaCapturas = new File(CAPTURAS_PATH);
-        File[] archivosCaptura = carpetaCapturas.listFiles();
+        File docFile = new File(EXISTING_DOCUMENT_PATH);
 
-        if (archivosCaptura == null || archivosCaptura.length == 0) {
-            LOGGER.info("No hay capturas para agregar al reporte.");
+        if (!docFile.exists()) {
+            System.err.println("⚠️ Error: El documento EXXO.docx no existe en la ruta especificada.");
             return;
         }
 
-        try (FileInputStream fis = new FileInputStream(rutaDocumento);
+        File[] capturasFiles = new File(CAPTURAS_FOLDER_PATH).listFiles();
+        if (capturasFiles == null || capturasFiles.length == 0) {
+            LOGGER.info("📌 No hay imágenes para agregar al documento.");
+            return;
+        }
+
+        Arrays.sort(capturasFiles, (f1, f2) -> Long.compare(f1.lastModified(), f2.lastModified()));
+
+        try (FileInputStream fis = new FileInputStream(docFile);
              XWPFDocument document = new XWPFDocument(fis);
-             FileOutputStream fos = new FileOutputStream(rutaDocumento)) {
+             FileOutputStream outputStream = new FileOutputStream(EXISTING_DOCUMENT_PATH)) {
 
-            LOGGER.info("Insertando capturas en el reporte...");
-
-            for (File captura : archivosCaptura) {
-                agregarImagen(document, captura);
+            for (File capturaFile : capturasFiles) {
+                addImageToWordDocument(document, capturaFile);
+                moverArchivo(capturaFile, COPIA_FOLDER_PATH);
             }
 
-            document.write(fos);
-
-            LOGGER.info("Reporte actualizado correctamente.");
+            document.write(outputStream);
+            LOGGER.info("✅ Capturas agregadas y documento actualizado correctamente.");
 
         } catch (IOException | InvalidFormatException e) {
-            LOGGER.severe("Error generando reporte: " + e.getMessage());
+            System.err.println("❌ Error al procesar el documento:");
             e.printStackTrace();
         }
-
-        moverCapturas(archivosCaptura);
     }
 
-    /**
-     * Inserta una imagen como un párrafo nuevo en el documento Word.
-     */
-    private static void agregarImagen(XWPFDocument document, File imagen)
+    private static void addImageToWordDocument(XWPFDocument document, File capturaFile)
             throws IOException, InvalidFormatException {
 
-        XWPFParagraph paragraph = document.createParagraph();
-        paragraph.setSpacingAfter(200);
-
-        XWPFRun run = paragraph.createRun();
-        run.addBreak();
-
-        try (FileInputStream fis = new FileInputStream(imagen)) {
-            run.addPicture(
-                    fis,
-                    Document.PICTURE_TYPE_PNG,
-                    imagen.getName(),
-                    Units.toEMU(450),   // ancho px → EMU
-                    Units.toEMU(300)    // alto px → EMU
-            );
+        BufferedImage image = ImageIO.read(capturaFile);
+        if (image == null) {
+            System.err.println("⚠️ No se pudo leer la imagen: " + capturaFile.getName());
+            return;
         }
 
-        run.addBreak();
-        run.setText("Imagen: " + imagen.getName());
-        run.addBreak();
+        String fileName = capturaFile.getName();
+
+        // Quitar extensión
+        String paso = fileName.substring(0, fileName.lastIndexOf("."));
+
+        // 🔥 PATRÓN CORREGIDO: Elimina el formato específico de fecha/hora
+        // Formato: "texto 1 18 12 2025 12 31 22" (día mes día año hora min seg)
+        // Este patrón busca: número espacio número número espacio número número espacio número número número número espacio etc...
+        paso = paso.replaceAll("\\s+\\d{1,2}\\s+\\d{2}\\s+\\d{2}\\s+\\d{4}\\s+\\d{2}\\s+\\d{2}\\s+\\d{2}$", "");
+
+        // Patrón alternativo más flexible (por si los números no siempre tienen 2 dígitos)
+        if (paso.matches(".*\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+$")) {
+            paso = paso.replaceAll("\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+\\s+\\d+$", "");
+        }
+
+        // Limpiar espacios extras y caracteres especiales
+        paso = paso.replace("_", " ").replaceAll("\\s+", " ").trim();
+
+        if (paso.isEmpty()) {
+            paso = "Paso de prueba";
+        }
+
+        // Agregar contador para pasos repetidos
+        String pasoFinal = agregarContadorSiEsNecesario(paso);
+
+        // Crear párrafo del paso
+        XWPFParagraph pasoParagraph = document.createParagraph();
+        pasoParagraph.setAlignment(ParagraphAlignment.BOTH);
+        XWPFRun pasoRun = pasoParagraph.createRun();
+        pasoRun.setFontSize(12);
+        pasoRun.setText(pasoFinal);
+
+        // Calcular dimensiones
+        int[] dimensiones = resizeImageDimensions(image.getWidth(), image.getHeight(), 19.05, 11.31);
+
+        // Agregar imagen
+        try (InputStream inputStream = new FileInputStream(capturaFile)) {
+            XWPFParagraph imageParagraph = document.createParagraph();
+            imageParagraph.setAlignment(ParagraphAlignment.CENTER);
+            XWPFRun imageRun = imageParagraph.createRun();
+            imageRun.addPicture(inputStream, Document.PICTURE_TYPE_JPEG, capturaFile.getName(),
+                    Units.toEMU(dimensiones[0]), Units.toEMU(dimensiones[1]));
+        }
+
+        document.createParagraph();
+
+        // Debug: mostrar qué se procesó
+        LOGGER.info("📝 Archivo: " + fileName + " → Paso: " + pasoFinal);
     }
 
-    /**
-     * Mueve las capturas a una carpeta de respaldo después de generar el reporte.
-     */
-    private static void moverCapturas(File[] archivos, String destinoPath) {
-        moverCapturas(archivos);
+    private static String agregarContadorSiEsNecesario(String pasoBase) {
+        String pasoNormalizado = pasoBase.toLowerCase().trim();
+
+        contadorPasos.put(pasoNormalizado, contadorPasos.getOrDefault(pasoNormalizado, 0) + 1);
+        int numeroOcurrencia = contadorPasos.get(pasoNormalizado);
+
+        if (numeroOcurrencia == 1) {
+            return pasoBase;
+        }
+
+        return pasoBase + " - Página " + numeroOcurrencia;
     }
 
-    private static void moverCapturas(File[] archivos) {
+    private static int[] resizeImageDimensions(int originalWidth, int originalHeight, double maxCmWidth, double maxCmHeight) {
+        int maxWidthPx = (int) (maxCmWidth * 28.3464567);
+        int maxHeightPx = (int) (maxCmHeight * 28.3464567);
 
-        File carpetaDestino = new File(COPIA_PATH);
-        if (!carpetaDestino.exists()) {
-            carpetaDestino.mkdirs();
+        if (originalWidth <= maxWidthPx && originalHeight <= maxHeightPx) {
+            return new int[]{originalWidth, originalHeight};
         }
 
-        for (File archivo : archivos) {
-            try {
-                Files.move(
-                        archivo.toPath(),
-                        new File(carpetaDestino, archivo.getName()).toPath(),
-                        StandardCopyOption.REPLACE_EXISTING
-                );
-            } catch (IOException e) {
-                LOGGER.warning("Error moviendo archivo: " + archivo.getName());
-                e.printStackTrace();
-            }
+        double aspectRatio = (double) originalWidth / originalHeight;
+        int adjustedWidth, adjustedHeight;
+
+        if (aspectRatio >= 1) {
+            adjustedWidth = maxWidthPx;
+            adjustedHeight = (int) (maxWidthPx / aspectRatio);
+        } else {
+            adjustedWidth = (int) (maxHeightPx * aspectRatio);
+            adjustedHeight = maxHeightPx;
         }
 
-        LOGGER.info("Capturas movidas a la carpeta de copia.");
+        return new int[]{adjustedWidth, adjustedHeight};
+    }
+
+    private static void moverArchivo(File archivo, String destino) {
+        try {
+            Files.move(archivo.toPath(), new File(destino + archivo.getName()).toPath(), StandardCopyOption.REPLACE_EXISTING);
+            LOGGER.info("📂 Archivo movido a: " + destino);
+        } catch (IOException e) {
+            System.err.println("❌ Error al mover archivo: " + archivo.getName());
+        }
+    }
+
+    private static void crearCarpetaSiNoExiste(String ruta) {
+        File carpeta = new File(ruta);
+        if (!carpeta.exists()) {
+            carpeta.mkdirs();
+        }
     }
 }

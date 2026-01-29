@@ -46,12 +46,13 @@ public class RealizarLlamada implements Task {
 
         actor.attemptsTo(
                 ClickElementByText.clickElementByText("Teclado"),
-               // Click.on(TECLADO_TELEFONO),
+                //Click.on(TECLADO_TELEFONO),
                 Enter.theValue(numero).into(By.id("digits")));
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
 
         actor.attemptsTo(
+                //ClickElementByText.clickElementByText("Llamar"),
                 Click.on(BTN_LLAMAR),
                 WaitUntil.the(IMG_ESPERA, isNotPresent()));
 

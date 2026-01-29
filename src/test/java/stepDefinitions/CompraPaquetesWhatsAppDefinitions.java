@@ -107,18 +107,19 @@ public class CompraPaquetesWhatsAppDefinitions {
     @And("^Ingresar al boton Selecciona paquete Relevo$")
     public void ingresarBotonSeleccionaPqRelevo() {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(BTN_SELECCIONA_PQ_RELEVO),
+                EsperarYClickSeleccionaEnUltimoMensaje.conTimeout(20),
+               // Click.on(BTN_SELECCIONA_PQ_RELEVO),
                 WaitFor.aTime(2000));
     }
 
     @And("^Seleccionar el paquete de Apps$")
-    public void seleccionarPqApps(List<User> credentials) {
-        theActorInTheSpotlight().attemptsTo(SeleccionarPqApps.seleccionarPqApps(credentials.get(0)));
+    public void seleccionarPqApps() {
+        theActorInTheSpotlight().attemptsTo(SeleccionarPqApps.seleccionarPqApps());
     }
 
     @And("^Seleccionar el paquete internacional$")
-    public void seleccionarPqInternacional(List<User> credentials) {
-        theActorInTheSpotlight().attemptsTo(SeleccionarPqInternacional.seleccionarPqInternacional(credentials.get(0)));
+    public void seleccionarPqInternacional() {
+        theActorInTheSpotlight().attemptsTo(SeleccionarPqInternacional.seleccionarPqInternacional());
     }
 
     @And("^Seleccionar el paquete de compra$")
@@ -140,7 +141,8 @@ public class CompraPaquetesWhatsAppDefinitions {
     @And("^Realizar la compra de paquetes datos$")
     public void realizarCompraPaqueteDtos() {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(BTN_SELECCIONA_PQ_DATOS),
+                EsperarYClickSeleccionaEnUltimoMensaje.conTimeout(20),
+                //Click.on(BTN_SELECCIONA_PQ_DATOS),
                 WaitFor.aTime(3000),
                 SeleccionarPaqueteCompra.comprarPaqueteVoz());
     }

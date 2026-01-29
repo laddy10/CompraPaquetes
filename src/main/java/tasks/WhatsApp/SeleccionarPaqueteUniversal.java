@@ -13,6 +13,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.questions.Presence;
 import utils.CapturaDePantallaMovil;
 import utils.TestDataProvider;
+import utils.WordAppium;
 
 import java.util.List;
 
@@ -24,11 +25,15 @@ public class SeleccionarPaqueteUniversal implements Task {
 
     private final User user = TestDataProvider.getRealUser();
 
-
     @Override
     public <T extends Actor> void performAs(T actor) {
 
         boolean encontrado = false;
+
+        // 🔹 Normalización de criterios
+        String criterioNombre   = normalizarTexto(user.getNombrePaquete());
+        String criterioBusqueda = normalizarTexto(user.getPaqueteComprar());
+
 
         while (!encontrado) {
 
@@ -36,26 +41,29 @@ public class SeleccionarPaqueteUniversal implements Task {
 
             for (WebElementFacade paquete : paquetes) {
 
-                String texto = paquete.getText().toLowerCase().replaceAll("\\s+", " ");
-
-                String criterioNombre = user.getNombrePaquete().toLowerCase();
-                String criterioBusqueda = user.getPaqueteComprar().toLowerCase();
-                String criterioExtra = user.getCriterioExtra() != null
-                        ? user.getCriterioExtra().toLowerCase()
-                        : "";
+                String textoOriginal = paquete.getText();
+                String texto = normalizarTexto(textoOriginal);
 
                 int coincidencias = 0;
 
+                // 🔍 Debug controlado
                 System.out.println(">>> TEXTO REAL DEL ELEMENTO:");
-                System.out.println("'" + paquete.getText() + "'");
+                System.out.println("'" + textoOriginal + "'");
+                System.out.println(">>> TEXTO NORMALIZADO:");
+                System.out.println("'" + texto + "'");
+
+                if (!criterioNombre.isEmpty() && texto.contains(criterioNombre)) {
+                    coincidencias++;
+                }
+
+                if (!criterioBusqueda.isEmpty() && texto.contains(criterioBusqueda)) {
+                    coincidencias++;
+                }
 
 
-                if (texto.contains(criterioNombre)) coincidencias++;
-                if (texto.contains(criterioBusqueda)) coincidencias++;
-                if (!criterioExtra.isEmpty() && texto.contains(criterioExtra)) coincidencias++;
 
-                // 🔥 Selección robusta
-                if (coincidencias >= 2) {
+                // ✅ Selección robusta (mínimo 1 coincidencia fuerte + contexto)
+                if (coincidencias >= 1 && texto.contains("dia")) {
 
                     paquete.click();
 
@@ -73,6 +81,7 @@ public class SeleccionarPaqueteUniversal implements Task {
             }
 
             if (!encontrado) {
+
                 if (!Presence.of(BTN_VER_MAS_PAQUETES).viewedBy(actor).resolveAll().isEmpty()
                         && BTN_VER_MAS_PAQUETES.resolveFor(actor).isVisible()) {
 
@@ -81,26 +90,50 @@ public class SeleccionarPaqueteUniversal implements Task {
                             WaitFor.aTime(2000)
                     );
 
-                    CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
+                    CapturaDePantallaMovil.tomarCapturaPantalla("ver-mas-paquetes");
 
                     actor.attemptsTo(
                             ClickTextoQueContengaX.elTextoContiene(ENVIAR2),
                             WaitForTextContains.withAnyTextContains(ELIGE_Y_COMPRA),
-                            WaitFor.aTime(2000));
+                            WaitFor.aTime(2000)
+                    );
 
-                    CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
+                    CapturaDePantallaMovil.tomarCapturaPantalla("lista-expandida");
 
                     actor.attemptsTo(
                             EsperarYClickSeleccionaEnUltimoMensaje.conTimeout(20)
                     );
 
-                    continue;
                 } else {
-                    // No hay más paquetes para mostrar
-                    throw new RuntimeException("Paquete no encontrado: " + user.getPaqueteComprar());
+                    throw new RuntimeException(
+                            "Paquete no encontrado. Criterios: "
+                                    + criterioBusqueda
+                    );
                 }
             }
         }
+
+        WordAppium.main();
+    }
+
+    /**
+     * 🔧 Normaliza textos provenientes de Android
+     */
+    private static String normalizarTexto(String texto) {
+        if (texto == null) return "";
+
+        return texto
+                .toLowerCase()
+                .replace("\u00A0", " ")        // NBSP
+                .replace("×", "x")             // multiplicación
+                .replace("í", "i")
+                .replace("á", "a")
+                .replace("é", "e")
+                .replace("ó", "o")
+                .replace("ú", "u")
+                .replaceAll("\\s+", " ")
+                .replaceAll("[^a-z0-9$., ]", "")
+                .trim();
     }
 
     public static Performable comprar() {

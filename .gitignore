@@ -6,7 +6,8 @@ null/
 
 # Gradle files
 .gradle
-build/
+/build/
+/target/
 gradlew.bat
 # Compiled class file
 *.class
@@ -59,6 +60,7 @@ log/
 
 #Capturas de pantalla
 Capturas/
+Copia/
 
 
 #APK

@@ -1,5 +1,6 @@
 package tasks.USSD;
 
+import interactions.comunes.ObtenerTextoUSSD;
 import interactions.comunes.ValidarTextoQueContengaX;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -34,9 +35,11 @@ public class SeleccionarCompraPaquetes implements Task {
                 ValidarTextoQueContengaX.elTextoContiene(VIGENCIA)
         );
 
-        String textoMenuPrincipal = Text.of(Target.the("menu principal").located(By.id("android:id/message")))
+        String textoMenuPrincipal = ObtenerTextoUSSD.obtener(actor);
+
+        /* String textoMenuPrincipal = Text.of(Target.the("menu principal").located(By.id("android:id/message")))
                 .viewedBy(actor)
-                .asString();
+                .asString(); */
         //  System.out.println("Texto del menú: " + textoMenuPrincipal);
 
         int opcionCompraPaquetes = obtenerNumeroOpcion(textoMenuPrincipal, option);

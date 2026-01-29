@@ -57,9 +57,10 @@ public class MyDriver implements DriverSource {
             capabilities.setCapability("platformName", MOTO_E20.getOperatingSystem());
             capabilities.setCapability("automationName", "UiAutomator2");
             capabilities.setCapability("autoGrantPermissions", "true");
-            capabilities.setCapability("reset", "false");
-            capabilities.setCapability("noReset", "false");
-            capabilities.setCapability("autoDismissAlerts", "true");
+            capabilities.setCapability("fullReset", false);
+            capabilities.setCapability("noReset", "true");
+            capabilities.setCapability("autoDismissAlerts", "true");;
+
             // return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
             System.out.println("Ejecutando con: " + appType);

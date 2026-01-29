@@ -7,6 +7,7 @@ import static utils.Constants.*;
 
 import interactions.WaitElement;
 import interactions.WaitFor;
+import models.User;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -20,6 +21,7 @@ import org.slf4j.LoggerFactory;
 import interactions.comunes.ValidateInformationText;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
+import utils.TestDataProvider;
 
 import java.util.List;
 import java.util.Map;
@@ -28,11 +30,7 @@ public class ValidarOfertas implements Task {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ValidarOfertas.class);
 
-    private final Map<String, String> data;
-
-    public ValidarOfertas(Map<String, String> data) {
-        this.data = data;
-    }
+    private final User user = TestDataProvider.getRealUser();
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -74,7 +72,7 @@ public class ValidarOfertas implements Task {
     }
 
     private void buscarYSeleccionarPaquete(Actor actor) {
-        String paqueteBuscado = data.get("paquete");
+        String paqueteBuscado = user.getPaqueteCMAX();
         LOGGER.info("Buscando paquete: '{}'", paqueteBuscado);
 
         List<WebElementFacade> filas = TBL_OFERTAS.resolveAllFor(actor);
@@ -112,7 +110,7 @@ public class ValidarOfertas implements Task {
         }
     }
 
-    public static Performable validarOfertas(Map<String, String> data) {
-        return instrumented(ValidarOfertas.class, data);
+    public static Performable validarOfertas() {
+        return instrumented(ValidarOfertas.class);
     }
 }

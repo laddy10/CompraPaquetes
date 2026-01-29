@@ -17,6 +17,7 @@ import net.serenitybdd.screenplay.questions.Presence;
 import tasks.WhatsApp.EsperarYClickSeleccionaEnUltimoMensaje;
 import utils.CapturaDePantallaMovil;
 import utils.TestDataProvider;
+import utils.WordAppium;
 
 import java.util.List;
 
@@ -101,9 +102,7 @@ public class ComprarPaqueteTodoIncluido implements Task {
                 }
             }
         }
-
-        OnStage.theActorInTheSpotlight().abilityTo(BrowseTheWeb.class).getDriver().quit();
-
+        WordAppium.main();
     }
 
 

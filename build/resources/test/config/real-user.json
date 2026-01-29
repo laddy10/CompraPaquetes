@@ -1,14 +1,26 @@
 {
   "usuario": "45111410",
-  "contrasena": "nef18@-ALE",
-  "numero": "3102223558",
+  "contrasena": "ALE@nef18*",
+  "numero": "3507671166",
+
+
   "numeroWhatsApp": "3558",
-  "tipoPaquete": "Paq. todo incluido",
-  "paqueteComprar": "$2.500 x 1 Día",
-  "nombrePaquete": "50MB + WhatsApp + 50 minutos a destinos nacionales",
-  "fecha": "05-dic-2025",
-  "valorBuscado": "3.500,00 COP",
+
+  "tipoPaquete": "Paquete Todo Incluido",
+  "paqueteComprar": "$5000 3 Dias 400MB+WFX+Voz",
+
+  "nombrePaquete": "Centro Relevo + SMS Ilimitados + WhatsApp, Facebook, Twitter + 2.5GB",
+  "paquete": "Paq. LDI Preferencial",
+
+
+  "fecha": "29-ene-2026",
+  "valorBuscado": "5.000,00 COP",
+  "paqueteCMAX": "Todo Incluido + 400MB + WTF 3 Dias de Salud en Linea 4 beneficiarios",
+
+
+  "paqueteVoz": "Todo Incluido Voz Ilimitados Vig 30 dias",
+  "paqueteDatos": "Todo Incluido Voz Ilimitados Vig 30 dias",
+  "paqueteSMS": "Todo Incluido SMS Ilimitados Vig 30 dias",
+
   "criterioExtra": "30GB"
-
-
 }
