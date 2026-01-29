@@ -12,7 +12,8 @@ gradlew.bat
 # Compiled class file
 *.class
 
-# Log Files
+# Logs
+*.log
 *.log.*
 
 # IntelliJ
