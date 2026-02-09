@@ -40,7 +40,7 @@ public class Constants {
   public static final String ACERCA_DE = "Acerca de";
   public static final String RECARGAS_Y_PAQUETES = "Recargas y paquetes";
   public static final String DECLARACION_SERVICIO = "Declaración de Servicio";
-  public static final String VERSION = "Ver";
+  public static final String VERSION = "Versión";
   public static final String PERFIL = "Perfil";
   public static final String MUNDO_CLARO = "Mundo Claro";
   public static final String COMPRA_PAQUETES_Y_RECARGAS = "Comprar paquetes y recargas";
@@ -56,6 +56,9 @@ public class Constants {
   public static final String TERMINOS_Y_CONDICIONES = "términos y condiciones";
   public static final String PAGAR = "Pagar";
   public static final String CLARO_2 = "CLARO";
+  public static final String INICIAR_SESION = "Iniciar sesión";
+  public static final String ACEPTAR_2 = "Aceptar";
+  public static final String TUS_SERVICIOS_FAVORITOS = "Tus servicios favoritos";
 
 
 

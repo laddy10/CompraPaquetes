@@ -25,13 +25,11 @@ import utils.CapturaDePantallaMovil;
 
 public class SeleccionarLineaDeCompra extends AndroidObject implements Task {
 
-    User addCredentials;
+    private final User user = utils.TestDataProvider.getRealUser();
 
     private AppiumDriver<AndroidElement> driver;
+    String numeroConEspacios = formatearNumeroConEspacios(user.getNumero());
 
-    public SeleccionarLineaDeCompra(User addCredentials) {
-        this.addCredentials = addCredentials;
-    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -40,15 +38,16 @@ public class SeleccionarLineaDeCompra extends AndroidObject implements Task {
                 ClickElementByText.clickElementByText(PREPAGO)
         );
 
-        scrollCorto2(actor, LINEA_SA + " " + addCredentials.getNumero() + " " + ELEGIR);
+        scrollCorto2(actor, LINEA_SA + " " + user.getNumero() + " " + ELEGIR);
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
                 WaitFor.aTime(2000),
-                ClickTextoQueContengaX.elTextoContiene(addCredentials.getNumero()),
+                ClickTextoQueContengaX.elTextoContiene(user.getNumero()),
                 WaitForResponse.withText(COMPRA_PAQUETES_RECARGAS)
         );
+
 
         theActorInTheSpotlight()
                 .should(
@@ -76,7 +75,7 @@ public class SeleccionarLineaDeCompra extends AndroidObject implements Task {
                 Atras.irAtras(),
                 ClickElementByText.clickElementByText(PAQUETES),
                 WaitForResponse.withText(ELIGE_TIPO_PAQUETE),
-                ValidarTextoQueContengaX.elTextoContiene(addCredentials.getNumero())
+                ValidarTextoQueContengaX.elTextoContiene(user.getNumero())
         );
 
 
@@ -87,9 +86,15 @@ public class SeleccionarLineaDeCompra extends AndroidObject implements Task {
                 Click.on(CBX_TIPO_PAQUETE),
                 WaitForResponse.withText(TIPO_PAQUETE)
         );
+
+
     }
 
-    public static Performable seleccionarLineaDeCompra(User addCredentials) {
-        return instrumented(SeleccionarLineaDeCompra.class, addCredentials);
+    private String formatearNumeroConEspacios(String numero) {
+        return numero.replaceAll("(\\d{3})(\\d{3})(\\d+)", "$1 $2 $3");
+    }
+
+    public static Performable seleccionarLineaDeCompra() {
+        return instrumented(SeleccionarLineaDeCompra.class);
     }
 }

@@ -1,6 +1,7 @@
 package userinterfaces;
 
 import io.appium.java_client.MobileBy;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageObject;
 
@@ -80,8 +81,9 @@ public class SegmentoPage extends PageObject {
               MobileBy.xpath(
                   "//android.widget.Button[@text=\"Paquetes todo incluido con redes\"]"));
 
-   public static final Target LBL_ENCABEZADO_USUARIO =
-      Target.the("Label Encabezado de usuario").located(MobileBy.id("home_user_name_tv"));
+  public static final Target LBL_ENCABEZADO_USUARIO =
+          Target.the("Label Encabezado de usuario").located(By.id("profile_welcome_title"));
+
   public static final Target LOGO_ESPERA_CLARO =
       Target.the("Logo de espera Claro en la seccion de categorias")
           .located(MobileBy.id("com.clarocolombia.miclaro:id/imgLoadingInfoTitle"));
@@ -225,4 +227,42 @@ public class SegmentoPage extends PageObject {
                   .located(
                           MobileBy.xpath("(//android.widget.ImageView[@resource-id=\"com.clarocolombia.miclaro:id/page\"])[1]"));
 
+  public static final Target BTN_COMPRAR_PAQUETE_DINAMICO =
+          Target.the("Boton Comprar del paquete {0} con precio {1}")
+                  .locatedBy("//android.view.ViewGroup[.//android.widget.TextView[contains(@text, '{0}')] and .//android.widget.TextView[contains(@text, '{1}')]]//android.widget.Button[@text='Comprar']");
+
+  public static final Target LBL_VER_DETALLE_PAQUETE_DINAMICO =
+          Target.the("Link Ver detalle del paquete {0} con precio {1}")
+                  .locatedBy("//android.view.ViewGroup[.//android.widget.TextView[contains(@text, '{0}')] and .//android.widget.TextView[contains(@text, '{1}')]]//android.widget.Button[contains(@text, 'Ver detalle')]");
+
+  public static final Target CONTENEDOR_PAQUETE_DINAMICO =
+          Target.the("Contenedor del paquete {0} con precio {1}")
+                  .locatedBy("//android.view.ViewGroup[.//android.widget.TextView[contains(@text, '{0}')] and .//android.widget.TextView[contains(@text, '{1}')]]");
+
+  public static final Target BTN_SIGUIENTE_PAGINACION =
+          Target.the("Botón Siguiente Paginación")
+                  .located(MobileBy.xpath("//android.widget.TextView[@text=''] | //android.view.View[contains(@content-desc, 'Next')] | //android.widget.TextView[contains(@text, '>')]")); // Ajustar selector según inspección real, pongo varios posibles estandares
+
+  public static final Target BTN_OTROS_METODOS_INGRESO =
+          Target.the("Boton Otros métodos de ingreso")
+                  .located(By.xpath("//*[@text='Otros métodos de ingreso']"));
+
+  public static final Target LBL_BIENVENIDA =
+          Target.the("Texto ¡Te damos la bienvenida!")
+                  .located(By.xpath("//*[@text='¡Te damos la bienvenida!']"));
+  public static final Target CHECK_TC =
+          Target.the("Check Acepto los términos y condiciones, el tratamiento de mis datos")
+                  .located(By.id("iv_protocol"));
+  public static final Target TXT_AUTORIZACION_VELOCIDAD_2 =
+          Target.the("Texto Autorización para Medición de Velocidad")
+                  .located(By.xpath("//*[@text='Autorización para Medición de Velocidad']"));
+
+  public static final Target LBL_TUS_SERVICIOS_FAVORITOS =
+          Target.the("Label Tus servicios favoritos").located(By.id("card_mini_program_title_tv"));
+  public static final Target BTN_CONTINUAR =
+          Target.the("Botón continuar con cuenta activa").located(By.id("login_entry_next"));
+  public static final Target BTN_MENU_HAMBURGUESA =
+          Target.the("Boton menu hamburguesa").located(By.id("iv_menu"));
+  public static final Target BTN_CERRAR_X =
+          Target.the("Boton menu hamburguesa").located(By.id("iv_close"));
 }

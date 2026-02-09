@@ -3,6 +3,7 @@ package models;
 public class User {
 
 
+    private String id;
     private String usuario;
     private String contrasena;
     private String numeroWhatsApp;
@@ -31,7 +32,16 @@ public class User {
     private String paqueteDatos;
     private String paqueteSMS;
     private String criterioExtra;
+    private String cedula;
 
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUsuario() {
         return usuario;
@@ -242,5 +252,14 @@ public class User {
     public void setPaqueteSMS(String paqueteSMS) {
         this.paqueteSMS = paqueteSMS;
     }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
 
 }

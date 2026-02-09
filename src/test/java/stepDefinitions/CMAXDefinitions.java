@@ -188,6 +188,13 @@ public class CMAXDefinitions {
                 SwitchToMobile.toApp("com.google.android.dialer", ".activities.CallLogActivity"));
     }
 
+     @And("^cambia al contexto movil mi claro app$")
+    public void cambiaAlContextoMovilMiClaroApp() {
+        theActorInTheSpotlight().attemptsTo(
+                SwitchToMobile.toApp("com.clarocolombia.miclaro", "com.claro.superapp.SplashActivity"));
+    }
+
+
     @When("^abre WhatsApp$")
     public void abreWhatsApp() {
         theActorInTheSpotlight().attemptsTo(

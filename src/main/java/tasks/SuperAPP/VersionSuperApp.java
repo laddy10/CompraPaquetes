@@ -7,36 +7,37 @@ import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
 import utils.CapturaDePantallaMovil;
+import utils.TestDataProvider;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.SegmentoPage.BTN_CERRAR_X;
+import static userinterfaces.SegmentoPage.BTN_MENU_HAMBURGUESA;
 import static utils.Constants.*;
 
 
 public class VersionSuperApp implements Task {
 
-    private final User addCredentials;
-
-    public VersionSuperApp(User addCredentials) {
-        this.addCredentials = addCredentials;
-    }
+    private final User user = TestDataProvider.getRealUser();
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(PERFIL),
-                ValidarTexto.validarTexto(addCredentials.getNombreUsuario()),
-                ValidarTextoQueContengaX.elTextoContiene(VERSION));
+                Click.on(BTN_MENU_HAMBURGUESA),
+                ValidarTexto.validarTexto(user.getNombreUsuario()),
+                ValidarTextoQueContengaX.elTextoContiene(VERSION)
+        );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
-                ClickTextoQueContengaX.elTextoContiene(MUNDO_CLARO)
+                Click.on(BTN_CERRAR_X)
         );
 
     }
 
-    public static Performable validarVersion(User addCredentials) {
-        return instrumented(VersionSuperApp.class, addCredentials);
+    public static Performable validarVersion() {
+        return instrumented(VersionSuperApp.class);
     }
 }
