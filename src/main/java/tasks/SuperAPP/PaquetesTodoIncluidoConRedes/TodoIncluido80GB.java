@@ -1,8 +1,8 @@
 package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.*;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickElementByText;
@@ -12,7 +12,6 @@ import interactions.scroll.Scroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
 
@@ -26,23 +25,19 @@ public class TodoIncluido80GB extends AndroidObject implements Task {
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
-                ClickTextoQueContengaX.elTextoContiene(ULTIMO)
-        );
-
-        scrollCorto2(actor, "$ 100.000");
-
-        actor.attemptsTo(
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                ValidarTexto.validarTexto(PRECIO_$100000),
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(
-                        "Este paquete Todo Incluido incluye 80GB, ilimitados de Minutos + WhatsApp, Facebook y Twitter, Vigencia 30 dias.")
+                        TODO_INCLUIDO_30DIAS_80GB)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
-                Click.on(BTN_COMPRAR_2),
+                ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 100.000")
+                ValidarTexto.validarTexto(PRECIO_$100000)
         );
     }
 

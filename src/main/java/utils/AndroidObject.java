@@ -217,7 +217,6 @@ public class AndroidObject extends Excepciones {
 
     public void scrollCorto2(Actor actor, String textoOpcional) {
         int intentosMaximos = 10;
-        boolean textoEncontrado = false;
 
         try {
             AndroidDriver<MobileElement> driver = androidDriver(actor);
@@ -272,7 +271,7 @@ public class AndroidObject extends Excepciones {
                     //  **Realizamos un scroll controlado**
                     System.out.println(" Realizando scroll, intento #" + intento);
                     swipeVertical(actor, 0.7, 0.5, 0.3);
-                    Thread.sleep(800);
+                    Thread.sleep(600);
 
                 } catch (Exception e) {
                     System.out.println(" Error en el intento de scroll #" + intento);

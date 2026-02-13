@@ -2,6 +2,8 @@ package tasks.SuperAPP.PaquetesDeDatos;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
+import static utils.ConstantsPaquetes.NAVEGACION_800MB_3DIAS;
+import static utils.ConstantsPaquetes.PRECIO_$5000;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickElementByText;
@@ -22,10 +24,10 @@ public class Navegacion800MBWhatsappFacebookTwitter3Dia implements Task {
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
-                ValidarTexto.validarTexto("$ 4.500"),
+                ValidarTexto.validarTexto(PRECIO_$5000),
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(
-                        "Navegación 800MB+WhatsApp, Facebook y Twitter sin descontar de la capacidad incluida, Vigencia 3 Días")
+                        NAVEGACION_800MB_3DIAS)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -33,7 +35,7 @@ public class Navegacion800MBWhatsappFacebookTwitter3Dia implements Task {
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 4.500"));
+                ValidarTexto.validarTexto(PRECIO_$5000));
     }
 
     public static Performable navegacion800MBWhatsappFacebookTwitter3Dia() {

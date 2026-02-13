@@ -3,6 +3,8 @@ package tasks.SuperAPP.PaquetesTodoIncluido;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.ConstantsPaquetes.PRECIO_$23000;
+import static utils.ConstantsPaquetes.TODO_INCLUIDO_15DIAS_20GB;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ValidarTexto;
@@ -18,12 +20,12 @@ public class TodoIncluido15DiasMinIlim20GBNoIncluyeRedes extends AndroidObject i
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        scrollCorto2(actor, "Este paquete Todo Incluido incluye 20GB, ilimitados en Minutos y SMS , Vigencia 15 dias");
+        scrollCorto2(actor, TODO_INCLUIDO_15DIAS_20GB);
 
         actor.attemptsTo(
                 Click.on(LBL_VER_DETALLE_1),
                 ValidarTexto.validarTexto(
-                        "Este paquete Todo Incluido incluye 20GB, ilimitados en Minutos y SMS , Vigencia 15 dias")
+                        TODO_INCLUIDO_15DIAS_20GB)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -32,7 +34,7 @@ public class TodoIncluido15DiasMinIlim20GBNoIncluyeRedes extends AndroidObject i
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 22.000"));
+                ValidarTexto.validarTexto(PRECIO_$23000));
     }
 
     public static Performable todoIncluido15DiasMinIlim20GBNoIncluyeRedes() {

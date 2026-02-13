@@ -1,12 +1,16 @@
 package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
+import interactions.WaitForResponse;
+import interactions.scroll.ScrollAndClick;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import utils.AndroidObject;
+import utils.CapturaDePantallaMovil;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static utils.AdbUtils.ejecutarAdbTap;
+import static utils.ConstantsPaquetes.PAQUETES_TODO_INCLUIDO_CON_REDES;
+
 
 public class PaqueteTodoIncluidoConRedes extends AndroidObject implements Task {
 
@@ -14,11 +18,15 @@ public class PaqueteTodoIncluidoConRedes extends AndroidObject implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        ejecutarAdbTap(373, 1216);  // Simula un toque en las coordenadas
+        actor.attemptsTo(
+                ScrollAndClick.scrollAndClick(PAQUETES_TODO_INCLUIDO_CON_REDES),
+                WaitForResponse.withText(PAQUETES_TODO_INCLUIDO_CON_REDES)
+        );
 
+        CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
     }
 
-    public static Performable PaqueteTodoIncluidoConRedes() {
+    public static Performable paqueteTodoIncluidoConRedes() {
         return instrumented(PaqueteTodoIncluidoConRedes.class);
     }
 }

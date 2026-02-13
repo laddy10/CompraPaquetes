@@ -28,7 +28,6 @@ public class SeleccionarLineaDeCompra extends AndroidObject implements Task {
     private final User user = utils.TestDataProvider.getRealUser();
 
     private AppiumDriver<AndroidElement> driver;
-    String numeroConEspacios = formatearNumeroConEspacios(user.getNumero());
 
 
     @Override
@@ -44,7 +43,9 @@ public class SeleccionarLineaDeCompra extends AndroidObject implements Task {
 
         actor.attemptsTo(
                 WaitFor.aTime(2000),
-                ClickTextoQueContengaX.elTextoContiene(user.getNumero()),
+               // ClickElementByText.clickElementByText(LINEA_SA + " " + user.getNumero() + " " + ELEGIR),
+               // ClickElementByText.clickElementByText("Línea 350 767 1166 Elegir"),
+                ClickTextoQueContengaX.elTextoContiene("350 767 1166"),
                 WaitForResponse.withText(COMPRA_PAQUETES_RECARGAS)
         );
 
@@ -88,10 +89,6 @@ public class SeleccionarLineaDeCompra extends AndroidObject implements Task {
         );
 
 
-    }
-
-    private String formatearNumeroConEspacios(String numero) {
-        return numero.replaceAll("(\\d{3})(\\d{3})(\\d+)", "$1 $2 $3");
     }
 
     public static Performable seleccionarLineaDeCompra() {

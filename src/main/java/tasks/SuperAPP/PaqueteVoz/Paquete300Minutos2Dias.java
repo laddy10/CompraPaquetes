@@ -13,6 +13,8 @@ import utils.CapturaDePantallaMovil;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.ConstantsPaquetes.PAQUETE_300M_2DIAS;
+import static utils.ConstantsPaquetes.PRECIO_$3000;
 
 
 public class Paquete300Minutos2Dias extends AndroidObject implements Task {
@@ -22,9 +24,9 @@ public class Paquete300Minutos2Dias extends AndroidObject implements Task {
 
         actor.attemptsTo(
                 Scroll.scrollUnaVista(),
-                ValidarTexto.validarTexto("$ 2.500"),
+                ValidarTexto.validarTexto(PRECIO_$3000),
                 Click.on(LBL_VER_DETALLE_3),
-                ValidarTexto.validarTexto("Paquete 300 Minutos Vig 2 dias")
+                ValidarTexto.validarTexto(PAQUETE_300M_2DIAS)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -32,7 +34,7 @@ public class Paquete300Minutos2Dias extends AndroidObject implements Task {
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_3),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 2.500"));
+                ValidarTexto.validarTexto(PRECIO_$3000));
     }
 
     public static Performable paquete300Minutos2Dias() {

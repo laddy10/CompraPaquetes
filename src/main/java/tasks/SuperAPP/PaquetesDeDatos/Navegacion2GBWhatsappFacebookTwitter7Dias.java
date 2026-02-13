@@ -4,8 +4,9 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
 import static utils.Constants.ULTIMO;
+import static utils.ConstantsPaquetes.NAVEGACION_2GB_7DIAS;
+import static utils.ConstantsPaquetes.PRECIO_$8000;
 
-import interactions.WaitFor;
 import interactions.WaitForResponse;
 import interactions.comunes.ClickTextoQueContengaX;
 import interactions.comunes.ValidarTexto;
@@ -28,10 +29,10 @@ public class Navegacion2GBWhatsappFacebookTwitter7Dias extends AndroidObject imp
 
         actor.attemptsTo(
                 Scroll.scrollUnaVista(),
-                ValidarTexto.validarTexto("$ 7.500"),
+                ValidarTexto.validarTexto(PRECIO_$8000),
                 Click.on(LBL_VER_DETALLE_2),
                 ValidarTexto.validarTexto(
-                        "Navegación 2GB+WhatsApp, Facebook y Twitter sin descontar de la capacidad incluida, Vigencia 7 Dias")
+                        NAVEGACION_2GB_7DIAS)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -39,7 +40,7 @@ public class Navegacion2GBWhatsappFacebookTwitter7Dias extends AndroidObject imp
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 7.500"));
+                ValidarTexto.validarTexto(PRECIO_$8000));
     }
 
     public static Performable navegacion2GBWhatsappFacebookTwitter7Dias() {

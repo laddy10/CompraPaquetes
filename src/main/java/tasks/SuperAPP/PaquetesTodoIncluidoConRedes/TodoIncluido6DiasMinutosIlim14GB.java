@@ -3,6 +3,7 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.*;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickElementByText;
@@ -28,12 +29,12 @@ public class TodoIncluido6DiasMinutosIlim14GB extends AndroidObject implements T
                 WaitForResponse.withText(ELIGE_TIPO_PAQUETE)
         );
 
-        scrollCorto2(actor, "$ 7.500");
+        scrollCorto2(actor, PRECIO_$8000);
 
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(
-                        "Este paquete incluye los servicios ilimitados de Minutos y SMS todo destino + 1.4GB + WhatsApp, Twitter y Facebook, sin descontar de la capacidad incluida, Vigencia 6 dias")
+                        TODO_INCLUIDO_6DIAS_1_4GB)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -41,7 +42,7 @@ public class TodoIncluido6DiasMinutosIlim14GB extends AndroidObject implements T
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 7.500")
+                ValidarTexto.validarTexto(PRECIO_$8000)
         );
     }
 

@@ -14,18 +14,20 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
 import static utils.Constants.VER_DETALLE_DEL_PAQUETE;
+import static utils.ConstantsPaquetes.PAQUETE_RELEVO_2_5GB_15DIAS;
+import static utils.ConstantsPaquetes.PRECIO_$16500;
 
 public class RelevoSMSIlimWTF25GB15Dias extends AndroidObject implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        scrollCorto2(actor, "$ 15.500");
+        scrollCorto2(actor, PRECIO_$16500);
 
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(
-                        "Este paquete incluye 2,5GB de Navegacion, ilimitados de SMS + WhatsApp, Facebook , Twitter y la aplicación de Centro de Relevo durante una vigencia 15 dias.")
+                        PAQUETE_RELEVO_2_5GB_15DIAS)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -33,7 +35,7 @@ public class RelevoSMSIlimWTF25GB15Dias extends AndroidObject implements Task {
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 15.500"));
+                ValidarTexto.validarTexto(PRECIO_$16500));
     }
 
     public static Performable relevoSMSIlimWTF25GB15Dias() {

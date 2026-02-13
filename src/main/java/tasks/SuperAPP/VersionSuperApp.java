@@ -26,7 +26,7 @@ public class VersionSuperApp implements Task {
         actor.attemptsTo(
                 Click.on(BTN_MENU_HAMBURGUESA),
                 ValidarTexto.validarTexto(user.getNombreUsuario()),
-                ValidarTextoQueContengaX.elTextoContiene(VERSION)
+                ValidarTextoQueContengaX.elTextoContiene(VERSION_2)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");

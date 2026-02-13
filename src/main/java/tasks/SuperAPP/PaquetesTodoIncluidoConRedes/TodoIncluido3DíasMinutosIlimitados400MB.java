@@ -2,6 +2,8 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
+import static utils.ConstantsPaquetes.PRECIO_$5000;
+import static utils.ConstantsPaquetes.TODO_INCLUIDO_3DIAS_400MB;
 
 import interactions.WaitFor;
 import interactions.WaitForResponse;
@@ -20,7 +22,7 @@ public class TodoIncluido3DíasMinutosIlimitados400MB extends AndroidObject impl
 
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
-                ValidarTexto.validarTexto("Todo incluido 3 Días con Minutos Ilimitados + 400MB")
+                ValidarTexto.validarTexto(TODO_INCLUIDO_3DIAS_400MB)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -28,7 +30,8 @@ public class TodoIncluido3DíasMinutosIlimitados400MB extends AndroidObject impl
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 4.500"));
+                ValidarTexto.validarTexto(PRECIO_$5000)
+        );
     }
 
     public static Performable todoIncluido3DíasMinutosIlimitados400MB() {

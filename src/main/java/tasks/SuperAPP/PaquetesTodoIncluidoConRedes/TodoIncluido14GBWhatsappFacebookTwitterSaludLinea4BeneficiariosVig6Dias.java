@@ -2,6 +2,8 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
+import static utils.ConstantsPaquetes.PRECIO_$9000;
+import static utils.ConstantsPaquetes.TODO_INCLUIDO_6DIAS_1_4GB_4BENEFICIARIOS;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickElementByText;
@@ -23,10 +25,10 @@ public class TodoIncluido14GBWhatsappFacebookTwitterSaludLinea4BeneficiariosVig6
                 Scroll.scrollUnaVista(),
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
                 WaitForResponse.withText(ELIGE_TIPO_PAQUETE),
-                ValidarTexto.validarTexto("$ 8.500"),
+                ValidarTexto.validarTexto(PRECIO_$9000),
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(
-                        "Todo Incluido 1.4GB + WhatsApp, Facebook y Twitter + Salud en Linea 4 beneficiarios por 6 Dias")
+                        TODO_INCLUIDO_6DIAS_1_4GB_4BENEFICIARIOS )
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -34,7 +36,7 @@ public class TodoIncluido14GBWhatsappFacebookTwitterSaludLinea4BeneficiariosVig6
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 8.500")
+                ValidarTexto.validarTexto(PRECIO_$9000)
         );
     }
 

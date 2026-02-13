@@ -1,0 +1,39 @@
+{
+  "usuario": "45111410",
+  "contrasena": "ALE@nef18*",
+
+  "usuarios": [
+    {
+      "numero": "3507671166",
+      "email": "pruebasexperienciaclaro@gmail.com",
+      "cedula": "99321987",
+      "password": "ExuS2o2a",
+      "nombreUsuario": "Hola, Gerencia",
+      "numeroWhatsApp": "3558",
+      "tipoPaquete": "Paquetes todo incluido con redes",
+      "paqueteComprar": "Todo Incluido 400MB + WhatsApp, Facebook y Twitter + Salud en Linea 4 beneficiarios por 3 Dias",
+      "precio": "$ 5.500",
+      "nombrePaquete": "Centro Relevo + SMS Ilimitados + WhatsApp, Facebook, Twitter + 2.5GB",
+      "paquete": "Paq. LDI Preferencial",
+      "valorBuscado": "5.000,00 COP",
+      "paqueteCMAX": "Todo Incluido + 400MB + WTF 3 Dias de Salud en Linea 4 beneficiarios",
+      "criterioExtra": "30GB"
+    },
+    {
+      "numero": "350 999 8888",
+      "email": "pruebasexperienciaclaro@gmail.com",
+      "cedula": "99321987",
+      "password": "ExuS2o2a",
+      "nombreUsuario": "Hola, Gerencia",
+      "numeroWhatsApp": "9888",
+      "tipoPaquete": "Paquetes todo incluido con redes",
+      "paqueteComprar": "Todo Incluido 3 Días 400MB",
+      "precio": "$ 5.500",
+      "nombrePaquete": "Todo Incluido 3 Días Minutos Ilimitados 400MB",
+      "paquete": "Paq. LDI Preferencial",
+      "valorBuscado": "5.000,00 COP",
+      "paqueteCMAX": "Todo Incluido 3 Días 400MB",
+      "criterioExtra": "30GB"
+    }
+  ]
+}

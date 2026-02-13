@@ -3,6 +3,8 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.*;
+import static utils.ConstantsPaquetes.PRECIO_$9000;
+import static utils.ConstantsPaquetes.TODO_INCLUIDO_7DIAS_2GB;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickTextoQueContengaX;
@@ -32,7 +34,7 @@ public class TodoIncluido7DiasMinutosIlim2GB extends AndroidObject implements Ta
         actor.attemptsTo(
                 Click.on(LBL_VER_DETALLE_2),
                 ValidarTexto.validarTexto(
-                        "Este paquete incluye los servicios ilimitados de Minutos y SMS todo destino + 2GB + WhatsApp, Twitter y Facebook sin descontar de la capacidad incluida, Vigencia 7 dias.")
+                        TODO_INCLUIDO_7DIAS_2GB)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -40,7 +42,7 @@ public class TodoIncluido7DiasMinutosIlim2GB extends AndroidObject implements Ta
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 8.500")
+                ValidarTexto.validarTexto(PRECIO_$9000)
         );
     }
 

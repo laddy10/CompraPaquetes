@@ -1,7 +1,10 @@
 package models;
 
-public class User {
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class User {
 
     private String id;
     private String usuario;
@@ -260,6 +263,5 @@ public class User {
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
-
 
 }

@@ -2,6 +2,8 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
+import static utils.ConstantsPaquetes.PRECIO_$33000;
+import static utils.ConstantsPaquetes.TODO_INCLUIDO_12GB;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickElementByText;
@@ -30,10 +32,10 @@ public class TodoIncluido30DiasMinIlim12GB extends AndroidObject implements Task
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO));
 
         actor.attemptsTo(
-                ValidarTexto.validarTexto("$ 32.000"),
+                ValidarTexto.validarTexto(PRECIO_$33000),
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(
-                        "Este paquete incluye los servicios ilimitados de Minutos y SMS todo destino + 12GB + WhatsApp, Twitter y Facebook sin descontar de la capacidad")
+                        TODO_INCLUIDO_12GB)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -41,7 +43,7 @@ public class TodoIncluido30DiasMinIlim12GB extends AndroidObject implements Task
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 32.000"));
+                ValidarTexto.validarTexto(PRECIO_$33000));
     }
 
     public static Performable todoIncluido30DiasMinIlim12GB() {

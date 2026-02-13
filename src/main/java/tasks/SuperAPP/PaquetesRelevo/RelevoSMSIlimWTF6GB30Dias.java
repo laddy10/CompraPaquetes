@@ -13,6 +13,8 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_2;
 import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_2;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.ConstantsPaquetes.PAQUETE_RELEVO_6GB_30DIAS;
+import static utils.ConstantsPaquetes.PRECIO_$31500;
 
 public class RelevoSMSIlimWTF6GB30Dias implements Task {
 
@@ -21,10 +23,10 @@ public class RelevoSMSIlimWTF6GB30Dias implements Task {
 
         actor.attemptsTo(
                 Scroll.scrollUnaVista(),
-                ValidarTexto.validarTexto("$ 30.500"),
+                ValidarTexto.validarTexto(PRECIO_$31500),
                 Click.on(LBL_VER_DETALLE_2),
                 Scroll.scrollUnaVista(),
-                ValidarTexto.validarTexto("Este paquete incluye 6GB de Navegacion, ilimitados de SMS + WhatsApp, Facebook , Twitter y la aplicación de Centro de Relevo durante una vigencia 30 dias.")
+                ValidarTexto.validarTexto(PAQUETE_RELEVO_6GB_30DIAS)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -32,7 +34,7 @@ public class RelevoSMSIlimWTF6GB30Dias implements Task {
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 30.500"));
+                ValidarTexto.validarTexto(PRECIO_$31500));
     }
 
     public static Performable relevoSMSIlimWTF6GB30Dias() {

@@ -4,6 +4,8 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_2;
 import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_2;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.ConstantsPaquetes.PRECIO_$5000;
+import static utils.ConstantsPaquetes.SALUD_EN_LINEA_30DIAS_2BENEFICIARIOS;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ValidarTexto;
@@ -20,10 +22,10 @@ public class SaludLinea2BeneficiarioVig30Dias implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                ValidarTexto.validarTexto("$ 4.500"),
+                ValidarTexto.validarTexto(PRECIO_$5000),
                 Click.on(LBL_VER_DETALLE_2),
                 ValidarTexto.validarTexto(
-                        "Salud en línea te conecta con grupo Mok tu médico virtual, disfruta de consultas médicas para ti y un beneficiario, agenda tu cita telefónica al 5800838 vigencia 30 días."),
+                        SALUD_EN_LINEA_30DIAS_2BENEFICIARIOS),
                 Scroll.scrollUnaVista()
 
         );
@@ -33,7 +35,7 @@ public class SaludLinea2BeneficiarioVig30Dias implements Task {
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 4.500")
+                ValidarTexto.validarTexto(PRECIO_$5000)
         );
     }
 

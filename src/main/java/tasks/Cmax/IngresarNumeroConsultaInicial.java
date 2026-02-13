@@ -14,14 +14,12 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
-import utils.TestDataProvider;
-
+import utils.JsonDataProvider;
 
 public class IngresarNumeroConsultaInicial implements Task {
 
-    private final User user = TestDataProvider.getRealUser();
+    private final User user = JsonDataProvider.getUserConsultaInicial();  // Usuario índice 0
     private static final String paso = "Verificar el estado inicial de la linea";
-
 
     public static Performable ingresarNumeroConsultaInicial() {
         return Instrumented.instanceOf(IngresarNumeroConsultaInicial.class)

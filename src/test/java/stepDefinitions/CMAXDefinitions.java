@@ -36,6 +36,8 @@ import static userinterfaces.WhatsAppPage.LBL_WHATSAPP;
 public class CMAXDefinitions {
 
     private final User user = TestDataProvider.getRealUser();
+    private User userConsultaInicial;
+    private User userCompra;
 
     DataDrivenExcel dataDriverExcel = new DataDrivenExcel();
     Map<String, String> data = new HashMap<>();
@@ -67,6 +69,11 @@ public class CMAXDefinitions {
 
     }
 
+    public void cargarDatos() {
+        userConsultaInicial = JsonDataProvider.getUserConsultaInicial();
+        userCompra = JsonDataProvider.getUserCompra();
+    }
+
     @Given("^Se ingresa a la URL de CMAX$")
     public void seIngresaALaURLDeCMAX() {
         URL = environmentVariables.getProperty("url_prueba");
@@ -87,7 +94,7 @@ public class CMAXDefinitions {
 
     @When("^Se ingresa el numero de la linea en consulta inicial$")
     public void seIngresaElNumeroDeLaLineaAConsultarConsultaInicial() {
-        ReportHooksWeb.setLineaDesdeData(user.getNumero());
+        ReportHooksWeb.setLineaDesdeData(userConsultaInicial.getNumero());
         theActorInTheSpotlight()
                 .attemptsTo(IngresarNumeroConsultaInicial.ingresarNumeroConsultaInicial());
     }

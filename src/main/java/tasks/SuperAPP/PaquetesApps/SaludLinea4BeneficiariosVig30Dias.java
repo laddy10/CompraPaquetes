@@ -3,6 +3,8 @@ package tasks.SuperAPP.PaquetesApps;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.ConstantsPaquetes.PRECIO_$6500;
+import static utils.ConstantsPaquetes.SALUD_EN_LINEA_30DIAS_4BENEFICIARIOS;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ValidarTexto;
@@ -21,10 +23,10 @@ public class SaludLinea4BeneficiariosVig30Dias extends AndroidObject implements 
         scrollCorto3(actor, "Null");
 
         actor.attemptsTo(
-                ValidarTexto.validarTexto("$ 6.000"),
+                ValidarTexto.validarTexto(PRECIO_$6500),
                 Click.on(LBL_VER_DETALLE_3),
                 ValidarTexto.validarTexto(
-                        "Salud en línea te conecta con grupo Mok tu médico virtual, disfruta de consultas médicas para ti y 3 beneficiarios, agenda tu cita telefónica al 5800838 vigencia 30 días.")
+                        SALUD_EN_LINEA_30DIAS_4BENEFICIARIOS)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -32,7 +34,7 @@ public class SaludLinea4BeneficiariosVig30Dias extends AndroidObject implements 
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_3),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 6.000")
+                ValidarTexto.validarTexto(PRECIO_$6500)
         );
     }
 

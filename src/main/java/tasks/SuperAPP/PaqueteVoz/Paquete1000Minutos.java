@@ -12,6 +12,8 @@ import utils.CapturaDePantallaMovil;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.ConstantsPaquetes.PAQUETE_1000M_20DIAS;
+import static utils.ConstantsPaquetes.PRECIO_$17500;
 
 public class Paquete1000Minutos implements Task {
 
@@ -20,9 +22,9 @@ public class Paquete1000Minutos implements Task {
 
         actor.attemptsTo(
                 Scroll.scrollUnaVista(),
-                ValidarTexto.validarTexto("$ 16.500"),
+                ValidarTexto.validarTexto(PRECIO_$17500),
                 Click.on(LBL_VER_DETALLE_2),
-                ValidarTexto.validarTexto("Paquete 1000 Minutos Vig 20 dias")
+                ValidarTexto.validarTexto(PAQUETE_1000M_20DIAS)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -30,7 +32,7 @@ public class Paquete1000Minutos implements Task {
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 16.500"));
+                ValidarTexto.validarTexto(PRECIO_$17500));
     }
 
     public static Performable paquete1000Minutos() {

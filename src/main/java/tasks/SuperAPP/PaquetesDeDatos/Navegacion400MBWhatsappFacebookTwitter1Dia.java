@@ -3,6 +3,8 @@ package tasks.SuperAPP.PaquetesDeDatos;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.ConstantsPaquetes.NAVEGACION_400MB_1DIA;
+import static utils.ConstantsPaquetes.PRECIO_$3000;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ValidarTexto;
@@ -18,13 +20,13 @@ public class Navegacion400MBWhatsappFacebookTwitter1Dia extends AndroidObject im
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        scrollCorto2(actor, "$ 2.500");
+        scrollCorto2(actor, PRECIO_$3000);
 
         actor.attemptsTo(
-                ValidarTexto.validarTexto("$ 2.500"),
+                ValidarTexto.validarTexto(PRECIO_$3000),
                 Click.on(LBL_VER_DETALLE_2),
                 ValidarTexto.validarTexto(
-                        "Navegación 400MB+WhatsApp, Facebook y Twitter sin descontar de la capacidad incluida, Vigencia 1 dia")
+                        NAVEGACION_400MB_1DIA)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -32,7 +34,7 @@ public class Navegacion400MBWhatsappFacebookTwitter1Dia extends AndroidObject im
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 2.500"));
+                ValidarTexto.validarTexto(PRECIO_$3000));
     }
 
     public static Performable navegacion400MBWhatsappFacebookTwitter1Dia() {

@@ -11,6 +11,8 @@ import utils.CapturaDePantallaMovil;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
+import static utils.ConstantsPaquetes.PAQUETE_RELEVO_800MB_7DIAS;
+import static utils.ConstantsPaquetes.PRECIO_$8000;
 
 public class RelevoSMSIlimWTF800MB7Dias extends AndroidObject implements Task {
 
@@ -18,9 +20,9 @@ public class RelevoSMSIlimWTF800MB7Dias extends AndroidObject implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                ValidarTexto.validarTexto("$ 7.500"),
+                ValidarTexto.validarTexto(PRECIO_$8000),
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
-                ValidarTexto.validarTexto("Este paquete incluye 800MB de Navegacion, ilimitados de SMS + WhatsApp, Facebook , Twitter y la aplicación de Centro de Relevo durante una vigencia 7 dias.")
+                ValidarTexto.validarTexto(PAQUETE_RELEVO_800MB_7DIAS)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -28,7 +30,7 @@ public class RelevoSMSIlimWTF800MB7Dias extends AndroidObject implements Task {
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto("$ 7.500")
+                ValidarTexto.validarTexto(PRECIO_$8000)
         );
     }
 
