@@ -2,6 +2,7 @@ package tasks.WhatsApp;
 
 import interactions.WaitForResponse;
 import interactions.comunes.Atras;
+import interactions.comunes.ClickTextoQueContengaX;
 import interactions.comunes.ValidarTexto;
 import interactions.comunes.ValidarTextoQueContengaX;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -57,6 +58,13 @@ public class ValidarTratamientoDatos implements Task {
             }
 
             UtilidadesAndroid.abrirLinkEnNavegador(actor, URL_PORTAL_CLARO);
+
+            List<WebElementFacade> lblinformacionimportante = LBL_INFORMACION_IMPORTANTE.resolveAllFor(actor);
+            if (!lblinformacionimportante.isEmpty()) {
+                actor.attemptsTo(
+                        ClickTextoQueContengaX.elTextoContiene(ENTENDIDO)
+                );
+            }
 
             actor.attemptsTo(
                     WaitForResponse.withText(PERSONAS),

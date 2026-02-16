@@ -137,4 +137,8 @@ public class WhatsAppPage {
             Target.the("Mensajes del chat")
                     .located(MobileBy.AndroidUIAutomator(
                             "new UiSelector().className(\"android.widget.TextView\")"));
+
+    public static final Target LBL_INFORMACION_IMPORTANTE=
+            Target.the("Texto información importante")
+                    .located(MobileBy.xpath("//*[@text='Información Importante']"));
 }

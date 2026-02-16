@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import cucumber.api.DataTable;
 
 import java.io.File;
 import java.util.HashMap;
@@ -13,13 +12,11 @@ import cucumber.api.java.en.When;
 import freemarker.log.Logger;
 import hooks.ReportHooksWeb;
 import models.User;
-import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.util.EnvironmentVariables;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,7 +25,6 @@ import tasks.SwitchToMobile;
 import tasks.SwitchToWeb;
 import utils.*;
 
-import static net.serenitybdd.screenplay.actions.Open.url;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static userinterfaces.WhatsAppPage.LBL_WHATSAPP;
@@ -36,7 +32,6 @@ import static userinterfaces.WhatsAppPage.LBL_WHATSAPP;
 public class CMAXDefinitions {
 
     private final User user = TestDataProvider.getRealUser();
-    private User userConsultaInicial;
     private User userCompra;
 
     DataDrivenExcel dataDriverExcel = new DataDrivenExcel();
@@ -47,8 +42,8 @@ public class CMAXDefinitions {
     private ChromeDriver driver;
     private static final Logger LOGGER = Logger.getLogger(CMAXDefinitions.class.getName());
 
-   // @Managed
-   // private Actor user = Actor.named("user");
+    // @Managed
+    // private Actor user = Actor.named("user");
 
     @Before
     public void getConfiguration() {
@@ -70,7 +65,6 @@ public class CMAXDefinitions {
     }
 
     public void cargarDatos() {
-        userConsultaInicial = JsonDataProvider.getUserConsultaInicial();
         userCompra = JsonDataProvider.getUserCompra();
     }
 
@@ -94,14 +88,14 @@ public class CMAXDefinitions {
 
     @When("^Se ingresa el numero de la linea en consulta inicial$")
     public void seIngresaElNumeroDeLaLineaAConsultarConsultaInicial() {
-        ReportHooksWeb.setLineaDesdeData(userConsultaInicial.getNumero());
+        ReportHooksWeb.setLineaDesdeData(user.getNumeroCmax());
         theActorInTheSpotlight()
                 .attemptsTo(IngresarNumeroConsultaInicial.ingresarNumeroConsultaInicial());
     }
 
     @When("^Se ingresa el numero de la linea en consulta final$")
     public void seIngresaElNumeroDeLaLineaAConsultarConsultaFinal() {
-        ReportHooksWeb.setLineaDesdeData(user.getNumero());
+        ReportHooksWeb.setLineaDesdeData(user.getNumeroCmax());
         theActorInTheSpotlight()
                 .attemptsTo(IngresarNumeroConsultaFinal.ingresarNumeroConsultaFinal());
 
@@ -125,7 +119,7 @@ public class CMAXDefinitions {
 
     @When("^Se ingresa el numero de la linea en consulta de compra$")
     public void seIngresaElNumeroDeLaLineaEnConsultaDeCompra() {
-        ReportHooksWeb.setLineaDesdeData(user.getNumero());
+        ReportHooksWeb.setLineaDesdeData(user.getNumeroCmax());
         theActorInTheSpotlight()
                 .attemptsTo(IngresarNumeroConsultaCompra.ingresarnumeroConsultaCompra());
     }
@@ -195,7 +189,7 @@ public class CMAXDefinitions {
                 SwitchToMobile.toApp("com.google.android.dialer", ".activities.CallLogActivity"));
     }
 
-     @And("^cambia al contexto movil mi claro app$")
+    @And("^cambia al contexto movil mi claro app$")
     public void cambiaAlContextoMovilMiClaroApp() {
         theActorInTheSpotlight().attemptsTo(
                 SwitchToMobile.toApp("com.clarocolombia.miclaro", "com.claro.superapp.SplashActivity"));

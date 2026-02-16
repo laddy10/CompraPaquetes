@@ -2,6 +2,8 @@ package utils;
 
 public class ConstantsPaquetes {
 
+
+    // CANAL MI CLARO APP
     public static final String PAQUETES_TODO_INCLUIDO_CON_REDES = "Paquetes todo incluido con redes";
     public static final String PAQUETES_TODO_INCLUIDO = "Paquetes todo incluido";
     public static final String PAQUETES_DE_DATOS= "Paquetes de datos";
@@ -46,7 +48,7 @@ public class ConstantsPaquetes {
 
 
 
-    //PAQUETE DE VO
+    //PAQUETE DE VOZ
     public static final String PAQUETE_300M_1DIA = "Paquete 300 Minutos Vig 1 dia";
     public static final String PAQUETE_1000M_20DIAS = "Paquete 1000 Minutos Vig 20 dias";
     public static final String PAQUETE_300M_2DIAS = "Paquete 300 Minutos Vig 2 dias";
@@ -78,6 +80,58 @@ public class ConstantsPaquetes {
     public static final String PRECIO_$16500= "$ 16.500";
     public static final String PRECIO_$31500= "$ 31.500";
     public static final String PRECIO_$3500= "$ 3.500";
+
+
+
+
+
+
+
+    // CANAL WHATSAPP
+
+    public static final String PAQ_TODO_INCLUIDO_WH = "Paq. todo incluido";
+    public static final String PAQ_VOZ_WH = "Paq. de Voz";
+    public static final String PAQ_DATOS_WH= "Paq. de datos";
+    public static final String PAQ_INTERNACIONAL_WH= "Paq. Internacionales";
+    public static final String PAQUETES_RELEVO_WH= "Paq. Comunidad Sorda";
+
+
+
+    //PAQUETES TODO INCLUIDOS CON REDES
+    public static final String TODO_INCLUIDO_50MB_50MIN = "50MB + WhatsApp + 50 minutos a destinos nacionales";
+    public static final String TODO_INCLUIDO_400MB_WFT_VOZ = "400 MB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional";
+    public static final String TODO_INCLUIDO_1_4GB_WFT_VOZ = "1.4 GB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional";
+    public static final String TODO_INCLUIDO_2GB_WFT_VOZ = "2 GB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional + SMS";
+    public static final String TODO_INCLUIDO_3_5GB_WFT_VOZ = "3.5 GB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional";
+    public static final String TODO_INCLUIDO_10GB_VOZ_SMS_ILIM = "10GB + Voz y SMS Ilimitados a todo destino nacional";
+    public static final String TODO_INCLUIDO_7_5GB_WFT_VOZ = "7.5 GB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional + SMS";
+    public static final String TODO_INCLUIDO_20GB_VOZ_SMS_ILIM = "20GB de Navegacion + Voz y SMS Ilimitados a todo destino nacional";
+    public static final String TODO_INCLUIDO_12GB_WFT_VOZ = "12 GB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional";
+    public static final String TODO_INCLUIDO_30GB_VOZ_SMS_ILIM = "30GB de Navegacion + Voz y SMS Ilimitados a todo destino nacional";
+    public static final String TODO_INCLUIDO_18GB_WFT_VOZ = "18 GB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional";
+    public static final String TODO_INCLUIDO_80GB_WFT_VOZ = "80 GB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional";
+    public static final String TODO_INCLUIDO_400MB_WFT_SALUD_4_BENEFICIARIOS = "400 MB + WhatsApp, Facebook, Twitter + Salud en línea 4 beneficiarios";
+    public static final String TODO_INCLUIDO_1_4GB_WFT_SALUD_4_BENEFICIARIOS = "1.4 GB + WhatsApp, Facebook, Twitter + Salud en línea 4 beneficiarios";
+    public static final String TODO_INCLUIDO_14GB_WFT_VOZ = "";
+
+
+
+
+
+
+    public static final String PRECIO_$2500_1DIA= "$2.500 x 1 Día";
+    public static final String PRECIO_$4500_3DIAS= "$4.500 x 3 Días";
+    public static final String PRECIO_$7500_6DIAS= "$7.500 x 6 Días";
+    public static final String PRECIO_$8500_7DIAS= "$8.500 x 7 Días";
+    public static final String PRECIO_$12000_10DIAS= "$12.000 x 10 Días";
+    public static final String PRECIO_$12000_7DIAS= "$12.000 x 7 días";
+    public static final String PRECIO_$22000_20DIAS= "$22.000 x 20 Días";
+    public static final String PRECIO_$22000_15DIAS= "$22.000 x 15 Días";
+    public static final String PRECIO_$32000_30DIAS= "$32.000 x 30 Días";
+    public static final String PRECIO_$42000_30DIAS= "$42.000 x 30 Días";
+    public static final String PRECIO_$100000_30DIAS= "$100.000 x 30 Días";
+    public static final String PRECIO_$5500_3DIAS= "$5.500 X 3 días";
+    public static final String PRECIO_$8500_6DIAS= "$8.500 X 6 días";
 
 
 }

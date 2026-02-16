@@ -20,6 +20,8 @@ import tasks.WhatsApp.Apps.SeleccionarPqApps;
 import tasks.WhatsApp.Internacional.SeleccionarPqInternacional;
 import tasks.WhatsApp.Internacional.SeleccionarUsarSaldo;
 import tasks.WhatsApp.TodoIncluido.ComprarPaqueteTodoIncluido;
+import tasks.WhatsApp.TodoIncluido.Paq50MB_50MIN;
+import tasks.WhatsApp.TodoIncluido.SeleccionarPaqTodoIncluido;
 import utils.WordAppium;
 
 import java.io.File;
@@ -98,6 +100,11 @@ public class CompraPaquetesWhatsAppDefinitions {
         theActorInTheSpotlight().attemptsTo(SeleccionarTipoPaquete.seleccionarTipoPaquete());
     }
 
+    @And("^Seleccionar el tipo de paquete todo incluido$")
+    public void seleccionarTipoPaqueteTodoIncluido() {
+        theActorInTheSpotlight().attemptsTo(SeleccionarPaqTodoIncluido.seleccionarPaqTodoIncluido());
+    }
+
     @And("^Realizar la compra del paquete todo incluido$")
     public void realizarCompraPqTodoIncluido() {
         theActorInTheSpotlight().attemptsTo(ComprarPaqueteTodoIncluido.comprarPaqueteTodoIncluido());
@@ -166,6 +173,11 @@ public class CompraPaquetesWhatsAppDefinitions {
     @Then("^Validar la notificacion de la compra$")
     public void validarNotificacionCompra() {
         theActorInTheSpotlight().attemptsTo(NotificacionCompra.notificacionCompra());
+    }
+
+    @And("^Comprar paq todo incluido 50MB WhatsApp 50 minutos a destinos nacionales$")
+    public void comprarPaq50MB50MIN() {
+        theActorInTheSpotlight().attemptsTo(Paq50MB_50MIN.paq50MB_50MIN());
     }
 
 }

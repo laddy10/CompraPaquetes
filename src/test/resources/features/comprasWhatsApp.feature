@@ -1,6 +1,46 @@
 Feature: Se requiere tomar evidencias de las consultas realizadas en CMAX
 
 
+  #---------- Paquetes todo incluido ------------#
+
+
+  @Compras_Whatsapp_01
+  Scenario: Comprar el paq. Todo incluido 50MB + WhatsApp + 50 minutos a destinos nacionales
+    Given Se ingresa a la URL de CMAX
+
+
+   ## Se realiza la consulta de la compra en CMAX
+    And cambia al contexto web
+    When Se ingresa el usuario y la contrasena
+    When Se ingresa el numero de la linea en consulta de compra
+    When Se valida el resumen de la cuenta para el SC
+    When Se valida el historial de contrato
+    When Se validan los datos de compra
+    When Se validan las ofertas activas
+    Then Se verifican firmas y factor multiplicador
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @Whatsapp_Compra_Paquete_Todo_Incluido_01
   Scenario: Consultar estado de linea CMAX y comprar paquete todo incluido
     Given Se ingresa a la URL de CMAX
@@ -35,7 +75,6 @@ Feature: Se requiere tomar evidencias de las consultas realizadas en CMAX
     When Se validan los datos de compra
     When Se validan las ofertas activas
     Then Se verifican firmas y factor multiplicador
-
 
   ############################################################################################
 

@@ -36,6 +36,7 @@ public class User {
     private String paqueteSMS;
     private String criterioExtra;
     private String cedula;
+    private String numeroCmax;
 
 
     public String getId() {
@@ -262,6 +263,13 @@ public class User {
 
     public void setCedula(String cedula) {
         this.cedula = cedula;
+    }
+
+    public String getNumeroCmax() {
+        return numeroCmax;
+    }
+    public void setNumeroCmax(String numeroCmax) {
+        this.numeroCmax = numeroCmax;
     }
 
 }

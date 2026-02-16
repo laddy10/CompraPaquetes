@@ -15,10 +15,11 @@ import net.serenitybdd.screenplay.actions.Enter;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
 import utils.JsonDataProvider;
+import utils.TestDataProvider;
 
 public class IngresarNumeroConsultaInicial implements Task {
 
-    private final User user = JsonDataProvider.getUserConsultaInicial();  // Usuario índice 0
+    private final User user = TestDataProvider.getRealUser();  // Usuario índice 0
     private static final String paso = "Verificar el estado inicial de la linea";
 
     public static Performable ingresarNumeroConsultaInicial() {
@@ -31,7 +32,7 @@ public class IngresarNumeroConsultaInicial implements Task {
         actor.attemptsTo(
                 Click.on(BTN_CLIENTES),
                 Click.on(BTN_BUSCAR_CLIENTE),
-                Enter.theValue(user.getNumero()).into(TXT_MSISDN),
+                Enter.theValue(user.getNumeroCmax()).into(TXT_MSISDN),
                 Click.on(BTN_BUSCAR),
                 WaitFor.aTime(1000),
                 Click.on(TXT_MSISDN_BUSCADO)

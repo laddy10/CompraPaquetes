@@ -1,8 +1,9 @@
 {
-  "_COMENTARIO": "Datos CMAX - Login",
+  "_COMENTARIO_CMAX": "Datos CMAX - LOGIN",
   "usuario": "45111410",
   "contrasena": "ALE@nef18*",
-  "numeroCmax": "3507671166",
+  "numeroCmax": "3102223558",
+
 
 
   "_COMENTARIO_SUPER_APP": "Datos login Super App",
@@ -13,23 +14,24 @@
   "numero": "350 767 1166",
 
 
+
   "_COMENTARIO_WHATSAPP": "Últimos 4 dígitos para WhatsApp",
   "numeroWhatsApp": "3558",
 
 
   "tipoPaquete": "Paq. Internacionales",
   "paqueteComprar": "$150.900 x 200 Minutos",
-
   "precio": "$ 150.900",
-
   "nombrePaquete": "LDI resto del mundo",
   "paquete": "Paq. LDI Resto del Mundo",
 
 
+
   "_COMENTARIO_VALIDACION": "Datos para validación de compra en CMAX",
-  "fecha": "13-feb-2026",
-  "valorBuscado": "150.900,00 COP",
-  "paqueteCMAX": "Todo Incluido + 400MB + WTF 3 Dias de Salud en Linea 4 beneficiarios",
+  "fecha": "16-feb-2026",
+  "valorBuscado": "2.500,00 COP",
+  "paqueteCMAX": "Todo Incluido 50 minutos + SMS Ilimitados + W + 50 MB 1 Dia",
+
 
 
   "_COMENTARIO_CONTADORES": "Datos para los contadores como registra el paquete en Cmax",

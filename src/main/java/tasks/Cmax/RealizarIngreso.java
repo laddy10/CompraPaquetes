@@ -11,10 +11,11 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import utils.JsonDataProvider;
+import utils.TestDataProvider;
 
 public class RealizarIngreso implements Task {
 
-    private final User user = JsonDataProvider.getUser();
+    private final User user = TestDataProvider.getRealUser();
 
     public static Performable realizarIngreso() {
         return Instrumented.instanceOf(RealizarIngreso.class).withProperties();

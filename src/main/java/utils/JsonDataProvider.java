@@ -103,6 +103,7 @@ public class JsonDataProvider {
         user.setNombrePaquete(get(datos, "nombrePaquete"));
         user.setPrecio(get(datos, "precio"));
         user.setPaquete(get(datos, "paquete"));
+        user.setNumeroCmax(get(datos, "numeroCmax"));
 
         // Fecha siempre HOY
         user.setFecha(obtenerFechaHoy());

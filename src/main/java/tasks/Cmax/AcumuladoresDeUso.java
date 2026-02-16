@@ -11,7 +11,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.questions.Presence;
 import utils.EvidenciaUtils;
-import utils.WordWeb;
 import utils.WordWebReport;
 
 public class AcumuladoresDeUso implements Task {

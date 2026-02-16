@@ -36,7 +36,7 @@ public class IngresarNumeroConsultaFinal implements Task {
         actor.attemptsTo(
                 Click.on(BTN_CLIENTES),
                 Click.on(BTN_BUSCAR_CLIENTE),
-                Enter.theValue(user.getNumero()).into(TXT_MSISDN),
+                Enter.theValue(user.getNumeroCmax()).into(TXT_MSISDN),
                 Click.on(BTN_BUSCAR),
                 Click.on(TXT_MSISDN_BUSCADO),
                 WaitFor.aTime(1000)
