@@ -16,8 +16,7 @@ import utils.WordAppium;
 import java.util.List;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static userinterfaces.WhatsAppPage.BTN_COMPRAR_PAQ_PREPAGO;
-import static userinterfaces.WhatsAppPage.LBL_SIN_SALDO;
+import static userinterfaces.WhatsAppPage.*;
 import static utils.Constants.*;
 
 public class SeleccionUsaTuSaldo implements Task {
@@ -41,8 +40,17 @@ public class SeleccionUsaTuSaldo implements Task {
 
 
         List<WebElementFacade> lblsinsaldo = LBL_SIN_SALDO.resolveAllFor(actor);
+        List<WebElementFacade> lblusartusaldo = LBL_USAR_TU_SALDO.resolveAllFor(actor);
+
         if (!lblsinsaldo.isEmpty()) {
             WordAppium.main();
+
+        } else if (!lblusartusaldo.isEmpty()) {
+            actor.attemptsTo(
+                    WaitFor.aTime(1000),
+                    ClickTextoQueContengaX.elTextoContiene(USAR_TU_SALDO),
+                    WaitFor.aTime(6000),
+                    ValidarTextoQueContengaX.elTextoContiene(ACTIVACION_PAQUETE));
         } else {
             actor.attemptsTo(
                     ClickElementByText.clickElementByText(MEDIOS_PAGO),
@@ -66,8 +74,6 @@ public class SeleccionUsaTuSaldo implements Task {
 
         WordAppium.main();
 
-        actor.attemptsTo(
-                WaitFor.aTime(120000));
     }
 
 

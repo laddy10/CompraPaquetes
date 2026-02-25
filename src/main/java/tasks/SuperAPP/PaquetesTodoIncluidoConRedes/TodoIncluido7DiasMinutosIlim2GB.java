@@ -3,8 +3,7 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.*;
-import static utils.ConstantsPaquetes.PRECIO_$9000;
-import static utils.ConstantsPaquetes.TODO_INCLUIDO_7DIAS_2GB;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickTextoQueContengaX;
@@ -16,12 +15,17 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class TodoIncluido7DiasMinutosIlim2GB extends AndroidObject implements Task {
+
+    private final String precioTexto = PRECIO_$9000;
+    private final String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
 
+        // Desplazamiento inicial y selección del segmento
         actor.attemptsTo(
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
@@ -29,16 +33,25 @@ public class TodoIncluido7DiasMinutosIlim2GB extends AndroidObject implements Ta
                 WaitForResponse.withText(ELIGE_TIPO_PAQUETE)
         );
 
+        // Scroll hasta el paquete específico
         scrollCorto2(actor, "2 GB");
 
+        // Ingreso al detalle del paquete
         actor.attemptsTo(
                 Click.on(LBL_VER_DETALLE_2),
-                ValidarTexto.validarTexto(
-                        TODO_INCLUIDO_7DIAS_2GB)
+
+                // Validación del nombre del paquete
+                ValidarTexto.validarTexto(TODO_INCLUIDO_7DIAS_2GB)
         );
 
+        // Guardar datos para validaciones posteriores en CMAX
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", TODO_INCLUIDO_7DIAS_2GB);
+
+        // Evidencia visual
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
+        // Flujo de compra
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),

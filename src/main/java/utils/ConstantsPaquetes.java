@@ -112,26 +112,78 @@ public class ConstantsPaquetes {
     public static final String TODO_INCLUIDO_80GB_WFT_VOZ = "80 GB + WhatsApp, Facebook, Twitter + Voz ilimitada nacional";
     public static final String TODO_INCLUIDO_400MB_WFT_SALUD_4_BENEFICIARIOS = "400 MB + WhatsApp, Facebook, Twitter + Salud en línea 4 beneficiarios";
     public static final String TODO_INCLUIDO_1_4GB_WFT_SALUD_4_BENEFICIARIOS = "1.4 GB + WhatsApp, Facebook, Twitter + Salud en línea 4 beneficiarios";
-    public static final String TODO_INCLUIDO_14GB_WFT_VOZ = "";
 
 
 
+    //Paq. de Voz
+
+    public static final String PQ_VOZ_300_MINUTOS= "300 minutos a todo operador nacional";
+    public static final String PQ_VOZ_1000_MINUTOS= "1000 minutos a todo operador nacional";
 
 
+
+    //Paq. de datos
+
+    public static final String PQ_DATOS_200MB_WH= "Paquete de datos de 200MB + WhatsApp";
+    public static final String PQ_DATOS_400MB_WFT= "Paquete de datos 400MB navegación + WhatsApp, Facebook, Twitter";
+    public static final String PQ_DATOS_800MB_WFT= "Paquete de datos 800MB navegación + WhatsApp, Facebook, Twitter";
+    public static final String PQ_DATOS_ILIMITADOS= "Datos ilimitados";
+    public static final String PQ_DATOS_2GB_WFT= "Paquete de datos 2 GB navegación + WhatsApp, Facebook, Twitter";
+
+
+
+    //Paq. Internacionales
+
+    public static final String PQ_LDI_USA_CAN_PR_MEX = "Paq. LDI USA,CAN,PR,MEX";
+    public static final String PQ_LDI_SIN_FRONTERAS = "Paq. LDI Sin Fronteras";
+    public static final String PQ_LDI_VENEZUELA = "Paq. LDI Venezuela";
+    public static final String PQ_LDI_PREFERENCIAL = "Paq. LDI Preferencial";
+    public static final String PQ_LDI_RESTO_DEL_MUNDO = "Paq. LDI Resto del Mundo";
+    public static final String PQ_ROAMING = "Paq. Roaming";
+    public static final String LLAMADAS_USA_CAN_PR_MEX = "Llamadas a USA, Canadá, Pto.Rico, México";
+    public static final String LLAMADAS_LDI_SIN_FRONTERAS = "Llamadas LDI Sin Fronteras";
+    public static final String LLAMADAS_LDI_VENEZUELA = "Llamadas LDI a Venezuela";
+    public static final String LLAMADAS_LDI_PREFERENCIAL = "LDI Preferencial";
+    public static final String LLAMADAS_LDI_RESTO_DEL_MUNDO = "LDI resto del mundo";
+    public static final String LLAMADAS_ROAMING_INTERNET = "Internet";
 
     public static final String PRECIO_$2500_1DIA= "$2.500 x 1 Día";
-    public static final String PRECIO_$4500_3DIAS= "$4.500 x 3 Días";
-    public static final String PRECIO_$7500_6DIAS= "$7.500 x 6 Días";
-    public static final String PRECIO_$8500_7DIAS= "$8.500 x 7 Días";
-    public static final String PRECIO_$12000_10DIAS= "$12.000 x 10 Días";
-    public static final String PRECIO_$12000_7DIAS= "$12.000 x 7 días";
-    public static final String PRECIO_$22000_20DIAS= "$22.000 x 20 Días";
-    public static final String PRECIO_$22000_15DIAS= "$22.000 x 15 Días";
-    public static final String PRECIO_$32000_30DIAS= "$32.000 x 30 Días";
-    public static final String PRECIO_$42000_30DIAS= "$42.000 x 30 Días";
+    public static final String PRECIO_$5000_3DIAS= "$5.000 x 3 Días";
+    public static final String PRECIO_$8000_6DIAS= "$8.000 x 6 Días";
+    public static final String PRECIO_$9000_7DIAS= "$9.000 x 7 Días";
+    public static final String PRECIO_$13000_10DIAS= "$13.000 x 10 Días";
+    public static final String PRECIO_$13000_7DIAS= "$13.000 x 7 días";
+    public static final String PRECIO_$23000_20DIAS= "$23.000 x 20 Días";
+    public static final String PRECIO_$23000_15DIAS= "$23.000 x 15 Días";
+    public static final String PRECIO_$33000_30DIAS= "$33.000 x 30 Días";
+    public static final String PRECIO_$43000_30DIAS= "$43.000 x 30 Días";
     public static final String PRECIO_$100000_30DIAS= "$100.000 x 30 Días";
-    public static final String PRECIO_$5500_3DIAS= "$5.500 X 3 días";
-    public static final String PRECIO_$8500_6DIAS= "$8.500 X 6 días";
+    public static final String PRECIO_$6000_3DIAS= "$6.000 X 3 días";
+    public static final String PRECIO_$9000_6DIAS= "$9.000 X 6 días";
+    public static final String PRECIO_$3000_2DIAS= "$3.000 x 2 Días";
+    public static final String PRECIO_$17500_20DIAS= "$17.500 x 20 Días";
+    public static final String PRECIO_$2000_1DIA_200MB= "$2.000 x 1 Día 200MB";
+    public static final String PRECIO_$3000_1DIA_400MB= "$3.000 x 1 Día 400MB";
+    public static final String PRECIO_$5000_3DIAS_800MB= "$5.000 x 3 Días 800MB";
+    public static final String PRECIO_$6000_2HORAS= "$6.000 x 2 Horas";
+    public static final String PRECIO_$8000_7DIAS_2GB= "$8.000 x 7 Días 2GB";
+    public static final String PRECIO_$5900_60MIN= "$5.900 x 60 Minutos";
+    public static final String PRECIO_$9900_120MIN= "$9.900 x 120 Minutos";
+    public static final String PRECIO_$18900_240MIN= "$18.900 x 240 Minutos";
+    public static final String PRECIO_$18900_50MIN= "$18.900 x 50 Minutos";
+    public static final String PRECIO_$31900_100MIN= "$31.900 x 100 Minutos";
+    public static final String PRECIO_$59900_200MIN= "$59.900 x 200 Minutos";
+    public static final String PRECIO_$2900_12MIN= "$2.900 x 12 Minutos";
+    public static final String PRECIO_$6900_30MIN= "$6.900 x 30 Minutos";
+    public static final String PRECIO_$23900_50MIN= "$23.900 x 50 Minutos";
+    public static final String PRECIO_$44900_100MIN= "$44.900 x 100 Minutos";
+    public static final String PRECIO_$79900_200MIN= "$79.900 x 200 Minutos";
+    public static final String PRECIO_$40900_50MIN= "$40.900 x 50 Minutos";
+    public static final String PRECIO_$80900_100MIN= "$80.900 x 100 Minutos";
+    public static final String PRECIO_$150900_200MIN= "$150.900 x 200 Minutos";
+    public static final String PRECIO_$11900_1GB= "$11.900 x 1 Día 1GB";
+    public static final String PRECIO_$21900_2GB= "$21.900 x 1 Día 2GB";
+
 
 
 }

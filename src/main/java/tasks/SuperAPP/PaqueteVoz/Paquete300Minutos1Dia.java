@@ -8,15 +8,18 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_1;
 import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_1;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
-import static utils.ConstantsPaquetes.PAQUETE_300M_1DIA;
-import static utils.ConstantsPaquetes.PRECIO_$2500;
+import static utils.ConstantsPaquetes.*;
 
 public class Paquete300Minutos1Dia extends AndroidObject implements Task {
+
+    String precioTexto = PRECIO_$2500;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -26,6 +29,9 @@ public class Paquete300Minutos1Dia extends AndroidObject implements Task {
                 ValidarTexto.validarTexto(PAQUETE_300M_1DIA)
         );
 
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", PAQUETE_300M_1DIA);
+
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
@@ -33,6 +39,7 @@ public class Paquete300Minutos1Dia extends AndroidObject implements Task {
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
                 ValidarTexto.validarTexto(PRECIO_$2500)
         );
+
     }
 
     public static Performable paquete300Minutos1Dia() {

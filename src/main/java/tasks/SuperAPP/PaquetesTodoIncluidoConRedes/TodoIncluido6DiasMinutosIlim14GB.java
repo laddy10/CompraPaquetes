@@ -16,12 +16,17 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class TodoIncluido6DiasMinutosIlim14GB extends AndroidObject implements Task {
+
+    private final String precioTexto = PRECIO_$8000;
+    private final String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
 
+        // Desplazamiento inicial y selección del segmento
         actor.attemptsTo(
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
@@ -29,16 +34,25 @@ public class TodoIncluido6DiasMinutosIlim14GB extends AndroidObject implements T
                 WaitForResponse.withText(ELIGE_TIPO_PAQUETE)
         );
 
+        // Scroll hasta el paquete específico
         scrollCorto2(actor, PRECIO_$8000);
 
+        // Ingreso al detalle del paquete
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
-                ValidarTexto.validarTexto(
-                        TODO_INCLUIDO_6DIAS_1_4GB)
+
+                // Validación del nombre del paquete
+                ValidarTexto.validarTexto(TODO_INCLUIDO_6DIAS_1_4GB)
         );
 
+        // Guardar datos para validaciones posteriores en CMAX
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", TODO_INCLUIDO_6DIAS_1_4GB);
+
+        // Evidencia visual
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
+        // Flujo de compra
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),

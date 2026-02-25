@@ -3,6 +3,7 @@ package tasks.Cmax;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.CmaxPage.*;
+import static userinterfaces.SegmentoPage.TBL_PRODUCT_ATTRIBUTES;
 import static utils.Constants.*;
 
 import interactions.WaitFor;
@@ -126,18 +127,48 @@ public class ValidarFirmaYFactorMultiplicador implements Task {
     }
 
     private void validarFirmasYFactor(Actor actor) {
-        LOGGER.debug("Validando firmas y factor multiplicador");
 
-        if (!Presence.of(TXT_FIRMAS).viewedBy(actor).resolveAll().isEmpty()) {
-            LOGGER.debug("Validando con factor multiplicador y firmas");
-            actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_FACTOR_MULTIPLICADOR)));
-            actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_FIRMAS)));
-        } else {
-            LOGGER.debug("Validando solo firmas (sin factor multiplicador)");
-            actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_FIRMAS2)));
+        LOGGER.info("Validando sección Product Attributes");
+
+        List<WebElementFacade> filas = TBL_PRODUCT_ATTRIBUTES.resolveAllFor(actor);
+
+        if (filas.isEmpty()) {
+            throw new AssertionError("No se encontraron atributos del producto.");
         }
 
-        LOGGER.debug("Validación de firmas completada");
+        boolean sorpresaEncontrada = false;
+
+        for (WebElementFacade fila : filas) {
+
+            String nombre = fila.then(By.xpath("./td[1]")).getText().trim();
+            String tipo = fila.then(By.xpath("./td[3]")).getText().trim();
+            String valor = fila.then(By.xpath("./td[4]")).getText().trim();
+
+            LOGGER.debug("Atributo: {} | Tipo: {} | Valor: {}", nombre, tipo, valor);
+
+            if (nombre.equalsIgnoreCase("Sorpresa")) {
+
+                sorpresaEncontrada = true;
+
+                // Validar que el tipo sea numérico
+                if (!tipo.equalsIgnoreCase("Numero Decimal")) {
+                    throw new AssertionError("El atributo Sorpresa no tiene tipo numérico.");
+                }
+
+                // Validar que el valor sea numérico
+                if (!valor.matches("\\d+")) {
+                    throw new AssertionError("El valor del factor multiplicador no es numérico: " + valor);
+                }
+
+                LOGGER.info("Factor multiplicador encontrado con valor válido: {}", valor);
+            }
+        }
+
+        if (!sorpresaEncontrada) {
+            LOGGER.info("El paquete no tiene factor multiplicador activo (válido según promoción).");
+        }
+
+        LOGGER.info("Validación de atributos completada correctamente.");
     }
 
     private String extraerNombrePaquete(Actor actor) {

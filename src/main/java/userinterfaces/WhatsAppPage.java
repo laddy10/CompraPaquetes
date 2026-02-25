@@ -2,6 +2,7 @@ package userinterfaces;
 
 import io.appium.java_client.MobileBy;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 public class WhatsAppPage {
 
@@ -22,7 +23,7 @@ public class WhatsAppPage {
 
     public static final Target TXT_BUSCAR_TEXTO =
             Target.the("Caja de texto buscar")
-                    .located(MobileBy.id("search_src_text"));
+                    .located(MobileBy.xpath("//android.widget.EditText[@text=\"Buscar nombre o número\"]"));
 
     public static final Target TXT_ENVIAR_MENSAJE =
             Target.the("Caja de texto enviar mensaje")
@@ -141,4 +142,15 @@ public class WhatsAppPage {
     public static final Target LBL_INFORMACION_IMPORTANTE=
             Target.the("Texto información importante")
                     .located(MobileBy.xpath("//*[@text='Información Importante']"));
+
+    public static final Target LBL_USAR_TU_SALDO=
+            Target.the("Texto Usar tu saldo")
+                    .located(MobileBy.xpath("//*[@text='Usar tu saldo']"));
+
+    public static final Target BTN_MAS_OPCIONES =
+            Target.the("Boton Más opciones")
+                    .located(By.id("menuitem_overflow"));
+
+    public static final Target BTN_VACIAR_CHAT = Target.the("Botones Selecciona")
+            .located(MobileBy.id("com.whatsapp:id/primary_button"));
 }

@@ -4,8 +4,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_1;
 import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_1;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
-import static utils.ConstantsPaquetes.PRECIO_$13000;
-import static utils.ConstantsPaquetes.TODO_INCLUIDO_7DIAS_10GB;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ValidarTexto;
@@ -15,8 +14,12 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class TodoIncluido7DiasMinIlim10GBNoIncluyeRedes extends AndroidObject implements Task {
+
+    String precioTexto = PRECIO_$13000;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -27,12 +30,17 @@ public class TodoIncluido7DiasMinIlim10GBNoIncluyeRedes extends AndroidObject im
                         TODO_INCLUIDO_7DIAS_10GB)
         );
 
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", TODO_INCLUIDO_7DIAS_10GB);
+
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_1),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto(PRECIO_$13000));
+                ValidarTexto.validarTexto(PRECIO_$13000)
+        );
+
     }
 
     public static Performable todoIncluido7DiasMinIlim10GBNoIncluyeRedes() {

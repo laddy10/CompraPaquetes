@@ -1,9 +1,11 @@
 package userinterfaces;
 
 import io.appium.java_client.MobileBy;
+import models.User;
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageObject;
+import utils.TestDataProvider;
 
 public class SegmentoPage extends PageObject {
 
@@ -265,4 +267,14 @@ public class SegmentoPage extends PageObject {
           Target.the("Boton menu hamburguesa").located(By.id("iv_menu"));
   public static final Target BTN_CERRAR_X =
           Target.the("Boton menu hamburguesa").located(By.id("iv_close"));
+
+  private static final User user = TestDataProvider.getRealUser();
+
+  public static Target BTN_LINEA(String numero) {
+    return Target.the("Botón línea exacta")
+            .locatedBy("//android.widget.Button[contains(@text,'" + numero + "')]");
+  }
+  public static final Target TBL_PRODUCT_ATTRIBUTES =
+          Target.the("Filas de la tabla Product Attributes")
+                  .located(By.xpath("//table[@id='OfferAttributes']//tbody/tr"));
 }

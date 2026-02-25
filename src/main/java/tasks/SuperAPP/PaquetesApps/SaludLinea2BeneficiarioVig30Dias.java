@@ -4,8 +4,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_2;
 import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_2;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
-import static utils.ConstantsPaquetes.PRECIO_$5000;
-import static utils.ConstantsPaquetes.SALUD_EN_LINEA_30DIAS_2BENEFICIARIOS;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ValidarTexto;
@@ -15,8 +14,12 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class SaludLinea2BeneficiarioVig30Dias implements Task {
+
+    String precioTexto = PRECIO_$5000;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -30,6 +33,9 @@ public class SaludLinea2BeneficiarioVig30Dias implements Task {
 
         );
 
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", SALUD_EN_LINEA_30DIAS_2BENEFICIARIOS);
+
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
@@ -37,6 +43,7 @@ public class SaludLinea2BeneficiarioVig30Dias implements Task {
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
                 ValidarTexto.validarTexto(PRECIO_$5000)
         );
+
     }
 
     public static Performable saludLinea2BeneficiarioVig30Dias() {

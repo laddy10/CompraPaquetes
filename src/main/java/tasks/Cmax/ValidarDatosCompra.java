@@ -6,7 +6,6 @@ import static userinterfaces.CmaxPage.*;
 import static utils.Constants.*;
 
 import interactions.WaitFor;
-import models.User;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -22,7 +21,6 @@ import org.slf4j.LoggerFactory;
 import interactions.comunes.ValidateInformationText;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
-import utils.TestDataProvider;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -36,12 +34,14 @@ public class ValidarDatosCompra implements Task {
     private static final Logger LOGGER = LoggerFactory.getLogger(ValidarDatosCompra.class);
     private static final Locale COLOMBIA_LOCALE = new Locale("es", "CO");
 
-    private final User user = TestDataProvider.getRealUser();
-
-
     @Override
     public <T extends Actor> void performAs(T actor) {
-        LOGGER.info("Iniciando validación de datos de compra para valor: {}", user.getValorBuscado());
+
+        // Recuperamos el valor dinámico desde el Actor
+        String valorBuscado = actor.recall("VALOR_COMPRA");
+        LOGGER.info("Valor buscado recuperado del actor: {}", valorBuscado);
+
+        LOGGER.info("Iniciando validación de datos de compra para valor: {}", valorBuscado);
 
         actor.attemptsTo(WaitUntil.the(TBL_DATOS, WebElementStateMatchers.isVisible()));
         actor.should(seeThat(ValidateInformationText.validateInformationText(TBL_DATOS)));
@@ -49,10 +49,11 @@ public class ValidarDatosCompra implements Task {
         List<WebElementFacade> filas = TBL_DATOS.resolveAllFor(actor);
         LOGGER.info("Se encontraron {} filas en la tabla", filas.size());
 
-        WebElementFacade filaEncontrada = buscarCompraMasReciente(filas);
+        // Pasamos valorBuscado como parámetro
+        WebElementFacade filaEncontrada = buscarCompraMasReciente(filas, valorBuscado);
 
         if (filaEncontrada == null) {
-            String errorMessage = "ERROR: No se encontró ninguna compra con el valor: " + user.getValorBuscado();
+            String errorMessage = "ERROR: No se encontró ninguna compra con el valor: " + valorBuscado;
             LOGGER.error(errorMessage);
             throw new AssertionError(errorMessage);
         }
@@ -72,7 +73,7 @@ public class ValidarDatosCompra implements Task {
 
         String nombrePaquete = extraerNombrePaquete(actor);
 
-        String mensajeEvidencia = PASO_VALIDACION_DATOS_COMPRA + " " + user.getValorBuscado();
+        String mensajeEvidencia = PASO_VALIDACION_DATOS_COMPRA + " " + valorBuscado;
         if (!nombrePaquete.isEmpty()) {
             mensajeEvidencia += " - " + nombrePaquete;
         }
@@ -83,8 +84,8 @@ public class ValidarDatosCompra implements Task {
         LOGGER.info("Validación de datos de compra completada exitosamente");
     }
 
-    private WebElementFacade buscarCompraMasReciente(List<WebElementFacade> filas) {
-        String valorBuscado = user.getValorBuscado();
+    private WebElementFacade buscarCompraMasReciente(List<WebElementFacade> filas, String valorBuscado) {
+
         DecimalFormat decimalFormat = (DecimalFormat) NumberFormat.getNumberInstance(Locale.getDefault());
         decimalFormat.applyPattern("#,###.##");
 
@@ -120,10 +121,22 @@ public class ValidarDatosCompra implements Task {
             LOGGER.debug("Comparando: '{}' con valor buscado: '{}'", valorCompraTexto, valorBuscado);
 
             if (valorBuscado.contains("COP") && valorCompraTexto.contains("COP")) {
-                boolean coincide = valorCompraTexto.trim().equals(valorBuscado.trim());
+
+                String valorTablaNormalizado = valorCompraTexto
+                        .replace("-", "")
+                        .trim();
+
+                String valorBuscadoNormalizado = valorBuscado
+                        .replace("-", "")
+                        .trim();
+
+                boolean coincide = valorTablaNormalizado.equals(valorBuscadoNormalizado);
+
                 if (coincide) {
-                    LOGGER.info("Valor coincidente encontrado (texto completo): {} = {}", valorCompraTexto, valorBuscado);
+                    LOGGER.info("Valor coincidente encontrado (texto normalizado): {} = {}",
+                            valorTablaNormalizado, valorBuscadoNormalizado);
                 }
+
                 return coincide;
             }
 
@@ -157,8 +170,7 @@ public class ValidarDatosCompra implements Task {
             String fechaHora = fila.then(By.xpath(COLUMN_FECHA_XPATH)).getText();
             LOGGER.debug("Procesando fecha: {}", fechaHora);
 
-            String fechaNormalizada = fechaHora.trim();
-            return dateFormat.parse(fechaNormalizada);
+            return dateFormat.parse(fechaHora.trim());
 
         } catch (ParseException e) {
             LOGGER.warn("No se pudo parsear la fecha de la fila", e);
@@ -174,16 +186,12 @@ public class ValidarDatosCompra implements Task {
     }
 
     private void validarCamposDetalle(Actor actor) {
-        LOGGER.debug("Validando campos de detalle de la compra");
-
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_FECHA_HORA)));
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_ESTADO_CUENTA)));
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_IMPORTE_AJUSTE)));
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_CUENTA_PRINCIPAL)));
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_DATOS_EXTERNOS1)));
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_DATOS_EXTERNOS2)));
-
-        LOGGER.debug("Todos los campos de detalle validados correctamente");
     }
 
     private String extraerNombrePaquete(Actor actor) {
@@ -194,9 +202,7 @@ public class ValidarDatosCompra implements Task {
             List<WebElementFacade> elementos = targetPaquete.resolveAllFor(actor);
 
             if (!elementos.isEmpty() && elementos.get(0).isPresent()) {
-                String nombrePaquete = elementos.get(0).getText().trim();
-                LOGGER.info("Nombre del paquete extraído: '{}'", nombrePaquete);
-                return nombrePaquete;
+                return elementos.get(0).getText().trim();
             }
         } catch (Exception e) {
             LOGGER.warn("No se pudo extraer el nombre del paquete", e);

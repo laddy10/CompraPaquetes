@@ -73,7 +73,7 @@ Feature: Se requiere tomar evidencias de las consultas realizadas en CMAX
 
 
 
-  @cmax @Validacion_Compra_Y_Estado_Final_Linea
+    @Validacion_Compra_Y_Estado_Final_Linea
     Scenario: Validación de la compra y consulta final del estado de la linea en CMAX
     Given Se ingresa a la URL de CMAX
     When Se ingresa el usuario y la contrasena

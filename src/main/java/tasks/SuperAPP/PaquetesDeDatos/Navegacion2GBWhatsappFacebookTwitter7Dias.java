@@ -4,8 +4,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
 import static utils.Constants.ULTIMO;
-import static utils.ConstantsPaquetes.NAVEGACION_2GB_7DIAS;
-import static utils.ConstantsPaquetes.PRECIO_$8000;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickTextoQueContengaX;
@@ -17,8 +16,12 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class Navegacion2GBWhatsappFacebookTwitter7Dias extends AndroidObject implements Task {
+
+    String precioTexto = PRECIO_$8000;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -35,12 +38,17 @@ public class Navegacion2GBWhatsappFacebookTwitter7Dias extends AndroidObject imp
                         NAVEGACION_2GB_7DIAS)
         );
 
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", NAVEGACION_2GB_7DIAS);
+
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto(PRECIO_$8000));
+                ValidarTexto.validarTexto(PRECIO_$8000)
+        );
+
     }
 
     public static Performable navegacion2GBWhatsappFacebookTwitter7Dias() {

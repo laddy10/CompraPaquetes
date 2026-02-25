@@ -2,8 +2,7 @@ package tasks.SuperAPP.PaquetesDeDatos;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
-import static utils.ConstantsPaquetes.NAVEGACION_800MB_3DIAS;
-import static utils.ConstantsPaquetes.PRECIO_$5000;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickElementByText;
@@ -14,8 +13,12 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class Navegacion800MBWhatsappFacebookTwitter3Dia implements Task {
+
+    String precioTexto = PRECIO_$5000;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -30,12 +33,17 @@ public class Navegacion800MBWhatsappFacebookTwitter3Dia implements Task {
                         NAVEGACION_800MB_3DIAS)
         );
 
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", NAVEGACION_800MB_3DIAS);
+
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto(PRECIO_$5000));
+                ValidarTexto.validarTexto(PRECIO_$5000)
+        );
+
     }
 
     public static Performable navegacion800MBWhatsappFacebookTwitter3Dia() {

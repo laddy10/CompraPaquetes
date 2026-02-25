@@ -7,7 +7,7 @@ import static utils.Constants.*;
 
 import interactions.WaitElement;
 import interactions.WaitFor;
-import models.User;
+import interactions.comunes.ValidateInformationText;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -17,24 +17,20 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import interactions.comunes.ValidateInformationText;
 import utils.AdjustPageZoom;
 import utils.EvidenciaUtils;
-import utils.TestDataProvider;
+import utils.mappers.PaquetesMapper;
 
 import java.util.List;
-import java.util.Map;
 
 public class ValidarOfertas implements Task {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ValidarOfertas.class);
 
-    private final User user = TestDataProvider.getRealUser();
-
     @Override
     public <T extends Actor> void performAs(T actor) {
-        LOGGER.info("Iniciando validación de ofertas activas");
+
+        LOGGER.info("Iniciando validación de ofertas activas en CMAX");
 
         navegarAOfertas(actor);
         validarCamposOferta(actor);
@@ -42,12 +38,14 @@ public class ValidarOfertas implements Task {
         EvidenciaUtils.registrarCaptura(PASO_VALIDACION_OFERTAS);
 
         actor.attemptsTo(AdjustPageZoom.to(NORMAL_ZOOM));
+
         buscarYSeleccionarPaquete(actor);
 
-        LOGGER.info("Validación de ofertas activas completada exitosamente");
+        LOGGER.info("Validación de ofertas completada exitosamente");
     }
 
     private void navegarAOfertas(Actor actor) {
+
         LOGGER.debug("Navegando a la sección de ofertas");
 
         actor.attemptsTo(
@@ -62,35 +60,80 @@ public class ValidarOfertas implements Task {
     }
 
     private void validarCamposOferta(Actor actor) {
-        LOGGER.debug("Validando campos de ofertas");
+
+        LOGGER.debug("Validando campos generales de la tabla de ofertas");
 
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_NUMERO_CONSULTA)));
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_FECHA_INICIO)));
         actor.should(seeThat(ValidateInformationText.validateInformationText(TXT_FECHA_EXPIRACION2)));
 
-        LOGGER.debug("Todos los campos de ofertas validados correctamente");
+        LOGGER.debug("Campos generales validados correctamente");
     }
 
     private void buscarYSeleccionarPaquete(Actor actor) {
-        String paqueteBuscado = user.getPaqueteCMAX();
-        LOGGER.info("Buscando paquete: '{}'", paqueteBuscado);
+
+        String paqueteBuscado;
+
+        // 🔎 Detectar si es internacional
+        Boolean esInternacional = actor.recall("ES_INTERNACIONAL");
+
+        if (Boolean.TRUE.equals(esInternacional)) {
+
+            String precioSeleccionado = actor.recall("PRECIO_SELECCIONADO");
+
+            if (precioSeleccionado == null) {
+                throw new AssertionError(
+                        "No existe PRECIO_SELECCIONADO en memoria para paquete internacional.");
+            }
+
+            paqueteBuscado = PaquetesMapper
+                    .obtenerNombreCmaxInternacional(precioSeleccionado);
+
+            LOGGER.info("Internacional detectado.");
+            LOGGER.info("Precio seleccionado: '{}'", precioSeleccionado);
+
+        } else {
+
+            // 🔎 Flujo normal
+            String paqueteCanal = actor.recall("PAQUETE_CANAL");
+
+            if (paqueteCanal == null) {
+                throw new AssertionError(
+                        "No existe PAQUETE_CANAL en memoria del actor.");
+            }
+
+            paqueteBuscado = PaquetesMapper
+                    .obtenerNombreCMAX(paqueteCanal);
+
+            LOGGER.info("Paquete canal: '{}'", paqueteCanal);
+        }
+
+        LOGGER.info("Nombre esperado en CMAX: '{}'", paqueteBuscado);
 
         List<WebElementFacade> filas = TBL_OFERTAS.resolveAllFor(actor);
+
         LOGGER.info("Se encontraron {} filas en la tabla de ofertas", filas.size());
 
         boolean paqueteEncontrado = false;
 
         for (int i = 0; i < filas.size(); i++) {
+
             WebElementFacade fila = filas.get(i);
-            WebElementFacade celdaPaquete = fila.then(By.xpath(COLUMN_PAQUETE_XPATH));
-            String nombrePaqueteActual = celdaPaquete.getText().trim();
+            WebElementFacade celdaPaquete =
+                    fila.then(By.xpath(COLUMN_PAQUETE_XPATH));
 
-            LOGGER.debug("Fila {}: Paquete encontrado: '{}'", (i + 1), nombrePaqueteActual);
+            String nombrePaqueteActual =
+                    celdaPaquete.getText().trim();
 
-            if (nombrePaqueteActual.equals(paqueteBuscado)) {
+            LOGGER.debug("Fila {}: '{}'", (i + 1), nombrePaqueteActual);
+
+            if (nombrePaqueteActual.equalsIgnoreCase(paqueteBuscado)) {
+
                 LOGGER.info("Paquete encontrado en fila {}", (i + 1));
 
-                WebElementFacade enlace = fila.then(By.xpath(COLUMN_LINK_XPATH));
+                WebElementFacade enlace =
+                        fila.then(By.xpath(COLUMN_LINK_XPATH));
+
                 actor.attemptsTo(
                         Scroll.to(enlace),
                         WaitFor.aTime(500),
@@ -98,15 +141,14 @@ public class ValidarOfertas implements Task {
                 );
 
                 paqueteEncontrado = true;
-                LOGGER.info("Clic realizado en el enlace del paquete: '{}'", paqueteBuscado);
                 break;
             }
         }
 
         if (!paqueteEncontrado) {
-            String errorMessage = "ERROR: No se encontró el paquete en la tabla: " + paqueteBuscado;
-            LOGGER.error(errorMessage);
-            throw new AssertionError(errorMessage);
+            throw new AssertionError(
+                    "No se encontró el paquete en CMAX. Esperado: "
+                            + paqueteBuscado);
         }
     }
 

@@ -88,13 +88,13 @@ public class AndroidObject extends Excepciones {
         }
     }
 
-    public void SwipeToElement(Actor actor, String label) {
-        AndroidDriver driver = (AndroidDriver) BrowseTheWeb.as(actor).getDriver();
-        driver.findElementByAndroidUIAutomator(
-                        "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
-                                "new UiSelector().text(\"" + label + "\"));")
-                .click();
-    }
+        public void SwipeToElement(Actor actor, String label) {
+            AndroidDriver driver = (AndroidDriver) BrowseTheWeb.as(actor).getDriver();
+            driver.findElementByAndroidUIAutomator(
+                            "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
+                                    "new UiSelector().text(\"" + label + "\"));")
+                    .click();
+        }
 
 
     public void UnScrollArribaInicio(Actor actor) {
@@ -352,6 +352,76 @@ public class AndroidObject extends Excepciones {
                                     + "\"));");
         } catch (Exception e) {
             ExScrollVerticalClass(actor, label);
+        }
+    }
+
+
+    public void scrollCortoSinCentrar(Actor actor, String textoOpcional) {
+        int intentosMaximos = 10;
+
+        try {
+            AndroidDriver<MobileElement> driver = androidDriver(actor);
+
+            //  **PRIMERA VERIFICACIÓN SIN SCROLL**
+            if (textoOpcional != null && !textoOpcional.isEmpty()) {
+                List<MobileElement> elementos =
+                        driver.findElementsByAndroidUIAutomator(
+                                "new UiSelector().textContains(\"" + textoOpcional + "\")");
+
+                if (!elementos.isEmpty()) {
+                    for (WebElement elemento : elementos) {
+                        if (elemento.isDisplayed()) {
+                            System.out.println(" Texto visible de entrada: " + textoOpcional);
+                            return; //  NO HACEMOS SCROLL
+                        }
+                    }
+                }
+            }
+
+            // **BÚSQUEDA CON SCROLL**
+            for (int intento = 1; intento <= intentosMaximos; intento++) {
+                try {
+                    List<MobileElement> elementos =
+                            driver.findElementsByAndroidUIAutomator(
+                                    "new UiSelector().textContains(\"" + textoOpcional + "\")");
+
+                    if (!elementos.isEmpty()) {
+                        for (WebElement elemento : elementos) {
+                            if (elemento.isDisplayed()) {
+                                System.out.println(
+                                        "Verificando elemento en intento #"
+                                                + intento
+                                                + " -> isDisplayed(): "
+                                                + elemento.isDisplayed());
+
+                                // 🚨 NUEVO: Comprobamos si ya está en una posición segura antes de centrar
+
+
+
+                                // Si el texto no está centrado, lo movemos solo un poco
+                                System.out.println(
+                                        "✅ Texto encontrado y ajustado: " + textoOpcional + " en intento #" + intento);
+                                return;
+                            }
+                        }
+                    }
+
+                    //  **Realizamos un scroll controlado**
+                    System.out.println(" Realizando scroll, intento #" + intento);
+                    swipeVertical(actor, 0.7, 0.5, 0.3);
+                    Thread.sleep(600);
+
+                } catch (Exception e) {
+                    System.out.println(" Error en el intento de scroll #" + intento);
+                    e.printStackTrace();
+                }
+            }
+
+            System.out.println(" No se encontró el texto después de " + intentosMaximos + " intentos.");
+
+        } catch (Exception e) {
+            System.out.println(" Ocurrió un error en la operación de scroll.");
+            e.printStackTrace();
         }
     }
 

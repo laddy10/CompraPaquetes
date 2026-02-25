@@ -15,27 +15,35 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class TodoIncluido30DiasMinIlim12GB extends AndroidObject implements Task {
 
+
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
-                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
-                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
-                ClickTextoQueContengaX.elTextoContiene(ULTIMO));
+
+        String precioTexto = PRECIO_$33000;
+        String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
         actor.attemptsTo(
-                ValidarTexto.validarTexto(PRECIO_$33000),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO)
+        );
+
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", TODO_INCLUIDO_12GB);
+
+        actor.attemptsTo(
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
-                ValidarTexto.validarTexto(
-                        TODO_INCLUIDO_12GB)
+                ValidarTexto.validarTexto(TODO_INCLUIDO_12GB)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
@@ -43,7 +51,8 @@ public class TodoIncluido30DiasMinIlim12GB extends AndroidObject implements Task
         actor.attemptsTo(
                 ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto(PRECIO_$33000));
+                ValidarTexto.validarTexto(precioTexto)
+        );
     }
 
     public static Performable todoIncluido30DiasMinIlim12GB() {

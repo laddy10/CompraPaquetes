@@ -58,7 +58,6 @@ public class SeleccionarUsarSaldo implements Task {
         actor.attemptsTo(
                 WaitFor.aTime(5000));
 
-
         WordAppium.main();
     }
 

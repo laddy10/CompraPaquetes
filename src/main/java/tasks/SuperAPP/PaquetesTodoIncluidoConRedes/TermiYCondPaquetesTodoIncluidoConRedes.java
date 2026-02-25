@@ -51,10 +51,10 @@ public class TermiYCondPaquetesTodoIncluidoConRedes extends AndroidObject implem
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
-         /*  actor.attemptsTo(
-              Click.on(BTN_PAGAR),
+        actor.attemptsTo(
+                Click.on(BTN_PAGAR),
                 WaitForResponse.withAnyText(TEXTO_COSTO_DEL__PAQUETE, OPERACION_EXITOSA)
-        );¨*/
+        );
 
     }
 

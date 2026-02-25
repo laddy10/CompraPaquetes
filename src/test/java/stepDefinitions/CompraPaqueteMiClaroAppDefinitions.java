@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotPresent;
 import static userinterfaces.SegmentoPage.*;
@@ -22,7 +21,6 @@ import java.util.List;
 import models.User;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import tasks.SuperAPP.*;
 import tasks.SuperAPP.PaqueteVoz.PaqueteDeVoz;

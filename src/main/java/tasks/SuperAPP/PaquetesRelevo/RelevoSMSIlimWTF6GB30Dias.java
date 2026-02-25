@@ -8,15 +8,18 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_2;
 import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_2;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
-import static utils.ConstantsPaquetes.PAQUETE_RELEVO_6GB_30DIAS;
-import static utils.ConstantsPaquetes.PRECIO_$31500;
+import static utils.ConstantsPaquetes.*;
 
 public class RelevoSMSIlimWTF6GB30Dias implements Task {
+
+    String precioTexto = PRECIO_$31500;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -29,12 +32,17 @@ public class RelevoSMSIlimWTF6GB30Dias implements Task {
                 ValidarTexto.validarTexto(PAQUETE_RELEVO_6GB_30DIAS)
         );
 
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", PAQUETE_RELEVO_6GB_30DIAS);
+
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
                 Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
-                ValidarTexto.validarTexto(PRECIO_$31500));
+                ValidarTexto.validarTexto(PRECIO_$31500)
+        );
+
     }
 
     public static Performable relevoSMSIlimWTF6GB30Dias() {

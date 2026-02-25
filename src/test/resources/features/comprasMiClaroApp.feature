@@ -577,6 +577,7 @@ Feature: Compras Mi Claro App
     Then Se verifican firmas y factor multiplicador
 
 
+
   @COMPRAS_MICLARO_17
   Scenario: Realizar la compra del paquete Navegación 400MB+WhatsApp Facebook Twitter 1 dia
     Given Se ingresa a la URL de CMAX
@@ -904,7 +905,7 @@ Feature: Compras Mi Claro App
      #---------- Paquetes Relevo comunidad sorda ------------#
 
 
-  @COMPRAS_MICLARO_26
+  @COMPRAS_MICLARO_26_INHABILITADO
   Scenario: Realizar la compra del Paquete Relevo SMS Ilimitados + WTF + 800MB 7 Dias
     Given Se ingresa a la URL de CMAX
     When Se ingresa el usuario y la contrasena
@@ -939,7 +940,7 @@ Feature: Compras Mi Claro App
     Then Se verifican firmas y factor multiplicador
 
 
-  @COMPRAS_MICLARO_27
+  @COMPRAS_MICLARO_27_INHABILITADO
   Scenario: Realizar la compra del Paquete Relevo SMS Ilimitados + WTF + 2.5GB 15 Dias
     Given Se ingresa a la URL de CMAX
     When Se ingresa el usuario y la contrasena
@@ -975,7 +976,7 @@ Feature: Compras Mi Claro App
 
 
 
-  @COMPRAS_MICLARO_28
+  @COMPRAS_MICLARO_28_INHABILITADO
   Scenario: Realizar la compra del Paquete Relevo SMS Ilimitados + WTF + 6GB 30 Dias
     Given Se ingresa a la URL de CMAX
     When Se ingresa el usuario y la contrasena

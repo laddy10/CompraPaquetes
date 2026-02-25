@@ -3,8 +3,7 @@ package tasks.SuperAPP.PaquetesApps;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
-import static utils.ConstantsPaquetes.PRECIO_$6500;
-import static utils.ConstantsPaquetes.SALUD_EN_LINEA_30DIAS_4BENEFICIARIOS;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ValidarTexto;
@@ -14,8 +13,12 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class SaludLinea4BeneficiariosVig30Dias extends AndroidObject implements Task {
+
+    String precioTexto = PRECIO_$6500;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -29,6 +32,9 @@ public class SaludLinea4BeneficiariosVig30Dias extends AndroidObject implements 
                         SALUD_EN_LINEA_30DIAS_4BENEFICIARIOS)
         );
 
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", SALUD_EN_LINEA_30DIAS_4BENEFICIARIOS);
+
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
@@ -36,6 +42,7 @@ public class SaludLinea4BeneficiariosVig30Dias extends AndroidObject implements 
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
                 ValidarTexto.validarTexto(PRECIO_$6500)
         );
+
     }
 
     public static Performable saludLinea4BeneficiariosVig30Dias() {

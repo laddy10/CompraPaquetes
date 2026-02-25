@@ -92,7 +92,7 @@ public class Constants {
   public static final String CIRCULAR_SIC = "CIRCULAR ÚNICA DE LA SUPERINTENDENCIA DE INDUSTRIA Y COMERCIO";
   public static final String PERSONAS = "Personas";
   public static final String MAS_DE_CLARO = "Más de Claro";
-  public static final String AUTOGESTION_WHATSAPP = "Claro Autogestión";
+  public static final String AUTOGESTION_WHATSAPP = "Autogestión Claro WhatsApp";
   public static final String URL_CLARO = "claro.com.co";
   public static final String MENU_PRINCIPAL = "Menú principal";
   public static final String VER_MENU_PREPAGO = "Ver menú prepago";
@@ -121,9 +121,13 @@ public class Constants {
   public static final String CONECTADO = "conectado sin importar dónde te encuentres";
   public static final String RECUERDA_TENER_SALDO = "Recuerda tener saldo disponible para la compra de este paquete";
   public static final String ENTENDIDO = "Entendido";
+  public static final String MAS = "Más";
+  public static final String VACIAR_CHAT = "Vaciar chat";
+  public static final String ABANDONAR_CONVERSACION = "Tu solicitud de abandonar la conversación se cumplió. ¡Envíe #volver para regresar!";
 
 
-    // Portal Cautivo
+
+  // Portal Cautivo
   public static final String USAR_SIN_UNA_CUENTA = "Usar sin una cuenta";
   public static final String SMS_CODIGO_OTP = "A continuación te enviaremos un SMS con un código de verificación para validar tu número de celular.";
 

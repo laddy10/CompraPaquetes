@@ -8,13 +8,16 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
-import static utils.ConstantsPaquetes.PAQUETE_RELEVO_800MB_7DIAS;
-import static utils.ConstantsPaquetes.PRECIO_$8000;
+import static utils.ConstantsPaquetes.*;
 
 public class RelevoSMSIlimWTF800MB7Dias extends AndroidObject implements Task {
+
+    String precioTexto = PRECIO_$8000;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -24,6 +27,9 @@ public class RelevoSMSIlimWTF800MB7Dias extends AndroidObject implements Task {
                 ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(PAQUETE_RELEVO_800MB_7DIAS)
         );
+
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", PAQUETE_RELEVO_800MB_7DIAS);
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 

@@ -2,8 +2,7 @@ package tasks.SuperAPP.PaquetesApps;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static utils.Constants.*;
-import static utils.ConstantsPaquetes.PRECIO_$3500;
-import static utils.ConstantsPaquetes.SALUD_EN_LINEA_30DIAS;
+import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickElementByText;
@@ -12,8 +11,12 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import utils.CapturaDePantallaMovil;
+import utils.FormateadorValor;
 
 public class SaludLinea1BeneficiarioVig30Dias implements Task {
+
+    String precioTexto = PRECIO_$3500;
+    String valorFormateado = FormateadorValor.aFormatoCmax(precioTexto);
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -25,6 +28,9 @@ public class SaludLinea1BeneficiarioVig30Dias implements Task {
                         SALUD_EN_LINEA_30DIAS)
         );
 
+        actor.remember("VALOR_COMPRA", valorFormateado);
+        actor.remember("PAQUETE_CANAL", SALUD_EN_LINEA_30DIAS);
+
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
@@ -32,6 +38,7 @@ public class SaludLinea1BeneficiarioVig30Dias implements Task {
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
                 ValidarTexto.validarTexto(PRECIO_$3500)
         );
+
     }
 
     public static Performable saludLinea1BeneficiarioVig30Dias() {

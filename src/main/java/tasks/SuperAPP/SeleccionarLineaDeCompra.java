@@ -12,13 +12,23 @@ import interactions.WaitElement;
 import interactions.WaitFor;
 import interactions.WaitForResponse;
 import interactions.comunes.*;
+import interactions.scroll.ScrollAndClick;
+import interactions.scroll.ScrollRecyclerView;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.touch.offset.PointOption;
 import models.User;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Scroll;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
 
@@ -34,21 +44,20 @@ public class SeleccionarLineaDeCompra extends AndroidObject implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                ClickElementByText.clickElementByText(PREPAGO)
+                ClickElementByText.clickElementByText(PREPAGO),
+                WaitFor.aTime(2000)
         );
 
-        scrollCorto2(actor, LINEA_SA + " " + user.getNumero() + " " + ELEGIR);
+
+        scrollCortoSinCentrar(actor, LINEA_SA + " " + user.getNumero() + " " + ELEGIR);
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
-                WaitFor.aTime(2000),
-               // ClickElementByText.clickElementByText(LINEA_SA + " " + user.getNumero() + " " + ELEGIR),
-               // ClickElementByText.clickElementByText("Línea 350 767 1166 Elegir"),
-                ClickTextoQueContengaX.elTextoContiene("350 767 1166"),
-                WaitForResponse.withText(COMPRA_PAQUETES_RECARGAS)
-        );
+                WaitFor.aTime(800),
+                ClickTextoQueContengaX.elTextoContiene(user.getNumero())
 
+        );
 
         theActorInTheSpotlight()
                 .should(
