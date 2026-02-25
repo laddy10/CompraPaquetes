@@ -169,9 +169,11 @@ public class PaquetesMapper {
         MAPEO_CMAX.put(TODO_INCLUIDO_80GB_WFT_VOZ,
                 "Todo Incluido Voz Ilimitados Whatsapp Facebook Twitter +80GB Vig 30 dias");
 
-        MAPEO_CMAX.put(TODO_INCLUIDO_400MB_WFT_SALUD_4_BENEFICIARIOS, "");
+        MAPEO_CMAX.put(TODO_INCLUIDO_400MB_WFT_SALUD_4_BENEFICIARIOS,
+                "Todo Incluido + 400MB + WTF 3 Dias de Salud en Linea 4 beneficiarios   ");
 
-        MAPEO_CMAX.put(TODO_INCLUIDO_1_4GB_WFT_SALUD_4_BENEFICIARIOS, "");
+        MAPEO_CMAX.put(TODO_INCLUIDO_1_4GB_WFT_SALUD_4_BENEFICIARIOS,
+                "Todo Incluido + 1.4GB + WTF 6 Dias de Salud en Linea 4 beneficiarios   ");
 
 
         // =========================

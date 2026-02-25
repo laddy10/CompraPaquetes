@@ -13,7 +13,6 @@ import interactions.WaitFor;
 import interactions.WaitForResponse;
 import interactions.comunes.*;
 import interactions.scroll.ScrollAndClick;
-import interactions.scroll.ScrollRecyclerView;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
