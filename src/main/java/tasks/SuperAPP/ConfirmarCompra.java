@@ -42,7 +42,7 @@ public class ConfirmarCompra extends AndroidObject implements Task {
         WordAppium.main();
 
         actor.attemptsTo(
-                WaitFor.aTime(250000)
+                WaitFor.aTime(5000)
         );
 
     }

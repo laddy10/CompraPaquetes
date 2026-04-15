@@ -431,7 +431,7 @@ public class CompraPaquetesWhatsAppDefinitions {
                 ClickTextoQueContengaX.elTextoContiene(MAS),
                 ClickTextoQueContengaX.elTextoContiene(VACIAR_CHAT),
                 Click.on(BTN_VACIAR_CHAT),
-                WaitFor.aTime(280000)
+                WaitFor.aTime(5000)
         );
 
     }

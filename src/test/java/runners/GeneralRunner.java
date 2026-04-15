@@ -13,7 +13,7 @@ import utils.DataToFeature;
     glue = {"hooks",
             "stepDefinitions"},
     snippets = SnippetType.CAMELCASE,
-    tags = {"@Compras_Whatsapp_14"})
+    tags = {"@Compras_Whatsapp_15"})
 @RunWith(CustomRunner.class)
 public class GeneralRunner {
   @BeforeSuite
