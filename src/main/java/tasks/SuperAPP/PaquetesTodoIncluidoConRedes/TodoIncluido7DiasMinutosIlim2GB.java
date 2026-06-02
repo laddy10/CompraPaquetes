@@ -34,7 +34,7 @@ public class TodoIncluido7DiasMinutosIlim2GB extends AndroidObject implements Ta
         );
 
         // Scroll hasta el paquete específico
-        scrollCorto2(actor, "2 GB");
+        scrollCorto2(actor, PRECIO_$9000);
 
         // Ingreso al detalle del paquete
         actor.attemptsTo(

@@ -208,16 +208,15 @@ public class Excepciones {
                                 + "\"));");
     }
 
-    public AndroidDriver getAndroidDriver(Actor actor) {
-        return androidDriver(actor);
-    }
-
     @SuppressWarnings("unchecked")
     public static AndroidDriver androidDriver(Actor actor) {
-        return (AndroidDriver) ((WebDriverFacade) getDriver(actor)).getProxiedDriver();
-    }
-
-    private static WebDriverFacade getDriver(Actor actor) {
-        return ((WebDriverFacade) BrowseTheWeb.as(actor).getDriver());
+        Object driver = BrowseTheWeb.as(actor).getDriver();
+        if (driver instanceof WebDriverFacade) {
+            return (AndroidDriver) ((WebDriverFacade) driver).getProxiedDriver();
+        } else if (driver instanceof AndroidDriver) {
+            return (AndroidDriver) driver;
+        } else {
+            throw new IllegalArgumentException("El driver actual no es compatible con AndroidDriver: " + driver.getClass().getName());
+        }
     }
 }

@@ -32,6 +32,9 @@ public class TodoIncluido80GB extends AndroidObject implements Task {
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
 
                 // Validación del precio en el canal
                 ValidarTexto.validarTexto(PRECIO_$100000),

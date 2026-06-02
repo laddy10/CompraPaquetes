@@ -2,10 +2,12 @@ package tasks.SuperAPP.PaquetesTodoIncluido;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.*;
-import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.Constants.*;
 import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
+import interactions.comunes.ClickElementByText;
+import interactions.comunes.ClickTextoQueContengaX;
 import interactions.comunes.ValidarTexto;
 import interactions.scroll.Scroll;
 import net.serenitybdd.screenplay.Actor;
@@ -24,11 +26,16 @@ public class TodoIncluido30DiasMinIlim30GBNoIncluyeRedes extends AndroidObject i
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        scrollCorto2(actor, PRECIO_$33000);
+        actor.attemptsTo(
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                ValidarTexto.validarTexto(PRECIO_$33000)
+        );
+
 
         actor.attemptsTo(
-                Click.on(LBL_VER_DETALLE_2),
-                Scroll.scrollUnaVista(),
+                ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(TODO_INCLUIDO_30DIAS_30GB)
         );
 
@@ -38,7 +45,7 @@ public class TodoIncluido30DiasMinIlim30GBNoIncluyeRedes extends AndroidObject i
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
-                Click.on(BTN_COMPRAR_2),
+                ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
                 ValidarTexto.validarTexto(PRECIO_$33000)
         );

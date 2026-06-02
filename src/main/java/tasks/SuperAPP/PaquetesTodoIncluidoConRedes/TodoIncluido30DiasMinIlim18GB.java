@@ -33,9 +33,9 @@ public class TodoIncluido30DiasMinIlim18GB extends AndroidObject implements Task
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
-                ClickTextoQueContengaX.elTextoContiene(ULTIMO));
+                ValidarTexto.validarTexto(precioTexto)
+        );
 
-        scrollCorto2(actor, PRECIO_$43000);
 
         actor.attemptsTo(
                 Click.on(LBL_VER_DETALLE_2),

@@ -6,13 +6,15 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.questions.Text;
-import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
 import utils.CapturaDePantallaMovil;
 
+import static userinterfaces.USSDPage.BTN_ENVIAR;
+import static userinterfaces.USSDPage.CJA_INGRESAR_OPCION;
 
 public class RealizarCompraPaquete implements Task {
+
+    private static final int OPCION_MAS = 9;
+    private static final int MAXIMO_PAGINAS_MENU = 5;
 
     private final String option;
 
@@ -26,63 +28,33 @@ public class RealizarCompraPaquete implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(WaitFor.aTime(3000));
 
+        for (int pagina = 1; pagina <= MAXIMO_PAGINAS_MENU; pagina++) {
+            String textoMenu = ObtenerTextoUSSD.obtener(actor);
+            int opcionEncontrada = obtenerNumeroOpcion(textoMenu, option);
 
-        actor.attemptsTo(
-                WaitFor.aTime(3000));
+            if (opcionEncontrada != -1) {
+                enviarOpcion(actor, opcionEncontrada);
+                return;
+            }
 
-        String textoMenuPrincipal = ObtenerTextoUSSD.obtener(actor);
-      /*  String textoMenuPrincipal = Text.of(Target.the("menu principal").located(By.id("android:id/message")))
-                .viewedBy(actor)
-                .asString(); */
-     //    System.out.println("Texto del menú: " + textoMenuPrincipal);
-
-        int opcionCompraPaquetes = obtenerNumeroOpcion(textoMenuPrincipal, option);
-
-     //     System.out.println("Se encontró en la opción: " + opcionCompraPaquetes);
-
-        actor.attemptsTo(
-                WaitFor.aTime(4000));
-
-        actor.attemptsTo(
-                Enter.theValue(Integer.toString(opcionCompraPaquetes))
-                        .into(Target.the("dialer").located(By.id("com.android.phone:id/input_field"))));
-        CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
-
-        actor.attemptsTo(
-                Click.on(Target.the("enviar").located(By.id("android:id/button1")))
-        );
-
-        while (opcionCompraPaquetes == 9) {
-            String textoMenuCompra = ObtenerTextoUSSD.obtener(actor);
-
-         /*   String textoMenuCompra = Text.of(Target.the("menu compra").located(By.id("android:id/message")))
-                    .viewedBy(actor)
-                    .asString(); */
-           //     System.out.println("Texto del menú de compra: " + textoMenuCompra);
-
-            opcionCompraPaquetes = obtenerNumeroOpcion(textoMenuCompra, option);
-
-          //      System.out.println("Se encontró en la opción: " + opcionCompraPaquetes);
-
-            actor.attemptsTo(
-                    Enter.theValue(Integer.toString(opcionCompraPaquetes))
-                            .into(Target.the("dialer").located(By.id("com.android.phone:id/input_field"))));
-            CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
-
-            actor.attemptsTo(
-                    Click.on(Target.the("enviar").located(By.id("android:id/button1")))
-            );
+            if (tieneOpcionMas(textoMenu)) {
+                enviarOpcion(actor, OPCION_MAS);
+                actor.attemptsTo(WaitFor.aTime(3000));
+            } else {
+                break;
+            }
         }
 
-
-        // Si se encontró el paquete deseado, realizar las acciones correspondientes
-        realizarCompraPaquete(actor);
+        throw new IllegalArgumentException(
+                "No se encontro el paquete '" + option + "' en el menu USSD.");
     }
 
-    private void realizarCompraPaquete(Actor actor) {
-        // Aquí puedes agregar la lógica para realizar la compra del paquete deseado
-        //   System.out.println("Realizando compra del paquete: " + option);
+    private void enviarOpcion(Actor actor, int opcion) {
+        actor.attemptsTo(Enter.theValue(Integer.toString(opcion)).into(CJA_INGRESAR_OPCION));
+        CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
+        actor.attemptsTo(Click.on(BTN_ENVIAR));
     }
 
     private int obtenerNumeroOpcion(String textoMenu, String opcion) {
@@ -92,7 +64,10 @@ public class RealizarCompraPaquete implements Task {
                 return i;
             }
         }
-        return 9;
+        return -1;
     }
 
+    private boolean tieneOpcionMas(String textoMenu) {
+        return textoMenu.contains(OPCION_MAS + ". Mas");
+    }
 }

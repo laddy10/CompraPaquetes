@@ -4,10 +4,13 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_2;
 import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_2;
 import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
+import static utils.Constants.ULTIMO;
 import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
+import interactions.comunes.ClickTextoQueContengaX;
 import interactions.comunes.ValidarTexto;
+import interactions.scroll.Scroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -24,6 +27,18 @@ public class TodoIncluidoWTF400MBSaludLinea4BeneficiariosVig3Dias
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
+        actor.attemptsTo(
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO)
+        );
 
         // Scroll hasta el paquete
         scrollCorto2(actor, PRECIO_$6000);

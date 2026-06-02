@@ -1,6 +1,8 @@
 package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterfaces.SegmentoPage.BTN_COMPRAR_2;
+import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_2;
 import static utils.Constants.*;
 import static utils.ConstantsPaquetes.PRECIO_$33000;
 import static utils.ConstantsPaquetes.TODO_INCLUIDO_12GB;
@@ -13,6 +15,7 @@ import interactions.scroll.Scroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
 import utils.FormateadorValor;
@@ -32,24 +35,23 @@ public class TodoIncluido30DiasMinIlim12GB extends AndroidObject implements Task
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
-                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
-                Scroll.scrollUnaVista(),
-                Scroll.scrollUnaVista(),
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO)
         );
+
+        scrollCorto2(actor, precioTexto);
 
         actor.remember("VALOR_COMPRA", valorFormateado);
         actor.remember("PAQUETE_CANAL", TODO_INCLUIDO_12GB);
 
         actor.attemptsTo(
-                ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
+                Click.on(LBL_VER_DETALLE_2),
                 ValidarTexto.validarTexto(TODO_INCLUIDO_12GB)
         );
 
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
-                ClickElementByText.clickElementByText(COMPRAR),
+                Click.on(BTN_COMPRAR_2),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
                 ValidarTexto.validarTexto(precioTexto)
         );

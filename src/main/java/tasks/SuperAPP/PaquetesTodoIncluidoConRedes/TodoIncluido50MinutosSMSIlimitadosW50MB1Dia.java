@@ -2,13 +2,15 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_2;
-import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
-import static utils.Constants.VER_DETALLE_DEL_PAQUETE;
+import static utils.Constants.*;
+import static utils.Constants.ULTIMO;
 import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
 import interactions.comunes.ClickElementByText;
+import interactions.comunes.ClickTextoQueContengaX;
 import interactions.comunes.ValidarTexto;
+import interactions.scroll.Scroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -24,6 +26,18 @@ public class TodoIncluido50MinutosSMSIlimitadosW50MB1Dia extends AndroidObject i
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
+        actor.attemptsTo(
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO)
+        );
 
         // Scroll hasta el paquete
         scrollCorto2(actor, PRECIO_$2500);

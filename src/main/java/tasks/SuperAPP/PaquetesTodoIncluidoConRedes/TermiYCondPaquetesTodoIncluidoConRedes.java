@@ -2,9 +2,7 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import interactions.WaitForResponse;
 import interactions.comunes.Atras;
-import interactions.comunes.ClickElementByText;
 import interactions.comunes.ClickTextoQueContengaX;
-import interactions.comunes.ValidarTextoQueContengaX;
 import interactions.scroll.Scroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -13,13 +11,11 @@ import net.serenitybdd.screenplay.actions.Click;
 import questions.ValidarElemento;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
-import utils.WordAppium;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static userinterfaces.SegmentoPage.*;
-import static userinterfaces.WhatsAppPage.LBL_WHATSAPP;
 import static utils.Constants.*;
 
 public class TermiYCondPaquetesTodoIncluidoConRedes extends AndroidObject implements Task {

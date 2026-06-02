@@ -173,7 +173,7 @@ Feature: El usuario realiza compra de paquetes por la super APP
    |   |   |   |   |   |   ||
 
 
-  @SUPER_APP_07
+  @SUPER_APP_30
   Scenario Outline: Realizar la compra del paquete Todo incluido 10 Dias con Minutos Ilimitados + 3.5GB
     Given ABRIR LA SUPER APP
     When EL USUARIO REALIZA EL INGRESO A LA SUPER APP

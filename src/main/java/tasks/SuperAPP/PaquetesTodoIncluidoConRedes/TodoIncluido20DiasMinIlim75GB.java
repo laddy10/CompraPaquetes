@@ -1,19 +1,17 @@
 package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static userinterfaces.SegmentoPage.*;
-import static utils.Constants.ELEGIR_OTRO_MEDIO_PAGO;
-import static utils.Constants.ULTIMO;
+import static utils.Constants.*;
 import static utils.ConstantsPaquetes.*;
 
 import interactions.WaitForResponse;
+import interactions.comunes.ClickElementByText;
 import interactions.comunes.ClickTextoQueContengaX;
 import interactions.comunes.ValidarTexto;
 import interactions.scroll.Scroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
 import utils.AndroidObject;
 import utils.CapturaDePantallaMovil;
 import utils.FormateadorValor;
@@ -31,13 +29,13 @@ public class TodoIncluido20DiasMinIlim75GB extends AndroidObject implements Task
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
-                ClickTextoQueContengaX.elTextoContiene(ULTIMO)
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                ValidarTexto.validarTexto(PRECIO_$23000)
         );
 
-        scrollCorto2(actor, PRECIO_$23000);
 
         actor.attemptsTo(
-                Click.on(LBL_VER_DETALLE_2),
+                ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
                 ValidarTexto.validarTexto(
                         TODO_INCLUIDO_20DIAS_7_5GB)
         );
@@ -49,7 +47,7 @@ public class TodoIncluido20DiasMinIlim75GB extends AndroidObject implements Task
         CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
 
         actor.attemptsTo(
-                Click.on(BTN_COMPRAR_2),
+                ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
                 ValidarTexto.validarTexto(PRECIO_$23000)
         );

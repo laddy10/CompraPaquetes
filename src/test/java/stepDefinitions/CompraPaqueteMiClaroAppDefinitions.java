@@ -259,10 +259,22 @@ public class CompraPaqueteMiClaroAppDefinitions {
                 .attemptsTo(TodoIncluido7DiasMinutosIlim2GB.todoIncluido7DiasMinutosIlim2GB());
     }
 
+    @Then("^COMPRA DEL PAQUETE TODO INCLUIDO 7 DIAS CON MINUTOS ILIMITADOS 2GB WIN SPORTS$")
+    public void compraPaqueteTodoIncluido7DiasMinutosIlim2GBWinSports() {
+        theActorInTheSpotlight()
+                .attemptsTo(TodoIncluido7DiasMinutosIlim2GBWinSports.todoIncluido7DiasMinutosIlim2GBWinSports());
+    }
+
     @Then("^COMPRA DEL PAQUETE TODO INCLUIDO 10 DIAS CON MINUTOS ILIMITADOS 3.5GB$")
     public void compraPaqueteTodoIncluido10DiasMinutosIlim35GB() {
         theActorInTheSpotlight()
                 .attemptsTo(TodoIncluido10DiasMinutosIlim35GB.todoIncluido10DiasMinutosIlim35GB());
+    }
+
+    @Then("^COMPRA DEL PAQUETE TODO INCLUIDO 10 DIAS CON MINUTOS ILIMITADOS 3.5GB WIN SPORTS$")
+    public void compraPaqueteTodoIncluido10DiasMinutosIlim35GBWinSport() {
+        theActorInTheSpotlight()
+                .attemptsTo(TodoIncluido10DiasMinutosIlim35GBWinSport.todoIncluido10DiasMinutosIlim35GBWinSport());
     }
 
     @Then(
@@ -505,6 +517,36 @@ public class CompraPaqueteMiClaroAppDefinitions {
     @Then("TERMINOS Y CONDICIONES PAQUETE APPS")
     public void terminosYCondicionesPQDeApps() {
         theActorInTheSpotlight().attemptsTo(TermiYCondPaquetesDeApps.termiYCondPaquetesDeApps());
+    }
+
+    @Then("SELECCIONAR METODO SALDO EXCLUSIVO WIN SPORTS")
+    public void seleccionarMetodoSaldoExclusivoWinSports() {
+        if (!net.serenitybdd.screenplay.questions.Presence.of(BTN_CONTRA_SALDO).viewedBy(theActorInTheSpotlight()).resolveAll().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(net.serenitybdd.screenplay.actions.Click.on(BTN_CONTRA_SALDO));
+        } else if (!net.serenitybdd.screenplay.questions.Presence.of(BTN_CONTRA_SALDO2).viewedBy(theActorInTheSpotlight()).resolveAll().isEmpty()) {
+            theActorInTheSpotlight().attemptsTo(net.serenitybdd.screenplay.actions.Click.on(BTN_CONTRA_SALDO2));
+        }
+
+        theActorInTheSpotlight().attemptsTo(
+                ValidarTexto.validarTexto(PAGAR_CON_MI_SALDO)
+        );
+
+        CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
+
+        theActorInTheSpotlight()
+                .attemptsTo(
+                        ClickTextoQueContengaX.elTextoContiene(PAGAR_CON_MI_SALDO),
+                        WaitForResponse.withText(RESUMEN_COMPRA)
+                );
+
+        CapturaDePantallaMovil.tomarCapturaPantalla("captura_pantalla");
+    }
+
+    @Then("^COMPRA DEL PAQUETE TODO INCLUIDO 7 DIAS CON MINUTOS ILIMITADOS 10GB WIN SPORTS$")
+    public void compraPaqueteTodoIncluido7DiasMinIlim10GBWinSport() {
+        theActorInTheSpotlight()
+                .attemptsTo(
+                        TodoIncluido10DiasMinIlim10GBWinSport.todoIncluido10DiasMinIlim10GBWinSport());
     }
 
 }

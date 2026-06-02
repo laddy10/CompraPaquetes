@@ -28,7 +28,15 @@ public class TodoIncluido14GBWhatsappFacebookTwitterSaludLinea4BeneficiariosVig6
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
-                WaitForResponse.withText(ELIGE_TIPO_PAQUETE),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
+                Scroll.scrollUnaVista(),
+                Scroll.scrollUnaVista(),
+                ClickTextoQueContengaX.elTextoContiene(ULTIMO),
 
                 // Validación del precio en el canal
                 ValidarTexto.validarTexto(PRECIO_$9000),

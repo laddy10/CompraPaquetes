@@ -26,7 +26,7 @@ public class TodoIncluido15DiasMinIlim20GBNoIncluyeRedes extends AndroidObject i
         scrollCorto2(actor, TODO_INCLUIDO_15DIAS_20GB);
 
         actor.attemptsTo(
-                Click.on(LBL_VER_DETALLE_1),
+                Click.on(LBL_VER_DETALLE_2),
                 ValidarTexto.validarTexto(
                         TODO_INCLUIDO_15DIAS_20GB)
         );

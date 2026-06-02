@@ -394,7 +394,114 @@ Feature: Compras Mi Claro App
 
 
 
+  @COMPRAS_MICLARO_29
+  Scenario: Realizar la compra del paquete Todo Incluido 7 Dias con Minutos Ilimitados + 2GB Win Sports
+    Given Se ingresa a la URL de CMAX
+    When Se ingresa el usuario y la contrasena
+    When Se ingresa el numero de la linea en consulta inicial
+    When Se valida el resumen de la cuenta para el SC
+    When Se validan las ofertas activas en consulta inicial
+    When Se validan las cuentas dedicadas
+    When Se validan los acumuladores de uso
+
+    ## Se realiza el proceso de compra en la Super App
+    And cambia al contexto movil mi claro app
+    And ABRIR LA SUPER APP
+    When EL USUARIO REALIZA EL INGRESO A LA SUPER APP
+    Then VERIFICA VERSION DE LA SUPER APP
+    Then INGRESAR AL MENU DE RECARGAS Y PAQUETES
+    Then SELECCIONAR LINEA DE COMPRA
+    Then SELECCIONAR EL TIPO DE PAQUETE TODO INCLUIDO CON REDES
+    Then COMPRA DEL PAQUETE TODO INCLUIDO 7 DIAS CON MINUTOS ILIMITADOS 2GB WIN SPORTS
+    Then SELECCIONAR METODO SALDO EXCLUSIVO WIN SPORTS
+    Then TERMINOS Y CONDICIONES PAQUETE TODO INCLUIDO CON REDES
+    Then CLIC PAGAR CON MI SALDO
+    Then CONFIRMACION DE LA COMPRA
+
+    ## Se realiza la consulta de la compra en CMAX
+    And cambia al contexto web
+    When Se ingresa el usuario y la contrasena
+    When Se ingresa el numero de la linea en consulta de compra
+    When Se valida el resumen de la cuenta para el SC
+    When Se valida el historial de contrato
+    When Se validan los datos de compra
+    When Se validan las ofertas activas
+    Then Se verifican firmas y factor multiplicador
+
+
+
+  @COMPRAS_MICLARO_30
+  Scenario: Realizar la compra del paquete Todo incluido 10 Dias con Minutos Ilimitados + 3.5GB WIN SPORTS
+    Given Se ingresa a la URL de CMAX
+    When Se ingresa el usuario y la contrasena
+    When Se ingresa el numero de la linea en consulta inicial
+    When Se valida el resumen de la cuenta para el SC
+    When Se validan las ofertas activas en consulta inicial
+    When Se validan las cuentas dedicadas
+    When Se validan los acumuladores de uso
+
+    ## Se realiza el proceso de compra en la Super App
+    And cambia al contexto movil mi claro app
+    And ABRIR LA SUPER APP
+    When EL USUARIO REALIZA EL INGRESO A LA SUPER APP
+    Then VERIFICA VERSION DE LA SUPER APP
+    Then INGRESAR AL MENU DE RECARGAS Y PAQUETES
+    Then SELECCIONAR LINEA DE COMPRA
+    Then SELECCIONAR EL TIPO DE PAQUETE TODO INCLUIDO CON REDES
+    Then COMPRA DEL PAQUETE TODO INCLUIDO 10 DIAS CON MINUTOS ILIMITADOS 3.5GB WIN SPORTS
+    Then CLIC EN BOTON CONTRA SALDO
+    Then TERMINOS Y CONDICIONES PAQUETE TODO INCLUIDO CON REDES
+    Then CLIC PAGAR CON MI SALDO
+    Then CONFIRMACION DE LA COMPRA
+
+    ## Se realiza la consulta de la compra en CMAX
+    And cambia al contexto web
+    When Se ingresa el usuario y la contrasena
+    When Se ingresa el numero de la linea en consulta de compra
+    When Se valida el resumen de la cuenta para el SC
+    When Se valida el historial de contrato
+    When Se validan los datos de compra
+    When Se validan las ofertas activas
+    Then Se verifican firmas y factor multiplicador
+
+
+
    #---------- Paquetes todo incluido ------------#
+
+
+  @COMPRAS_MICLARO_31
+  Scenario: Realizar la compra del paquete Todo incluido 7 Dias con Minutos Ilimitados + 10GB WIN SPORTS
+    Given Se ingresa a la URL de CMAX
+    When Se ingresa el usuario y la contrasena
+    When Se ingresa el numero de la linea en consulta inicial
+    When Se valida el resumen de la cuenta para el SC
+    When Se validan las ofertas activas en consulta inicial
+    When Se validan las cuentas dedicadas
+    When Se validan los acumuladores de uso
+
+    ## Se realiza el proceso de compra en la Super App
+    And cambia al contexto movil mi claro app
+    And ABRIR LA SUPER APP
+    When EL USUARIO REALIZA EL INGRESO A LA SUPER APP
+    Then VERIFICA VERSION DE LA SUPER APP
+    Then INGRESAR AL MENU DE RECARGAS Y PAQUETES
+    Then SELECCIONAR LINEA DE COMPRA
+    Then SELECCIONAR EL TIPO DE PAQUETE TODO INCLUIDO SIN REDES
+    Then COMPRA DEL PAQUETE TODO INCLUIDO 7 DIAS CON MINUTOS ILIMITADOS 10GB WIN SPORTS
+    Then CLIC EN BOTON CONTRA SALDO
+    Then TERMINOS Y CONDICIONES PAQUETE TODO INCLUIDO CON REDES
+    Then CLIC PAGAR CON MI SALDO
+    Then CONFIRMACION DE LA COMPRA
+
+     ## Se realiza la consulta de la compra en CMAX
+    And cambia al contexto web
+    When Se ingresa el usuario y la contrasena
+    When Se ingresa el numero de la linea en consulta de compra
+    When Se valida el resumen de la cuenta para el SC
+    When Se valida el historial de contrato
+    When Se validan los datos de compra
+    When Se validan las ofertas activas
+    Then Se verifican firmas y factor multiplicador
 
 
   @COMPRAS_MICLARO_12

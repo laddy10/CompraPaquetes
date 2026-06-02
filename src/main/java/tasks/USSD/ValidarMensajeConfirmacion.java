@@ -63,7 +63,7 @@ public class ValidarMensajeConfirmacion extends AndroidObject implements Task {
         WordAppium.main();
 
         actor.attemptsTo(
-                WaitFor.aTime(120000));
+                WaitFor.aTime(5000));
 
     }
 }

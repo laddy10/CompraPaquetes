@@ -2,6 +2,7 @@ package tasks.SuperAPP.PaquetesTodoIncluidoConRedes;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static userinterfaces.SegmentoPage.BTN_COMPRAR_2;
+import static userinterfaces.SegmentoPage.LBL_VER_DETALLE_2;
 import static utils.Constants.*;
 import static utils.ConstantsPaquetes.*;
 
@@ -33,15 +34,15 @@ public class TodoIncluido10DiasMinutosIlim35GB extends AndroidObject implements 
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
-                ClickTextoQueContengaX.elTextoContiene(ULTIMO)
+                ValidarTexto.validarTexto(PRECIO_$13000)
         );
 
         // Scroll hasta el paquete específico
-        scrollCorto2(actor, PRECIO_$13000);
+        //scrollCorto2(actor, PRECIO_$13000);
 
         // Ingreso al detalle del paquete
         actor.attemptsTo(
-                ClickElementByText.clickElementByText(VER_DETALLE_DEL_PAQUETE),
+                Click.on(LBL_VER_DETALLE_2),
 
                 // Validación del nombre del paquete
                 ValidarTexto.validarTexto(TODO_INCLUIDO_3_5GB)

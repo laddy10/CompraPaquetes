@@ -31,11 +31,10 @@ public class TodoIncluido6DiasMinutosIlim14GB extends AndroidObject implements T
                 Scroll.scrollUnaVista(),
                 Scroll.scrollUnaVista(),
                 ClickTextoQueContengaX.elTextoContiene(ULTIMO),
-                WaitForResponse.withText(ELIGE_TIPO_PAQUETE)
-        );
+                WaitForResponse.withText(ELIGE_TIPO_PAQUETE),
+                ValidarTexto.validarTexto(PRECIO_$8000)
 
-        // Scroll hasta el paquete específico
-        scrollCorto2(actor, PRECIO_$8000);
+        );
 
         // Ingreso al detalle del paquete
         actor.attemptsTo(
@@ -54,7 +53,7 @@ public class TodoIncluido6DiasMinutosIlim14GB extends AndroidObject implements T
 
         // Flujo de compra
         actor.attemptsTo(
-                Click.on(BTN_COMPRAR_2),
+                ClickElementByText.clickElementByText(COMPRAR),
                 WaitForResponse.withText(ELEGIR_OTRO_MEDIO_PAGO),
                 ValidarTexto.validarTexto(PRECIO_$8000)
         );
